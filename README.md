@@ -7,3 +7,13 @@ Tip:​ les recomendamos crear la carpeta ​wireframes​ para incluir este con
 ● Colores
 ● Tipografías
 Tip:​ les recomendamos crear la carpeta ​design​ para incluir este contenido.
+> Resumen de entregables
+★ URL del repositorio con todos los colaboradores agregados. ★ Archivo README.md con:
+○ Temática del sitio y público objetivo.
+○ Listado de al menos 5 referentes. ★ Wireframe de las siguientes páginas:
+○ Home
+○ Detalle de producto
+○ Carrito de compras
+○ Formulario de registro
+○ Formulario de login
+★ Opcional: Boceto o diseño gráfico del sitio (logo, colores, tipografías, etc).
