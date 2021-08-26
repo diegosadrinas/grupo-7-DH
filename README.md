@@ -1,4 +1,4 @@
-Grupo 7 "DeMadera"
+Grupo 7 "Woodstack"
 Productos de madera para setups de laburo en compu. 
 > También agregar una breve descripción del público al que apunta el sitio.
 Una breve descripción de los integrantes del equipo.
