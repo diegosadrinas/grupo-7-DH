@@ -7,7 +7,7 @@ Consignas:
 Se apunta mayormente al conjunto de profesionales de las áreas de diseño, publicidad y programación. Son áreas de mercado con individuos particularmente sensibles a la estética y funcionalidad de su espacio de trabajo. 
 La intención es ofrecerles un producto tope de gama que permita articular distintas necesidades del setup de trabajo, siguiendo una misma línea de diseño y materiales. 
 
-El sitio ofrece exclusivamente productos para armados de escritorio A saber: escritorios, mouse-pads, deskpads, stands para laptops, docks para laptops, soporte para teclados, organizadores de útiles de escritorio. Los productos son pocos y bien definidos. 
+El sitio ofrece exclusivamente productos para armados de escritorio A saber: escritorios, mouse-pads, deskpads, stands y docks para laptops, soporte para teclados, organizadores de útiles de escritorio. Los productos son pocos y bien definidos. 
 
 Descripción de los integrantes del grupo:
 
@@ -15,7 +15,7 @@ Diego: Abogado/Sociólogo. 36 años. Panadero autodidacta.
 
 Matias: Músico. 34 años.
 
-Carlos: .............
+Carlos: Maestro de Matemáticas/Física/Pokémon. Mexicano de 30 años. Duelista de TCGs y chef en casa. Platillo favorito; Tlayudas. Color facorito; azul.
 
 Sebastián: Hobbista de la carpinteria. 34 años. Autodidacta compulsivo.
 
