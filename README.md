@@ -13,7 +13,7 @@ Descripción de los integrantes del grupo:
 
 Diego: Abogado/Sociólogo. 36 años. Panadero autodidacta.
 
-Matias: .............
+Matias: Músico. 34 años.
 
 Carlos: .............
 
