@@ -23,7 +23,7 @@ Descripción de los integrantes del grupo:
 
 - Grovemade (https://grovemade.com/). Es el sitio que buscamos emular.
 - Smallable (https://www.smallable.com/es/). Sitio de e-commerce también de tipo "minimalista" con pocos colores.
-- Etsy (https://www.etsy.com/). Sitio de e-commerce más masivo. Ofrece productos de vendedores independientes. Ofrece funcionalidades similares.
+- Etsy (https://www.etsy.com/). Sitio de e-commerce más masivo. Ofrece productos de vendedores independientes y posee funcionalidades similares.
 - Smallfolk (https://thesmallfolk.com.au). Sitio dedicado a la venta de juguetes y productos "artesanales" para chicos/as. La estética sigue la misma línea. Minimalista, pocos colores. Centrada en la imagen del producto.
 - The Horse (https://www.thehorse.com.au). Sitio de indumentaria femenina. Centrado en la fotografía y de muy poca redacción. 
 
