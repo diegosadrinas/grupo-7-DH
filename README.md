@@ -1,6 +1,6 @@
-Grupo 7 "Woodstack"
+# Grupo 7 "Woodstack"
 
-Consignas:
+### Consignas:
 
 2. El sitio ofrece productos de diseño en madera orientados a armar un setup de primer nivel para trabajos en modalidad WFH. Permite el armado de un escritorio funcional y de estética exclusiva.
 
@@ -11,19 +11,19 @@ El sitio ofrece exclusivamente productos para armados de escritorio A saber: esc
 
 Descripción de los integrantes del grupo:
 
-Diego: Abogado/Sociólogo. 36 años. Panadero autodidacta.
+>Diego: Abogado/Sociólogo. 36 años. Panadero autodidacta.
 
-Matias: Músico. 34 años.
+>Matias: Músico. 34 años.
 
-Carlos: Maestro de Matemáticas/Física/Pokémon. Mexicano de 30 años. Duelista de TCGs y chef en casa. Platillo favorito; Tlayudas. Color facorito; azul.
+>Carlos: Maestro de Matemáticas/Física/Pokémon. Mexicano de 30 años. Duelista de TCGs y chef en casa. Platillo favorito; Tlayudas. Color facorito; azul.
 
-Sebastián: Hobbista de la carpinteria. 34 años. Autodidacta compulsivo.
+>Sebastián: Hobbista de la carpinteria. 34 años. Autodidacta compulsivo.
 
 3. Sitios de inspiración:
 
-a. Grovemade (https://grovemade.com/). Es el sitio que buscamos emular.
-b. Smallable (https://www.smallable.com/es/). Sitio de e-commerce también de tipo "minimalista" con pocos colores.
-c. Etsy (https://www.etsy.com/). Sitio de e-commerce más masivo. Ofrece productos de vendedores independientes. Ofrece funcionalidades similares.
-d. Smallfolk (https://thesmallfolk.com.au). Sitio dedicado a la venta de juguetes y productos "artesanales" para chicos/as. La estética sigue la misma línea. Minimalista, pocos colores. Centrada en la imagen del producto.
-e. The Horse (https://www.thehorse.com.au). Sitio de indumentaria femenina. Centrado en la fotografía y de muy poca redacción. 
+- Grovemade (https://grovemade.com/). Es el sitio que buscamos emular.
+- Smallable (https://www.smallable.com/es/). Sitio de e-commerce también de tipo "minimalista" con pocos colores.
+- Etsy (https://www.etsy.com/). Sitio de e-commerce más masivo. Ofrece productos de vendedores independientes. Ofrece funcionalidades similares.
+- Smallfolk (https://thesmallfolk.com.au). Sitio dedicado a la venta de juguetes y productos "artesanales" para chicos/as. La estética sigue la misma línea. Minimalista, pocos colores. Centrada en la imagen del producto.
+- The Horse (https://www.thehorse.com.au). Sitio de indumentaria femenina. Centrado en la fotografía y de muy poca redacción. 
 
