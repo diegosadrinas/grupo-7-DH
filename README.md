@@ -17,7 +17,7 @@ Matias: Músico. 34 años.
 
 Carlos: .............
 
-Sebastián: .............
+Sebastián: Hobbista de la carpinteria. 34 años. Autodidacta compulsivo.
 
 3. Sitios de inspiración:
 
