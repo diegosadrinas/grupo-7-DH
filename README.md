@@ -1,20 +1,29 @@
 Grupo 7 "Woodstack"
-Productos de madera para setups de laburo en compu. 
-> También agregar una breve descripción del público al que apunta el sitio.
-Una breve descripción de los integrantes del equipo.
-En el README.md agregar un listado de al menos 5 sitios de referencia indicando brevemente por qué fueron elegidos.
-Tip:​ les recomendamos crear la carpeta ​wireframes​ para incluir este contenido. Entregable (Opcional)​:​ Boceto o diseño del sitio incluyendo.
-● Logo
-● Colores
-● Tipografías
-Tip:​ les recomendamos crear la carpeta ​design​ para incluir este contenido.
-> Resumen de entregables
-★ URL del repositorio con todos los colaboradores agregados. ★ Archivo README.md con:
-○ Temática del sitio y público objetivo.
-○ Listado de al menos 5 referentes. ★ Wireframe de las siguientes páginas:
-○ Home
-○ Detalle de producto
-○ Carrito de compras
-○ Formulario de registro
-○ Formulario de login
-★ Opcional: Boceto o diseño gráfico del sitio (logo, colores, tipografías, etc).
+
+Consignas:
+
+2. El sitio ofrece productos de diseño en madera orientados a armar un setup de primer nivel para trabajos en modalidad WFH. Permite el armado de un escritorio funcional y de estética exclusiva.
+
+Se apunta mayormente al conjunto de profesionales de las áreas de diseño, publicidad y programación. Son áreas de mercado con individuos particularmente sensibles a la estética y funcionalidad de su espacio de trabajo. 
+La intención es ofrecerles un producto tope de gama que permita articular distintas necesidades del setup de trabajo, siguiendo una misma línea de diseño y materiales. 
+
+El sitio ofrece exclusivamente productos para armados de escritorio A saber: escritorios, mouse-pads, deskpads, stands para laptops, docks para laptops, soporte para teclados, organizadores de útiles de escritorio. Los productos son pocos y bien definidos. 
+
+Descripción de los integrantes del grupo:
+
+Diego: Abogado/Sociólogo. 36 años. Panadero autodidacta.
+
+Matias: .............
+
+Carlos: .............
+
+Sebastián: .............
+
+3. Sitios de inspiración:
+
+a. Grovemade (https://grovemade.com/). Es el sitio que buscamos emular.
+b. Smallable (https://www.smallable.com/es/). Sitio de e-commerce también de tipo "minimalista" con pocos colores.
+c. Etsy (https://www.etsy.com/). Sitio de e-commerce más masivo. Ofrece productos de vendedores independientes. Ofrece funcionalidades similares.
+d. Smallfolk (https://thesmallfolk.com.au). Sitio dedicado a la venta de juguetes y productos "artesanales" para chicos/as. La estética sigue la misma línea. Minimalista, pocos colores. Centrada en la imagen del producto.
+e. The Horse (https://www.thehorse.com.au). Sitio de indumentaria femenina. Centrado en la fotografía y de muy poca redacción. 
+
