@@ -1,3 +1,178 @@
+*{
+    margin: 0px;
+    padding: 0px;    
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
 body{
-    background: #000;
+    background: #fff;
+}
+nav{
+    visibility: visible;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 769px){
+    body{
+        text-decoration: none;
+    }
+    body li{
+        text-decoration: none;
+        list-style-type: none
+    }
+    header{
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 10%;
+        flex-wrap: wrap;
+    }
+    
+    
+    
+    .linea1,.linea2,.linea3{
+        background-color: black;
+        width: 25px;
+        height: 3px;
+        margin: 2px;
+        cursor: pointer;
+    }
+    
+    #menu_checkbox{
+        display: none;
+    }
+    
+    nav{
+        visibility: hidden;
+    }
+
+    #menu_checkbox:checked ~ nav{
+        visibility: visible;
+        text-decoration: none;
+        list-style: none;
+        
+    }
+    
+    .main-navbar{
+        width: 100%;
+        display: block;
+        justify-content:flex-start;
+        align-items: center;
+        padding: 30px;
+    } 
+
+    main{
+        margin-top: 60px;
+    }
+
+    
+    .tarjeta{
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* width: 400px; */
+        background: white;
+        border-radius: 10px;
+        /* box-shadow: 10px 10px 15px rgba(0,0,0,0.05); */
+      }
+      .tarjeta h1{
+        text-align: center;
+        padding: 20px 0;
+        /* border-bottom: 1px solid silver; */
+      }
+      .tarjeta form{
+        padding: 0 40px;
+        box-sizing: border-box;
+      }
+      form .campo{
+        position: relative;
+        border-bottom: 2px solid #000000;
+        margin: 30px 0;
+      }
+      .campo input{
+        width: 100%;
+        padding: 0 5px;
+        height: 40px;
+        font-size: 16px;
+        border: none;
+        background: none;
+        outline: none;
+      }
+      .campo label{
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        color: #adadad;
+        transform: translateY(-50%);
+        font-size: 16px;
+        pointer-events: none;
+        transition: .5s;
+      }
+      .campo span::before{
+        content: '';
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background: #000000;
+        transition: .5s;
+      }
+      .campo input:focus ~ label,
+      .campo input:valid ~ label{
+        top: -5px;
+        color: #000000;
+      }
+      .campo input:focus ~ span::before,
+      .campo input:valid ~ span::before{
+        width: 100%;
+      }
+      .pass{
+        margin: -5px 0 20px 5px;
+        color: #a6a6a6;
+        cursor: pointer;
+      }
+      .pass:hover{
+        text-decoration: underline;
+      }
+      input[type="submit"]{
+        width: 100%;
+        height: 30px;
+        background: #000000;
+        font-size: 16px;
+        color: #FFEBCD;
+        border: 1px solid;
+        border-radius: 0px;
+        cursor: pointer;
+        outline: none;
+        text-align: center;
+      }
+      input[type="submit"]:hover{
+        border-color: #000000;
+        transition: .5s;
+      }
+      .registrarse{
+        margin: 30px 0;
+        text-align: center;
+        font-size: 16px;
+        color: #666666;
+      }
+      .registrarse a{
+        color: #000000;
+        text-decoration: none;
+      }
+      .registrarse a:hover{
+        text-decoration: underline;
+      }
+
+
 }
