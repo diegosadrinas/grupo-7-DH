@@ -1,0 +1,22 @@
+{
+  "name": "grupo-7-dh",
+  "version": "1.0.0",
+  "description": "2. El sitio ofrece productos de diseño en madera orientados a armar un setup de primer nivel para trabajos en modalidad WFH. Permite el armado de un escritorio funcional y de estética exclusiva.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diegosadrinas/grupo-7-DH.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diegosadrinas/grupo-7-DH/issues"
+  },
+  "homepage": "https://github.com/diegosadrinas/grupo-7-DH#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
