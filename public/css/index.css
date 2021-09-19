@@ -27,6 +27,8 @@ body{
     display: flex;
     margin: 5px;
     width: 20%;
+    padding-left: 10px
+
 }
 
 .nav-bar ul {
@@ -56,7 +58,7 @@ body{
 
 .right-bar {
     width: 20%;
-    text-align: right;
+    text-align: center;
 }
 
 /* Termina HEADER */
