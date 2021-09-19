@@ -1,4 +1,53 @@
-body{
+
+* {
+    box-sizing: border-box;
+    margin: auto;
+}
+
+header{
+    border: red dotted 1px;
+    height: 100px;
+}
+
+.nav-bar {
+    height: 35px;
+    border: red dotted 1px;
+    font-size: 10px;
+    display: flex;
+}
+
+.nav-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: red dotted 1px;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: #222;
+    padding: 5px;
+
+}
+
+.left-bar {
+    display: none;
+}
+
+.main-title{
+    border: red dotted 1px;
     text-align: center;
-    background:salmon;
+    font-size: 14px;
+    font-weight: 600;
+    align-self: center;
+    
+}
+
+.hamburger-btn {
+    font-size: 14px;
+}
+
+main{
+    text-align: center;
+    border: red dotted 1px
 }
