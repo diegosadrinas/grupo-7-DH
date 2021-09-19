@@ -4,11 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.css">
+    <!--<link rel="stylesheet" href="css/normalize.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="css/login.css">
     <title>LogIn</title>
 </head>
 <body>
-    
+    <header>
+        
+            
+            <input type="checkbox" id="menu_checkbox">
+                <label for="menu_checkbox" id="menu">
+                    <div class="linea1"></div>
+                    <div class="linea2"></div>
+                    <div class="linea3"></div>
+                </label>
+            
+            <a href="#"><img src="/images/logo.jpg" alt="Woodstack"></a>
+            
+            <ul class="right-bar">
+                <li><a href=#><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        
+            <nav class="main-navbar">
+                <ul class="left-bar">
+                    <li><a href="#">Login</a></li>
+                    <li><a href=#>Productos</a></li>
+                </ul>
+            </nav>
+        
+        
+    </header>
+    <main>
+        <div class="tarjeta">
+            <h1>Iniciar Sesion</h1>
+            <form method="post">
+              <div class="campo">
+                <input type="text" required>
+                <span></span>
+                <label>Usuario</label>
+              </div>
+              <div class="campo">
+                <input type="password" required>
+                <span></span>
+                <label>Contraseña</label>
+              </div>
+              <div class="pass">Olvidó su contraseña?</div>
+              <input type="submit" value="Iniciar Sesion">
+              <div class="registrarse">
+                No es miembro?<a href="#">Registrarse</a>
+              </div>
+            </form>
+          </div>
+    </main>
+    <footer>
+
+    </footer>
 </body>
 </html>
