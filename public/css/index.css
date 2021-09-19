@@ -63,6 +63,7 @@ body{
 
 main{
     text-align: center;
+<<<<<<< HEAD
 }
 
 /* Empieza Banner */
@@ -97,3 +98,7 @@ main{
         text-align: center;
     }
 }
+=======
+    border: red dotted 1px
+}
+>>>>>>> 8337cb50c89ec261f3d94de16e4517f2bc0c182c
