@@ -18,15 +18,15 @@ body{
     flex-direction: row;
     
 } */
-header{
+/* header{
     background: whitesmoke;
 }
 
 header:hover{
-    background: grey;
+    background: black;
     transition: 1s;
-    color: whitesmoke;
-}
+    color: white;
+} */
 
 
 .nav-bar {
@@ -34,6 +34,17 @@ header:hover{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    background: whitesmoke;
+    width: 100%;
+    /* overflow: hidden; */
+    position: fixed; 
+    top: 0; 
+    z-index: 100;
+}
+.nav-bar:hover{
+    background:rgba(200, 200, 200, 1);
+    /* color: white; */
+    transition: 1s;
 }
 
 
@@ -186,6 +197,11 @@ div .boton{
 }
 .detalle{
     background-color: whitesmoke;
+    /* margin-bottom: 50px; */
+}
+
+.detalle p{
+    margin-bottom: 10px;
 }
 
 .detalle:hover{
