@@ -11,8 +11,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
 }
-
+.carritoProducto h2,
 .carritovacio h1 {
     font-size: 32px;
     font-weight: 100;
@@ -21,6 +22,7 @@ body {
 .carritovacio p {
     font-weight: 400;
 }
+.botonFinalizar,
 .carritovacio a {
     padding: 1em 3em;
     color: #fff;
@@ -28,6 +30,110 @@ body {
     border: 1px solid #000;
     transition: all 0.3s linear;
 }
+.botonFinalizar:hover,
 .carritovacio a:hover {
     background: #666;
+}
+.botonFinalizar {
+    width: 75%;
+    text-align: center;
+    padding: 1em 0;
+}
+.hide {
+    display: none;
+}
+.productList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 75%;
+}
+.productList .item {
+    display: flex;
+    flex-direction: row;
+    margin: 1em 0;
+    padding: 0;
+    width: 100%;
+
+}
+.productList .item .link {
+    max-width: 230px;
+    display: block;
+    transition: all 0.2s linear;
+    margin-right: 1em;
+}
+.productList .item .link:hover {
+    opacity: 0.6;
+}
+.productList .item .link img {
+    width: 100%;
+    height: auto;
+}
+.productList .item .information {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.productList .item .information a {
+    text-decoration: none;
+    color: #000
+}
+.productList .item .information .caja .removereishon:hover,
+.productList .item .information a:hover {
+    text-decoration: underline;
+}
+.productList .item .information h2 {
+    font-size: 24px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+.productList .item .information .features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    text-transform: uppercase;
+    line-height: 20px;
+}
+.productList .item .information .cantidad {
+    display: flex;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.productList .item .information .entregation p:first-of-type,
+.productList .item .information .cantidad p:first-of-type {
+    margin-right: 0.2em;
+}
+.productList .item .information .entregation {
+    display: flex;
+    text-transform: uppercase;
+    font-size: 14px;
+    color:#005fff;
+}
+.productList .item .information .entregation p {
+    margin-top: 0.3em;
+}
+.productList .item .information .caja {
+    position: relative;
+}
+.productList .item .information .caja .removereishon {
+    position: absolute;
+    bottom: 14px;
+    right: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.subtotaleishon {
+    display: flex;
+    width: 75%;
+    justify-content: space-between;
+    text-transform: uppercase;
+    border-top: 1px solid rgb(188, 188, 189);
+    padding-top: 0.3em;
+}
+.subtotaleishon .dinereishon {
+    font-weight: 800;
+    font-size: 18px;
+
 }
