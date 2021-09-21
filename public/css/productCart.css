@@ -3,6 +3,57 @@ body {
     align-items: center;
     font-family: 'Open Sans Condensed', sans-serif;
 }
+/* Empieza HEADER */
+header {
+    border-bottom:1px solid #000;
+}
+.nav-bar {
+    display: flex;
+    align-items: center;
+    margin: 5px 0
+}
+
+
+.left-bar {
+    display: flex;
+    margin: 5px;
+    width: 30%;
+    padding-left: 10px
+
+}
+
+.nav-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar a {
+    margin: 5px;
+    font-size: 10px;
+    text-decoration: none;
+    color: #222;
+}
+
+.left-bar ul{
+    display: none;
+}
+
+.center-bar{
+    font-size: 18px ;
+    width: 80%;
+    text-align: center;
+    
+}
+
+.right-bar {
+    width: 30%;
+    text-align: center;
+    padding-right: 5px;
+}
+
+/* Termina HEADER */
+
 .container {
     width: 100%;
     max-width: 980px;
@@ -136,4 +187,135 @@ body {
     font-weight: 800;
     font-size: 18px;
 
+}
+
+/* footer{
+   
+} */
+
+footer:hover{
+    background: rgba(154, 168, 177, 0.9);
+}
+.tarjeta h2{
+    padding-top: 25px;
+}
+
+.tarjeta{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.campo{
+    text-align: center;
+    margin-top: 20px;
+}
+
+input[type="submit"]{
+    background: black;
+    color: blanchedalmond;
+    padding: 2px 10px;
+    border: none;
+
+  }
+
+  input[type="submit"]:hover{
+      padding: 4px 15px;
+  }
+
+.email{
+    /* text-align: center; */
+      border: none;
+      background: #CCD3D8;
+      border-bottom: solid black 2px;
+}
+
+.footer1{
+    position: relative;
+    bottom: 130px;
+    left: 20px;
+    width: 20%;
+    /* background: salmon */
+    ;
+}
+
+
+footer ul{
+    list-style: none;
+
+}
+footer ul li{
+    padding: 3px;
+}
+
+footer ul li a{
+    text-decoration: none;
+    color: black;
+}
+/* FOOTER CAJAS */
+
+.gral{
+    background: #CCD3D8;
+    margin-top: 20px;
+    width: 100%;
+    height: 170px;
+    position: relative;
+}
+
+.div1{
+    background: salmon;
+    position: relative;
+    height: 100%;
+    width: 25%;
+
+}
+.div2{
+    background: black;
+    position: relative;
+    height: 90%;
+    width: 100%;
+    left: 25%;
+    /* z-index: 4; */
+
+    
+}
+.div3{
+    background: green;
+    position: relative;
+    height: 20px;
+    width: 100%;
+    left: 25%;
+    bottom: 0%;
+    /* z-index: 3; */
+    /* left: 200px; */
+}
+
+.footer-legal{
+    display: flex;
+    justify-content: right;
+    font-size: 12px;
+}
+@media (max-width: 768px) {
+    .productList .item {
+        flex-direction: column;
+    }
+    .productList .item .link {
+        max-width: 100%;
+        margin: 0;
+    }
+}
+@media (min-width: 768px) {
+    
+    .hamburger-btn {
+        display: none;
+    }
+
+    .left-bar ul {
+        display: flex;
+    }
+
+    .left-bar {
+        display: inline-block;
+        margin: 5px;
+        width: 20%;
+    }
 }
