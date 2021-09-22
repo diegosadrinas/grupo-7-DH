@@ -1,8 +1,59 @@
 body {
     background:white;
     align-items: center;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Koh Santepheap';
 }
+/* Empieza HEADER */
+header {
+    border-bottom:1px solid #000;
+}
+.nav-bar {
+    display: flex;
+    align-items: center;
+    margin: 5px 0
+}
+
+
+.left-bar {
+    display: flex;
+    margin: 5px;
+    width: 30%;
+    padding-left: 10px
+
+}
+
+.nav-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar a {
+    margin: 5px;
+    font-size: 10px;
+    text-decoration: none;
+    color: #222;
+}
+
+.left-bar ul{
+    display: none;
+}
+
+.center-bar{
+    font-size: 18px ;
+    width: 80%;
+    text-align: center;
+    
+}
+
+.right-bar {
+    width: 30%;
+    text-align: center;
+    padding-right: 5px;
+}
+
+/* Termina HEADER */
+
 .container {
     width: 100%;
     max-width: 980px;
@@ -11,8 +62,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
 }
-
+.carritoProducto h2,
 .carritovacio h1 {
     font-size: 32px;
     font-weight: 100;
@@ -21,6 +73,7 @@ body {
 .carritovacio p {
     font-weight: 400;
 }
+.botonFinalizar,
 .carritovacio a {
     padding: 1em 3em;
     color: #fff;
@@ -28,6 +81,235 @@ body {
     border: 1px solid #000;
     transition: all 0.3s linear;
 }
+.botonFinalizar:hover,
 .carritovacio a:hover {
     background: #666;
+}
+.botonFinalizar {
+    width: 75%;
+    text-align: center;
+    padding: 1em 0;
+}
+.hide {
+    display: none;
+}
+.productList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 75%;
+}
+.productList .item {
+    display: flex;
+    flex-direction: column;
+    margin: 1em 0;
+    padding: 0;
+    width: 100%;
+
+}
+.productList .item .link {
+    max-width: 100%;
+    margin: 0;
+    display: block;
+    transition: all 0.2s linear;
+}
+.productList .item .link:hover {
+    opacity: 0.6;
+}
+.productList .item .link img {
+    width: 100%;
+    height: auto;
+}
+.productList .item .information {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.productList .item .information a {
+    text-decoration: none;
+    color: #000
+}
+.productList .item .information .caja .removereishon:hover,
+.productList .item .information a:hover {
+    text-decoration: underline;
+}
+.productList .item .information h2 {
+    font-size: 24px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+.productList .item .information .features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    text-transform: uppercase;
+    line-height: 20px;
+}
+.productList .item .information .cantidad {
+    display: flex;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.productList .item .information .entregation p:first-of-type,
+.productList .item .information .cantidad p:first-of-type {
+    margin-right: 0.2em;
+}
+.productList .item .information .entregation {
+    display: flex;
+    flex-direction: column;
+    line-height: 2px;
+    text-transform: uppercase;
+    font-size: 14px;
+    color:#005fff;
+}
+.productList .item .information .entregation p {
+    margin-top: 0.3em;
+}
+.productList .item .information .caja {
+    position: relative;
+}
+.productList .item .information .caja .removereishon {
+    position: absolute;
+    bottom: 14px;
+    right: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.subtotaleishon {
+    display: flex;
+    width: 75%;
+    justify-content: space-between;
+    text-transform: uppercase;
+    border-top: 1px solid rgb(188, 188, 189);
+    padding-top: 0.3em;
+}
+.subtotaleishon .dinereishon {
+    font-weight: 800;
+    font-size: 18px;
+
+}
+/* footer iniciaeishon */
+footer {
+    background: #CCD3D8;
+    margin-top: 22px;
+}
+footer .container {
+    align-items: flex-start;
+    padding-top: 22px;
+    padding-bottom: 20px;
+}
+footer ol,
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+footer ul li {
+    margin-bottom: 0.5em;
+}
+footer ul li a {
+    color:#000;
+    text-decoration: none;
+}
+footer ul li a:hover {
+    text-decoration: underline;
+}
+footer ol {
+    display: flex;
+    flex-direction: row;
+}
+footer ol li {
+    margin-right: 0.5em;
+}
+footer ol li a {
+    color: #000
+}
+footer ol li i {
+    font-size: 30px;
+}
+footer .newsLetters {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+footer .newsLetters h2 {
+    margin-top: 0;
+    margin-bottom: 0.2em;
+}
+footer .newsLetters form .campo {
+    display: flex;
+}
+footer .newsLetters form .email {
+    border: 0;
+    background: transparent;
+    border-bottom: 2px solid #000;
+    padding-bottom: 0.2em;
+}
+footer .newsLetters form .botonFooter {
+    border: 0;
+    background: transparent;
+    border-bottom: 2px solid #000;
+    padding-bottom: 0.2em;
+    padding-left: 0;
+}
+footer .footer-legal {
+    font-size: 12px;
+}
+footer .footer-legal a {
+    text-decoration: none;
+    color: #000;
+}
+footer .footer-legal a:hover {
+    text-decoration: underline;
+}
+
+/* footer terminaeishon */
+
+@media (min-width: 768px) {
+    .productList .item {
+        flex-direction: row;
+    }
+    .productList .item .link {
+        margin-right: 1em;
+        max-width: 230px;
+    }
+    /* footerStarteishon */
+    footer .container {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    footer .footer-legal {
+        display: flex;
+        flex-direction: row;
+    }
+    footer .footer-legal > * {
+        margin-right: 1em;
+    }
+    footer .footer-legal > :last-child {
+        margin-right: 0;
+    }
+    footer .newsLetters {
+        width: 100%;
+    }
+    footer .newsLetters .email {
+        width: 100%;
+    }
+    /* footerTerminaeishon */
+}
+@media (min-width: 768px) {
+    
+    .hamburger-btn {
+        display: none;
+    }
+
+    .left-bar ul {
+        display: flex;
+    }
+
+    .left-bar {
+        display: inline-block;
+        margin: 5px;
+        width: 20%;
+    }
 }

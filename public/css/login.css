@@ -1,25 +1,191 @@
-*{
-    margin: 0px;
-    padding: 0px;    
-    box-sizing: border-box;
-    text-decoration: none;
+* {
+  box-sizing: border-box;
+  margin: auto;
+  text-decoration: none;
+  list-style-type: none;
 }
 
 body{
-    background: #fff;
+  background: #ffffff;
+  color: #0d0d0d;
+  font-family: 'Koh Santepheap';
+  text-decoration: none;
+  font-size: 14px;
+  min-width: 360px;
+
 }
 nav{
     visibility: visible;
 }
 
+/* Empieza HEADER */
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  margin: 5px 0
+}
 
 
+.left-bar {
+  display: flex;
+  margin: 5px;
+  width: 30%;
+  padding-left: 10px
+
+}
+
+.nav-bar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar a {
+  margin: 5px;
+  font-size: 10px;
+  text-decoration: none;
+  color: #222;
+}
+
+.left-bar ul{
+  display: none;
+}
+
+.center-bar{
+  font-size: 18px ;
+  width: 80%;
+  text-align: center;
+  
+}
+
+.right-bar {
+  width: 30%;
+  text-align: center;
+  padding-right: 5px;
+}
+/* Termina header */
 
 
+.first-banner {
+  background-image: url(/images/index/desktops-img.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 20%;
+  padding-bottom: 50%;
 
+}
 
+.tarjeta{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #f5f5f5;
+    border-radius: 10px;
+  }
+  .tarjeta h1{
+    text-align: center;
+    padding: 20px 0px 0px 0px
+  }
+  .tarjeta form{
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+  form .campo{
+    position: relative;
+    border-bottom: 2px solid #000000;
+    margin: 30px 0;
+  }
+  .campo input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 12px;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  .campo label{
+    position: absolute;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 12px;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .pass{
+    margin: -5px 0 20px 5px;
+    color: #a6a6a6;
+    cursor: pointer;
+  }
+  .pass:hover{
+    text-decoration: underline;
+  }
+  input[type="submit"]{
+    width: 100%;
+    height: 30px;
+    background: #000000;
+    font-size: 16px;
+    color: #FFEBCD;
+    border: 1px solid;
+    border-radius: 0px;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+  }
+  input[type="submit"]:hover{
+    border-color: #000000;
+    transition: .5s;
+  }
+  .registrarse{
+    margin: 30px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #666666;
+  }
+  .registrarse a{
+    color: #000000;
+    text-decoration: none;
+    padding-left: 5px;
+  }
+  .registrarse a:hover{
+    text-decoration: underline;
+  }
 
-@media (max-width: 769px){
+  /*INICIO FOOTER */
+  footer{
+    background-color: #f5f5f5;
+    padding: 5px 10px;
+  }
+   footer a,i{
+    text-decoration: none;
+    list-style-type: none;
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+   } 
+   .links-footer{
+    
+    flex-direction: column;
+    
+   }
+   .redes{
+    display: flex;
+    padding: 5px 10px;
+   }
+   .redes i{
+     padding: 0 10px;
+   }
+   .redes p{
+    padding: 0 10px;
+  }
+
+  /*FIN FOOTER */
+
+@media (min-width: 768px) {
     body{
         text-decoration: none;
     }
@@ -27,32 +193,23 @@ nav{
         text-decoration: none;
         list-style-type: none
     }
-    header{
-        margin-top: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 10%;
-        flex-wrap: wrap;
+    
+    
+    .hamburger-btn {
+      display: none;
+    }
+    
+    .left-bar ul {
+      display: flex;
+    }
+
+    .left-bar {
+        display: inline-block;
+        margin: 5px;
+        width: 20%;
     }
     
     
-    
-    .linea1,.linea2,.linea3{
-        background-color: black;
-        width: 25px;
-        height: 3px;
-        margin: 2px;
-        cursor: pointer;
-    }
-    
-    #menu_checkbox{
-        display: none;
-    }
-    
-    nav{
-        visibility: hidden;
-    }
 
     #menu_checkbox:checked ~ nav{
         visibility: visible;
@@ -69,20 +226,24 @@ nav{
         padding: 30px;
     } 
 
-    main{
-        margin-top: 60px;
-    }
-
+   
+    .first-banner {
+      background-image: url(/images/index/desktops-img.webp);
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding-top: 20%;
+      padding-bottom: 50%;
+  
+  }
     
     .tarjeta{
         position: absolute;
-        top: 65%;
+        top: 45%;
         left: 50%;
         transform: translate(-50%, -50%);
-        /* width: 400px; */
-        background: white;
+        background: #f5f5f5;
         border-radius: 10px;
-        /* box-shadow: 10px 10px 15px rgba(0,0,0,0.05); */
+        padding: 40px;
       }
       .tarjeta h1{
         text-align: center;
@@ -169,6 +330,7 @@ nav{
       .registrarse a{
         color: #000000;
         text-decoration: none;
+        padding-left: 5px;
       }
       .registrarse a:hover{
         text-decoration: underline;

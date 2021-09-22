@@ -7,35 +7,39 @@
     <!--<link rel="stylesheet" href="css/normalize.css">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="css/login.css">
-    <title>LogIn</title>
+    <title>Woodstack | Iniciar Sesion</title>
 </head>
 <body>
     <header>
-        
-            
-            <input type="checkbox" id="menu_checkbox">
-                <label for="menu_checkbox" id="menu">
-                    <div class="linea1"></div>
-                    <div class="linea2"></div>
-                    <div class="linea3"></div>
-                </label>
-            
-            <a href="#"><img src="/images/logo.jpg" alt="Woodstack"></a>
-            
-            <ul class="right-bar">
-                <li><a href=#><i class="fas fa-shopping-cart"></i></a></li>
+      <nav class="nav-bar">
+        <div class="left-bar">
+            <a href="#" class="hamburger-btn">
+                <i class="fas fa-bars"></i>
+            </a>
+            <ul>
+                <li><a href="#">COMPRAR</a></li>
+                <li><a href="#">EXPLORAR</a></li>
             </ul>
-        
-            <nav class="main-navbar">
-                <ul class="left-bar">
-                    <li><a href="#">Login</a></li>
-                    <li><a href=#>Productos</a></li>
-                </ul>
-            </nav>
+        </div>
+
+        <div class="center-bar">
+            WOODSTACK
+        </div>
+
+        <div class="right-bar">
+            <ul>
+                <li><a href="#">
+                    <i class="fas fa-shopping-cart"></i>
+                    MI CARRITO</a></li>
+            </ul>
+        </div>
+    </nav>
         
         
     </header>
     <main>
+
+    <div class="first-banner"></div>
         <div class="tarjeta">
             <h1>Iniciar Sesion</h1>
             <form method="post">
@@ -58,7 +62,19 @@
           </div>
     </main>
     <footer>
-
-    </footer>
+      <article class="links-footer">
+          <li><a href="#">Tienda</a></li>
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Soporte</a></li>
+          <li><a href="#">Estado de su orden</a></li>
+      </article>
+      <article class="redes">
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <p>©2021Woodstack | Todos los derechos reservados</p>
+      </article>
+     
+  </footer>
 </body>
 </html>
