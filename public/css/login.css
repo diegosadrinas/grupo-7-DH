@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  margin: auto;
   text-decoration: none;
   list-style-type: none;
 }
@@ -156,32 +155,74 @@ nav{
   }
 
   /*INICIO FOOTER */
-  footer{
-    background-color: #f5f5f5;
-    padding: 5px 10px;
+  footer:hover{
+    background: rgba(154, 168, 177, 0.9);
+}
+.tarjeta-footer h2{
+    padding-top: 25px;
+}
+
+.tarjeta-footer{
+    text-align: center;
+}
+
+.campo-footer{
+    text-align: center;
+    margin-top: 20px;
+}
+
+#btn-register[type="submit"]{
+    background: black;
+    color: blanchedalmond;
+    padding: 2px 10px;
+    border: none;
+    width:auto;
   }
-   footer a,i{
-    text-decoration: none;
-    list-style-type: none;
-    color: #000000;
-    font-size: 20px;
-    font-weight: bold;
-   } 
-   .links-footer{
-    
-    flex-direction: column;
-    
-   }
-   .redes{
+
+  #btn-register[type="submit"]:hover{
+      padding: 4px 15px;
+  }
+
+.email{
+    /* text-align: center; */
+      border: none;
+      background: #CCD3D8;
+      border-bottom: solid black 2px;
+}
+
+.footer1{
     display: flex;
-    padding: 5px 10px;
-   }
-   .redes i{
-     padding: 0 10px;
-   }
-   .redes p{
-    padding: 0 10px;
-  }
+    order: -1;
+    width: 50%;
+}
+
+
+footer ul{
+    list-style: none;
+
+}
+footer ul li{
+    padding: 3px;
+}
+
+footer ul li a{
+    text-decoration: none;
+    color: black;
+}
+/* FOOTER CAJAS */
+
+.gral{
+    background: #CCD3D8;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-legal{
+    display: flex;
+    font-size: 12px;
+    width: 100%;
+    justify-content: flex-end;
+}
 
   /*FIN FOOTER */
 
