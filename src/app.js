@@ -6,9 +6,13 @@ const app = express();
 const publicPath = path.resolve(__dirname, './public');
 app.use(express.static(publicPath));
 
-app.listen(9000, () => {
+// Código a modificar----------------------------------->>>
+app.set('view engine', 'ejs')
+
+app.listen(3000, () => {
     console.log('SERVIDOR CORRIENDO EN EL PUERTO 9000!');
 });
+
 
 app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/index.html'))
