@@ -69,6 +69,7 @@ main{
 
 /* Empieza Banner */
 .first-banner {
+    margin-top: 50px;
     background-image: url(/images/index/first-section-img2.jpg);
     background-size: cover;
     background-repeat: no-repeat;

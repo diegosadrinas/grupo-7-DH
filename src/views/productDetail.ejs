@@ -11,49 +11,7 @@
     <title>WS ProductDetail</title>
 </head>
 <body>
-
-    <header>
-        <nav class="nav-bar">
-            <div class="left-bar">
-                <a href="#" class="hamburger-btn">
-                    <i class="fas fa-bars"></i>
-                </a>
-                <ul>
-                    <li><a href="#">COMPRAR</a></li>
-                    <li><a href="#">EXPLORAR</a></li>
-                </ul>
-            </div>
-    
-            <div class="center-bar">
-                WOODSTACK
-            </div>
-    
-            <div class="right-bar">
-                <a href="#" class="carrito">
-                    <i class="fas fa-shopping-cart"></i>
-                </a>
-                <ul>
-                    <li><a href="#">MI CARRITO</a></li>
-                </ul>
-            </div>
-        </nav>
-
-    <!-- <nav class="nav"> -->
-            <!-- cuando es movvil Comprar y Epxlorar es un Burguer Buton -->
-            <!-- Nav Fixed arriba -->
-            <!-- <ul class="navbar">
-                <li><a href="#"></a>Comprar</a></li>
-                <li><a href="#"></a>Explorar</a></li>
-            </ul>
-            <ul class="navbar-center">
-                <li><a href="#"></a>Woodstack</a></li>
-            </ul>
-            <ul class="navbar-right">
-                <li><a href="#"></a>Mi Carrito</a></li>
-            </ul> -->
-    <!-- </nav> -->
-</header>
-
+    <%-include('./partials/header')%>
 <main>
     <div class="img-producto">
         <img class="img" src="/images/escritorio2.webp" alt="banner">
@@ -66,8 +24,8 @@
         <h4 class="precio">$220</h4>
     </div>
     <div class="cont-boton">
-    <button class="boton" type="añadirCarrito" value="añadirCarrito">Comprar</button>            
-        </button>
+    <button class="boton" type="añadirCarrito" value="añadirCarrito"><a class="botonComprar" href="./productCart">Comprar</a>
+        </button>            
     </div>
     <div class="detalle">
         <h2>Diferencie su espacio de trabajo</h2>
@@ -77,42 +35,13 @@
         <img class="img2" src="/images/escritorio5.webp" alt="escritoriofoto">
         <h2>Wood Suaveus</h2>
     </div>
+    <div class="segundoDetalle">
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro corporis esse architecto qui rem obcaecati accusamus vero sit deleniti, delectus doloremque consequuntur cupiditate reprehenderit perspiciatis tempora velit! Sint, mollitia soluta.</p>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda molestias distinctio repudiandae qui animi aspernatur natus minus debitis est, nam eveniet! Dicta esse voluptatibus, totam aperiam veritatis ullam ipsa perspiciatis.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores, amet illum! Architecto consectetur natus tempore! Quisquam, delectus deserunt. Nesciunt, facilis nihil. Voluptatum culpa ex nemo temporibus? Soluta corporis fugit maiores.</p>
+    </div>
 </main>
 
-<footer>
-    <div class="gral">
-    <div class="tarjeta">
-        <h2 class="titulo">Enterate de lo Nuevo</h2>
-        <form method="post">
-          <div class="campo">
-            <input class="email" type="email" placeholder="email" required>
-            <span></span>
-            <input type="submit" value="Registrarse">
-          </div>
-        </form>
-        <div class="footer-legal">
-            <p>2021 - Copyright Woodstack</p>
-            <p>Terminos y Condiciones</p>
-            <p>Política de privacidad</p>
-        </div> 
-      </div>
+<%-include('./partials/footer')%>
 
-      <div class="footer1">
-          <ul>
-              <li><a href="#">Tienda</a></li>
-              <li><a href="#">Nosotros</a></li>
-              <li><a href="#">Soporte</a></li>
-              <li><a href="#">Estado de su orden</a></li>
-              <li><a href="#">Ventas corporativas</a></li>
-          </ul>
-          <ol>
-            <li><a href="http://facebook.com"><i class="fab fa-facebook-square"></i></a></li>
-            <li><a href="http://instagram.com"><i class="fab fa-instagram-square"></i></a></li>
-            <li><a href="http://twitter.com"><i class="fab fa-twitter-square"></i></a></li>
-        </ol>
-      </div>
-</footer>
 </body>
 </html>

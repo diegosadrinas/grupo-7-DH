@@ -13,22 +13,6 @@ body{
     text-decoration: none;
 
 }
-/* .nav{
-    display: flex;
-    flex-direction: row;
-    
-} */
-/* header{
-    background: whitesmoke;
-}
-
-header:hover{
-    background: black;
-    transition: 1s;
-    color: white;
-} */
-
-
 .nav-bar {
     display: flex;
     flex-direction: row;
@@ -36,6 +20,7 @@ header:hover{
     align-items: center;
     background: whitesmoke;
     width: 100%;
+    height: 7.5vh;
     /* overflow: hidden; */
     position: fixed; 
     top: 0; 
@@ -43,17 +28,14 @@ header:hover{
 }
 .nav-bar:hover{
     background:rgba(200, 200, 200, 1);
-    /* color: white; */
     transition: 1s;
 }
-
 
 .left-bar {
     display: flex;
     margin: 5px;
     width: 20%;
     padding-left: 10px
-
 }
 
 .nav-bar ul {
@@ -75,6 +57,9 @@ header:hover{
 .left-bar ul{
     display: none;
 }
+.left-bar ul li a{
+    font-size: 2vh;
+}
 
 .right-bar ul{
     display: none;
@@ -82,7 +67,7 @@ header:hover{
 
 
 .center-bar{
-    font-size: 14px;
+    font-size: 3vh;
     font-weight: 600;
     width: 100%;
     text-align: center;
@@ -93,49 +78,36 @@ header:hover{
     width: 20%;
     text-align: center;
 }
-@media (min-width: 768px) {
-    .hamburger-btn {
-        display: none;
-    }
-
-    .carrito{
-        display: none;
-    }
-
-    .left-bar ul {
-        display: flex;
-    }
-    .right-bar ul {
-        display: flex;
-    }
-
-    .left-bar {
-        display: inline-block;
-        margin: 5px;
-        width: 20%;
-    }
-
-    .right-bar{
-        /* border:red dotted 1px; */
-        text-align: center;
-    }
+.right-bar ul{
+    justify-content: center;
+}
+.right-bar ul li a{
+    font-size: 2vh;
 }
 
-p{
-    margin-top: 50px;
+.botonComprar {
+    text-decoration: none;
+    color: white;
+}
+
+.segundoDetalle{
+    margin-top: 20px;
     padding: 0 15px;
-
 }
+.segundoDetalle p{
+    margin-bottom: 20px;
+}
+
 
 .img{
     display: block;
     margin: auto;
     width: 100%;
-    margin-top: 40px;
-
+    /* margin-top: 40px; */
 }
 .img-producto{
     position: relative;
+    margin-top: 15vh;
 }
 
 .img-producto:hover h2{
@@ -173,6 +145,8 @@ p{
 .cont-boton{
     text-align: center;
     margin-top: 15px;
+    margin-bottom: 15px;
+
 }
 
 .precio{
@@ -191,17 +165,21 @@ div .boton{
 .boton:hover{
     padding: 8px 150px;
     transition: 1s;
-
-
-
 }
+
 .detalle{
     background-color: whitesmoke;
-    /* margin-bottom: 50px; */
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 }
 
 .detalle p{
-    margin-bottom: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
 }
 
 .detalle:hover{
@@ -211,19 +189,15 @@ div .boton{
 
 .detalle h2{
     text-align: center;
-    margin-top: 50px;
-}
-
-.detalle p{
-    text-align: center;
-    margin-top: 20px;
+    /* margin-top: 70px; */
+    /* background: red; */
 }
 
 .img2{
     display: block;
     margin: auto;
-    width: 100%;
-    height: 150px;
+    width: 50vh;
+    height: 50vh;
     margin-top: 40px;
 
 }
@@ -254,26 +228,92 @@ div .boton{
 }
 /* FOOOOOTER */
 
+.footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    width: 100vw;
+    font-family: sans-serif;
+    padding-top: 40px;
+    display: flex;
+    
+}
 
-/* footer{
+.footer-content{
+    background-color:whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    bottom: 40px;
    
-} */
-
-footer:hover{
-    background: rgba(154, 168, 177, 0.9);
+    
 }
-.tarjeta h2{
-    padding-top: 25px;
+    /* footer links */
+
+.footer-links li{
+    display: flex;
+    /* display:inline-block; */
+    /* margin: 0 10px; */
+    align-items: center;
+
+}
+.footer-links li a{
+    text-decoration: none;
+    list-style: none;
+    color:black;
+    justify-content: space-around;
 }
 
-.tarjeta{
-    text-align: center;
+    /* social media */
+
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+.socials li{
+    margin: 0 10px;
     margin-top: 20px;
 }
+.socials a{
+    text-decoration: none;
+    color: black;
+}
+.socials a i{
+    font-size: 1.1rem;
+    transition: color .4s ease;
+}
 
+/* copirygth */
+.footer-bottom{
+    background-color: #0f0f0f;
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+ }
+.footer-bottom p{
+    color:white;
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
 .campo{
     text-align: center;
-    margin-top: 20px;
+    background: whitesmoke;
+    padding-bottom: 30px;    
 }
 
 input[type="submit"]{
@@ -289,57 +329,49 @@ input[type="submit"]{
   }
 
 .email{
-    /* text-align: center; */
       border: none;
-      background: #CCD3D8;
+      background: whitesmoke;
       border-bottom: solid black 2px;
-}
-
-.footer1{
-    position: relative;
-    bottom: 130px;
-    left: 20px;
-    width: 20%;
-    /* background: salmon */
-    ;
-}
-
-
-footer ul{
-    list-style: none;
+      text-align: center;
 
 }
-footer ul li{
-    padding: 3px;
-}
 
-footer ul li a{
-    text-decoration: none;
-    color: black;
-}
-/* FOOTER CAJAS */
-
-.gral{
-    background: #CCD3D8;
-    margin-top: 20px;
-    width: 100%;
-    height: 170px;
-    position: relative;
+@media (min-width: 361px){
+    
+    
 }
 
 
-.footer-legal{
-    display: flex;
-    justify-content: right;
-    font-size: 12px;
-}
+@media (min-width: 768px) {
+    .hamburger-btn {
+        display: none;
+    }
 
-footer ol{
-    list-style: none;
-    display: flex;
-    /* justify-content:; */
-}
-footer ol a{
-    color: black;
-    margin-right: 25px;
+    .carrito{
+        display: none;
+    }
+
+    .left-bar ul {
+        display: flex;
+    }
+    .right-bar ul {
+        display: flex;
+    }
+
+    .left-bar {
+        display: inline-block;
+        margin: 5px;
+        width: 20%;
+    }
+
+    .right-bar{
+        text-align: center;
+    }
+    .footer-links li{
+        display: flex;
+        display:inline-block;
+        margin: 0 10px;
+        align-items: center;
+    }
+
 }
