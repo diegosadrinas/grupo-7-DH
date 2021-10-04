@@ -11,5 +11,6 @@ app.use('/login', webRoutes);
 app.use('/register', webRoutes);
 app.use('/productCart', webRoutes);
 app.use('/productDetail', webRoutes);
+app.use('/creacionProdcutos', webRoutes);
 
 app.listen(3001, console.log('server 3001'));
