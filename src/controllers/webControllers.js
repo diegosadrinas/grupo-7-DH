@@ -18,4 +18,7 @@ module.exports ={
     register: function (req, res){
        return res.render(path.resolve(__dirname, '../views/register'));
     },
+    creacionProductos: function (req, res){
+       return res.render(path.resolve(__dirname, '../views/creacionProdcutos'));
+    },
 }
