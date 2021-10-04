@@ -96,13 +96,14 @@ body{
 }
 .segundoDetalle p{
     margin-bottom: 20px;
+    text-align: center;
 }
 
 
 .img{
     display: block;
     margin: auto;
-    width: 100%;
+    width: 55%;
     /* margin-top: 40px; */
 }
 .img-producto{
@@ -206,7 +207,7 @@ div .boton{
 }
 
 .img-producto2:hover h2{
-    opacity: 1;
+    opacity: 0.6;
 
 }
 
@@ -264,6 +265,9 @@ div .boton{
     list-style: none;
     color:black;
     justify-content: space-around;
+}
+.footer-links{
+    position: left;
 }
 
     /* social media */
@@ -367,11 +371,21 @@ input[type="submit"]{
     .right-bar{
         text-align: center;
     }
+    .footer-content{
+        justify-content: space-between;
+    }
     .footer-links li{
-        display: flex;
+        display: flex; 
         display:inline-block;
         margin: 0 10px;
-        align-items: center;
     }
+    .socials{
+        margin-right: 10vh;
+    }
+    .footer-links{
+        margin-left: 10vh;
+
+    }
+
 
 }
