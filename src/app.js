@@ -15,4 +15,6 @@ app.use('/creacionProdcutos', webRoutes);
 app.use('/detalle/id', webRoutes);
 
 
-app.listen(3001, console.log('server 3001'));
+app.listen(process.env.PORT || 3001, function(){
+    console.log('Servidor funcionando en el 3001');
+});
