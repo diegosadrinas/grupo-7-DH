@@ -1,67 +1,15 @@
 
-* {
-    box-sizing: border-box;
-    margin: auto;
-}
 
 body{
     background: #ffffff;
     color: #0d0d0d;
     font-family: 'Koh Santepheap';
     text-decoration: none;
-    font-size: 14px;
     min-width: 360px;
 
 }
 
-/* Empieza HEADER */
 
-.nav-bar {
-    display: flex;
-    align-items: center;
-    margin: 5px 0
-}
-
-
-.left-bar {
-    display: flex;
-    margin: 5px;
-    width: 30%;
-    padding-left: 10px
-
-}
-
-.nav-bar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-bar a {
-    margin: 5px;
-    font-size: 10px;
-    text-decoration: none;
-    color: #222;
-}
-
-.left-bar ul{
-    display: none;
-}
-
-.center-bar{
-    font-size: 18px ;
-    width: 80%;
-    text-align: center;
-    
-}
-
-.right-bar {
-    width: 30%;
-    text-align: center;
-    padding-right: 5px;
-}
-
-/* Termina HEADER */
 
 main{
     text-align: center;
@@ -101,22 +49,4 @@ main{
     font-size: 1rem;
     text-decoration: underline;
     color:#ffffff;
-}
-
-
-
-@media (min-width: 768px) {
-    .hamburger-btn {
-        display: none;
-    }
-
-    .left-bar ul {
-        display: flex;
-    }
-
-    .left-bar {
-        display: inline-block;
-        margin: 5px;
-        width: 20%;
-    }
 }
