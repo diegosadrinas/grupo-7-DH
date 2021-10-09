@@ -1,0 +1,112 @@
+/* footer iniciaeishon */
+footer {
+    background: #CCD3D8;
+    margin-top: 22px;
+    padding: 2em 0;
+}
+footer .container {
+    align-items: flex-start;
+    padding-top: 22px;
+    padding-bottom: 20px;
+        width: 100%;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 0 22px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+}
+footer ol,
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+footer ul li {
+    margin-bottom: 0.5em;
+}
+footer ul li a {
+    color:#000;
+    text-decoration: none;
+}
+footer ul li a:hover {
+    text-decoration: underline;
+}
+footer ol {
+    display: flex;
+    flex-direction: row;
+}
+footer ol li {
+    margin-right: 0.5em;
+}
+footer ol li a {
+    color: #000
+}
+footer ol li i {
+    font-size: 30px;
+}
+footer .newsLetters {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+footer .newsLetters h2 {
+    margin-top: 0;
+    margin-bottom: 0.2em;
+}
+footer .newsLetters form .campo {
+    display: flex;
+    padding: 0;
+}
+footer .newsLetters form .email {
+    border: 0;
+    background: transparent;
+    border-bottom: 2px solid #000;
+    padding: 0.7em;
+    font-size: 12px;
+    text-align: left;
+}
+footer .newsLetters form .botonFooter {
+    border: 0;
+    background: transparent;
+    border-bottom: 2px solid #000;
+    padding: 0.7em;
+    color: #000;
+    font-size: 12px;
+}
+footer .footer-legal {
+    font-size: 12px;
+}
+footer .footer-legal a {
+    text-decoration: none;
+    color: #000;
+}
+footer .footer-legal a:hover {
+    text-decoration: underline;
+}
+
+/* footer terminaeishon */
+@media (min-width: 768px) {
+    /* footerStarteishon */
+    footer .container {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    footer .footer-legal {
+        display: flex;
+        flex-direction: row;
+    }
+    footer .footer-legal > * {
+        margin-right: 1em;
+    }
+    footer .footer-legal > :last-child {
+        margin-right: 0;
+    }
+    footer .newsLetters {
+        width: 100%;
+    }
+    footer .newsLetters .email {
+        width: 100%;
+    }
+    /* footerTerminaeishon */
+}
