@@ -13,6 +13,7 @@ body{
 /* -----> NAVBAR */
 .nav-bar {
     display: flex;
+    justify-content: space-around;
     align-items: center;
     background: whitesmoke;
     width: 100%;
@@ -53,7 +54,7 @@ body{
 }
 
 .center-bar{
-    width: 100%;
+    width: 40%;
     text-align: center;
 }
 
@@ -67,7 +68,11 @@ body{
 .right-bar {
     width: 30%;
     text-align: center;
-    padding-right: 5px;
+    padding-right: 15px;
+}
+
+.right-bar ul{
+    justify-content: flex-end;
 }
 /* -----> NAVBAR */
 /* Termina HEADER */
@@ -290,12 +295,16 @@ input[type="submit"]{
     .left-bar {
         display: inline-block;
         margin: 5px;
-        width: 20%;
     }
 
     .right-bar{
         text-align: center;
     }
+
+    .product-container {
+        flex-direction: row;
+    }
+    
     .footer-content{
         justify-content: space-between;
     }
@@ -313,25 +322,4 @@ input[type="submit"]{
     }
 
 
-}
-
-
-@media (min-width: 768px) {
-    .hamburger-btn {
-        display: none;
-    }
-
-    .left-bar ul {
-        display: flex;
-    }
-
-    .left-bar {
-        display: inline-block;
-        margin: 5px;
-        width: 20%;
-    }
-
-    .product-container {
-        flex-direction: row;
-    }
 }
