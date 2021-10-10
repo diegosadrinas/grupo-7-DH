@@ -23,25 +23,25 @@ const escritorios = [{
 
 module.exports ={
     index: function (req, res){
-       return res.render(path.resolve(__dirname, '../views/index'));
+       return res.render(path.resolve(__dirname, '../views/products/index'));
     },
     login: function (req, res){
-       return res.render(path.resolve(__dirname, '../views/login'));
+       return res.render(path.resolve(__dirname, '../views/users/login'));
     },
     productCart: function (req, res){
-       return res.render(path.resolve(__dirname, '../views/productCart'));
+       return res.render(path.resolve(__dirname, '../views/products/productCart'));
     },
     productDetail: function (req, res){
-       return res.render(path.resolve(__dirname, '../views/productDetail'));
+       return res.render(path.resolve(__dirname, '../views/products/productDetail'));
     },
     register: function (req, res){
-       return res.render(path.resolve(__dirname, '../views/register'));
+       return res.render(path.resolve(__dirname, '../views/users/register'));
     },
     creacionProductos: function (req, res){
-       return res.render(path.resolve(__dirname, '../views/creacionProdcutos'));
+       return res.render(path.resolve(__dirname, '../views/products/creacionProductos'));
     },
     detalle: function (req, res){
       console.log(req.params)
-     return res.render(path.resolve(__dirname, '../views/productDetail'),{escritorios:escritorios[req.params.id]} );
+     return res.render(path.resolve(__dirname, '../views/products/productDetail'),{escritorios:escritorios[req.params.id]} );
   },
 }
