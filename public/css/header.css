@@ -10,6 +10,7 @@
     position: fixed;
     z-index: 100;
     padding: 0 20px;
+    min-width: 361;
 }
 
 .nav-bar:hover{
@@ -58,8 +59,19 @@
     justify-content: flex-end;
 }
 
+.right-bar ul {
+    display: none;
+}
+
 /* -----> NAVBAR */
 /* Termina HEADER */
+@media (min-width: 361px) {
+    .right-bar ul {
+        display: none;
+    }
+}
+
+
 
 @media (min-width: 768px) {
     .hamburger-btn {
