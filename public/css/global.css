@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+    margin: auto;
+}
+
+body{
+    background: #ffffff;
+    color: #0d0d0d;
+    font-family: 'Koh Santepheap';
+    text-decoration: none;
+    min-width: 360px;
+
+}
+
+main{
+    text-align: center;
+    font-family: "Inria Serif";
+}
