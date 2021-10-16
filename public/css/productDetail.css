@@ -34,6 +34,7 @@ body{
     display: block;
     margin: auto;
     width: 55%;
+    padding-top: 15vh;
     /* margin-top: 40px; */
 }
 .img-producto{
