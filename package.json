@@ -4,7 +4,8 @@
   "description": "2. El sitio ofrece productos de diseño en madera orientados a armar un setup de primer nivel para trabajos en modalidad WFH. Permite el armado de un escritorio funcional y de estética exclusiva.",
   "main": "app.js",
   "scripts": {
-    "test": "nodemon src/app.js -e ejs json mjson"
+    "test": "nodemon src/app.js -e ejs json mjson",
+    "start": "node src/app.js"
   },
   "repository": {
     "type": "git",
