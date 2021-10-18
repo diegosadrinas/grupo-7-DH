@@ -1,13 +1,16 @@
 * {
     box-sizing: border-box;
-    margin: auto;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    
 }
 
 body{
     background: #ffffff;
     color: #0d0d0d;
     font-family: 'Koh Santepheap';
-    text-decoration: none;
     min-width: 360px;
 
 }

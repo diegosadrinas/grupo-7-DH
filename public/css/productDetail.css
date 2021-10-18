@@ -1,22 +1,4 @@
-/* Woodstack detalle producto */
-
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-
-body{
-    background: #ffffff;
-    color: #0d0d0d;
-    font-family: 'Koh Santepheap';
-    text-decoration: none;
-
-}
-
-
 .botonComprar {
-    text-decoration: none;
     color: white;
 }
 
@@ -35,7 +17,6 @@ body{
     margin: auto;
     width: 55%;
     padding-top: 15vh;
-    /* margin-top: 40px; */
 }
 .img-producto{
     position: relative;
