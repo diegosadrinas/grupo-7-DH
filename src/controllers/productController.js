@@ -3,10 +3,12 @@ const fs = require('fs');
 
 const productsFilePath= path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-// console.log(products.length);
+
+
+
+
 const controller = {
    index: (req, res) => {
-      console.log("esta mandando a index de products")
       res.render('products/all-products', {products})
    },
 
@@ -15,13 +17,16 @@ const controller = {
    },
 
    store: (req, res) => {
-      let image = "sample_image_from_post.jpg"
-      let newProduct = {
-         id: products[products.length - 1].id + 1,
+      if(req.files[0] != undefined){
+			image = req.files[0].filename
+		} else {
+			image = 'default-image.png'
+		}
+		let newProduct = {
+			id: products[products.length - 1].id + 1,
 			...req.body,
 			image: image
-      }
-      console.log("Intentando postear")
+		};
       products.push(newProduct)
       fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
 		res.redirect('/products');
@@ -63,7 +68,10 @@ const controller = {
 
 
    delete: (req, res) => {
-
+      let id = req.params.id;
+		let finalProducts = products.filter(product => product.id != id);
+		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
+		res.redirect('/');
    },
 
  
