@@ -14,13 +14,11 @@ router.patch('/:id/edit', productController.update);
 
 router.delete('/products/:id', productController.delete);
 
-
 // RUTAS DE TESTEO DE VISTAS - BORRAR DESPUES
 router.get('/productCart', productController.productCart);
 router.get('/productDetail', productController.productDetail);
 router.get('/creacionProductos', productController.creacionProductos);
 router.get('/detalle/:id', productController.detalle);
-
 
 
 module.exports = router;

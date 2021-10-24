@@ -1,3 +1,6 @@
+* {
+    font-family: sans-serif;
+}
 .prodCreate{
     display: flex;
     flex-direction: column;
@@ -6,23 +9,51 @@
     padding-top: 10%;
     background-color: rgb(195, 196, 197);
 }
+.pageTitle {
+    margin-top: 3em;
+}
 
 .izquierda{
     display: flex;
-    
+    flex-direction: column;
     align-items: left;
     text-align: left;
     flex-wrap: wrap;
     width: 50%;
 }
+.izquierda .form-input {
+    margin-top: 8px;
+    border: 0;
+}
+
 .derecha{
     display: flex;
-    
+    color: aqua;
     align-items: right;
     flex-wrap: wrap;
 }
 
+label {
+    font-size: 18px;
+    margin-bottom: 0.5em;
+    margin-top: 10px;
+}
+
+input {
+    padding: 5px 5px;
+    border: 0;
+    border-radius: 5px;
+}
+.line {
+    padding-bottom: 12px;
+}
+textarea {
+    padding-top: 8px;
+    padding-bottom: 12px;
+}
+
 .formulario{
+    margin-top: 1.5em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,6 +63,12 @@
     color: #ffffff;
     padding: 10px 20px;
     display: flex;
+    margin-top: 14px;
+    margin-bottom: 8px;
+    transition: all 0.2s linear;
+}
+.btn:hover{
+    opacity: 0.6;
 }
 
 input[type="file"]{

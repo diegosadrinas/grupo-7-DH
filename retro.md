@@ -1,5 +1,5 @@
 ### Comenzar a hacer:
-Necesitamos mayor coordinación y mejorar la comunicación para no pisarnos ni trabajar de más. 
+Necesitamos mayor coordinación y mejorar la comunicación para no pisarnos ni trabajar de más.
 
 ### Hacer más:
 Tener ḿas discusión para unificar los criterios estéticos. Tenemos problemas para mejorar la comunicación y evitar problemas en el funcionamiento del código.

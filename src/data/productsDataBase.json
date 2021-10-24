@@ -124,5 +124,9 @@
   {
     "id": 19,
     "image": "sample_image_from_post.jpg"
+  },
+  {
+    "id": 20,
+    "image": "sample_image_from_post.jpg"
   }
 ]
