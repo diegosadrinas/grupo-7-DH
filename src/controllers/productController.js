@@ -15,8 +15,8 @@ const controller = {
    },
 
    store: (req, res) => {
-      console.log("HOLA")
-      let image = "sample_image.jpg"
+      
+      let image = "sample_image_from_post.jpg"
       let newProduct = {
          id: products[products.length - 1].id + 1,
 			...req.body,
@@ -25,7 +25,7 @@ const controller = {
       console.log("Intentando postear")
       products.push(newProduct)
       fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
-		res.send("Producto Creado");
+		res.redirect('/products');
 
    },
 
@@ -42,8 +42,27 @@ const controller = {
    },
 
    update: (req, res) => {
+      let id = req.params.id;
+		let productToEdit = products.find(product => product.id == id)
+		let image = "sample_image_from_put.jpg"
 
-   }, 
+		productToEdit = {
+			id: productToEdit.id,
+			...req.body,
+			image: image,
+		};
+		
+		let newProducts = products.map(product => {
+			if (product.id == productToEdit.id) {
+				return product = {...productToEdit};
+			}
+			return product;
+		})
+
+		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
+		res.redirect('/');
+	},
+
 
    delete: (req, res) => {
 
