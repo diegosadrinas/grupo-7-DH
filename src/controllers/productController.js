@@ -73,22 +73,6 @@ const controller = {
 		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
 		res.redirect('/');
    },
-
- 
-
-   // URLs PARA TESTEO. DESPUES SE VAN
-   productCart: function (req, res){
-      res.render('products/product-cart');
-   },
-   productDetail: function (req, res){
-      return res.render('products/product-detail');
-   },
-   creacionProductos: function (req, res){
-      return res.render('products/product-create-form');
-   },
-   detalle: function (req, res){
-      return res.render('/products/productDetail');
-   },
 }
 
 module.exports = controller
