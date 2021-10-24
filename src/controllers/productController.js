@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const productsFilePath= path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
+// console.log(products.length);
 const controller = {
    index: (req, res) => {
       console.log("esta mandando a index de products")
@@ -15,7 +15,6 @@ const controller = {
    },
 
    store: (req, res) => {
-      
       let image = "sample_image_from_post.jpg"
       let newProduct = {
          id: products[products.length - 1].id + 1,
@@ -26,7 +25,6 @@ const controller = {
       products.push(newProduct)
       fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
 		res.redirect('/products');
-
    },
 
    detail: (req, res) => {
@@ -38,7 +36,7 @@ const controller = {
    edit: (req, res) => {
       let id = req.params.id
 		let productToEdit = products.find(product => product.id == id)
-		res.render('products/product-to-edit', {product: productToEdit})
+		res.render('products/product-to-edit', { product: productToEdit })
    },
 
    update: (req, res) => {

@@ -7,12 +7,12 @@ router.get('/', productController.index);
 router.get('/create', productController.create);
 router.post('/', productController.store);
 
-router.get('/:id', productController.detail)
+router.get('/:id', productController.detail);
 
-router.get('/:id/edit', productController.edit)
-router.put('/:id', productController.update)
+router.get('/:id/edit', productController.edit);
+router.patch('/:id/edit', productController.update);
 
-router.delete('/products/:id', productController.delete)
+router.delete('/products/:id', productController.delete);
 
 
 // RUTAS DE TESTEO DE VISTAS - BORRAR DESPUES
