@@ -68,6 +68,9 @@
                 <div>
                     <button type="submit" class="btn">Guardar producto</button>
                 </div>
+                <form action="/products/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+                    <button type="submit" class="action-button delete">ELIMINAR</button>
+                </form>
             </form>
         </div>
     </main>
