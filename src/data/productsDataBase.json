@@ -88,41 +88,6 @@
     "category": "Accesorios",
     "color": "Mauv",
     "price": 36
-  },
-  {
-    "id": 11,
-    "image": "sample_image_from_post.jpg"
-  },
-  {
-    "id": 12,
-    "image": "sample_image_from_post.jpg"
-  },
-  {
-    "id": 13,
-    "image": "sample_image_from_post.jpg"
-  },
-  {
-    "id": 14,
-    "image": "sample_image_from_post.jpg"
-  },
-  {
-    "id": 15,
-    "image": "sample_image_from_post.jpg"
-  },
-  {
-    "id": 16,
-    "image": "sample_image_from_post.jpg"
-  },
-  {
-    "id": 17,
-    "image": "sample_image_from_post.jpg"
-  },
-  {
-    "id": 18,
-    "image": "sample_image_from_post.jpg"
-  },
-  {
-    "id": 19,
-    "image": "sample_image_from_post.jpg"
   }
+
 ]
