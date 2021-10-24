@@ -1,18 +1,20 @@
 const express = require('express');
+const path = require('path')
 const app = express();
-const webRoutes = require('./routes/webRoutes')
+const mainRouter = require('./routes/main');
+const productsRouter = require('./routes/products');
+const methodOverride = require('method-override');
 
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(methodOverride('_method'));
 
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, '/views')); 
 
-app.use('/', webRoutes);
-app.use('/login', webRoutes);
-app.use('/register', webRoutes);
-app.use('/productCart', webRoutes);
-app.use('/productDetail', webRoutes);
-app.use('/creacionProdcutos', webRoutes);
-app.use('/detalle/id', webRoutes);
+app.use('/', mainRouter);
+app.use('/products', productsRouter);
 
 
 app.listen(process.env.PORT || 3001, function(){

@@ -9,7 +9,7 @@ footer .container {
     padding-top: 22px;
     padding-bottom: 20px;
         width: 100%;
-        max-width: 980px;
+        max-width: 1200px;
         margin: 0 auto;
         padding: 0 22px;
         display: flex;
@@ -90,7 +90,8 @@ footer .footer-legal a:hover {
     /* footerStarteishon */
     footer .container {
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
+        align-items: flex-start;
     }
     footer .footer-legal {
         display: flex;

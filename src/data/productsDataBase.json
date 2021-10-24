@@ -1,7 +1,7 @@
 [
     {
         "id":1,
-        "product_name":"Escritorio Waus",
+        "name":"Escritorio Waus",
         "description":"ut tellus nulla ut erat id mauris vulputate elementum nullam",
         "image":"1.jpg",
         "category":"Escritorios",
@@ -10,7 +10,7 @@
     },
     {
         "id":2,
-        "product_name":"Escritorio Claus",
+        "name":"Escritorio Claus",
         "description":"integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel",
         "image":"2.jpg",
         "category":"Escritorios",
@@ -19,7 +19,7 @@
     },
     {
         "id":3,
-        "product_name":"Escritorio Suaveus",
+        "name":"Escritorio Suaveus",
         "description":"consequat nulla nisl nunc nisl duis bibendum felis sed interdum",
         "image":"3.jpg",
         "category":"Escritorios",
@@ -27,7 +27,7 @@
         "price":65
     },
     {   "id":4,
-        "product_name":"Escritorio Divain",
+        "name":"Escritorio Divain",
         "description":"elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque",
         "image":"4.jpg",
         "category":"Escritorios",
@@ -35,7 +35,7 @@
         "price":69
     },
     {   "id":5,
-        "product_name":"Esctirorio Temperature Station",
+        "name":"Escritorio Temperature Station",
         "description":"suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum",
         "image":"5.jpg",
         "category":"Escritorios",
@@ -43,7 +43,7 @@
         "price":31
     },
     {   "id":6,
-        "product_name":"Italian Canned",
+        "name":"Italian Canned",
         "description":"enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh",
         "image":"6.jpg",
         "category":"Accesorios",
@@ -51,7 +51,7 @@
         "price":88
     },
     {   "id":7,
-        "product_name":"Sweet And Salte",
+        "name":"Sweet And Salte",
         "description":"at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci",
         "image":"7.jpg",
         "category":"Accesorios",
@@ -59,7 +59,7 @@
         "price":79
     },
     {   "id":8,
-        "product_name":"Firm",
+        "name":"Firm",
         "description":"posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at",
         "image":"8.jpg",
         "category":"Accesorios",
@@ -67,7 +67,7 @@
         "price":58
     },
     {   "id":9,
-        "product_name":"Low Sodium",
+        "name":"Low Sodium",
         "description":"tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla",
         "image":"9.jpg",
         "category":"Accesorios",
@@ -75,7 +75,7 @@
         "price":76
     },
     {   "id":10,
-        "product_name":"Steak",
+        "name":"Steak",
         "description":"rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa id lobortis convallis tortor risus","image":"10.jpg",
         "category":"Accesorios",
         "color":"Mauv",

@@ -1,18 +1,68 @@
 const path = require('path');
+const fs = require('fs');
+
+const productsFilePath= path.join(__dirname, '../data/productsDataBase.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const controller = {
-    productCart: function (req, res){
-        return res.render(path.resolve(__dirname, '../views/products/productCart'));
-     },
-    productDetail: function (req, res){
-        return res.render(path.resolve(__dirname, '../views/products/productDetail'));
-     },
-    creacionProductos: function (req, res){
-        return res.render(path.resolve(__dirname, '../views/products/creacionProductos'));
-     },
-    detalle: function (req, res){
-       console.log(req.params)
-      return res.render(path.resolve(__dirname, '../views/products/productDetail'));
+   index: (req, res) => {
+      console.log("esta mandando a index de products")
+      res.render('products/all-products', {products})
+   },
+
+   create: (req, res) => {
+      res.render('products/product-create-form')
+   },
+
+   store: (req, res) => {
+      console.log("HOLA")
+      let image = "sample_image.jpg"
+      let newProduct = {
+         id: products[products.length - 1].id + 1,
+			...req.body,
+			image: image
+      }
+      console.log("Intentando postear")
+      products.push(newProduct)
+      fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
+		res.send("Producto Creado");
+
+   },
+
+   detail: (req, res) => {
+      let product_id = req.params.id
+      let product = products.find(product => product.id == product_id)
+      res.render('products/product-detail', {product});
+   },
+
+   edit: (req, res) => {
+      let id = req.params.id
+		let productToEdit = products.find(product => product.id == id)
+		res.render('products/product-to-edit', {product: productToEdit})
+   },
+
+   update: (req, res) => {
+
+   }, 
+
+   delete: (req, res) => {
+
+   },
+
+ 
+
+   // URLs PARA TESTEO. DESPUES SE VAN
+   productCart: function (req, res){
+      res.render('products/product-cart');
+   },
+   productDetail: function (req, res){
+      return res.render('products/product-detail');
+   },
+   creacionProductos: function (req, res){
+      return res.render('products/product-create-form');
+   },
+   detalle: function (req, res){
+      return res.render('/products/productDetail');
    },
 }
 

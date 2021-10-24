@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
     <%-include('../partials/head')%>
-    <link rel="stylesheet" href="css/productDetail.css">
+    <link rel="stylesheet" href="/css/productDetail.css">
     <title>WS ProductDetail</title>
 </head>
 <body>
     <%-include('../partials/header')%>
 <main>
+    
+
     <div class="img-producto">
         <img class="img" src="/images/escritorio2.webp" alt="banner">
         <h2>Wood Suaveus</h2>
@@ -34,6 +36,10 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro corporis esse architecto qui rem obcaecati accusamus vero sit deleniti, delectus doloremque consequuntur cupiditate reprehenderit perspiciatis tempora velit! Sint, mollitia soluta.</p>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores, amet illum! Architecto consectetur natus tempore! Quisquam, delectus deserunt. Nesciunt, facilis nihil. Voluptatum culpa ex nemo temporibus? Soluta corporis fugit maiores.</p>
     </div>
+
+    <!-- PRUEBA PARA TESTEO DE PASE DE DATA A VISTA -->
+    <div>Prueba de muestra de producto desde JSON</div>
+    <p><%= product.name %></p>
 </main>
 
 <%-include('../partials/footer')%>
