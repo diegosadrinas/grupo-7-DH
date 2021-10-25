@@ -27,7 +27,7 @@
                         <p> <%= product.image %></p>
                         <p> <%= product.category %></p>
                         <p> <%= product.color %></p>
-                        <p> <%= product.price %></p>
+                        <p>$ <%= product.price %></p>
                     </p>
                     <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
             </div>
@@ -69,7 +69,7 @@
                     <button type="submit" class="btn">Guardar producto</button>
                 </div>
                 <form action="/products/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-                    <button type="submit" class="action-button delete">ELIMINAR</button>
+                    <button type="submit" class="btn">Eliminar</button>
                 </form>
             </form>
         </div>
