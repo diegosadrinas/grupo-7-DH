@@ -17,15 +17,11 @@ const controller = {
    },
 
    store: (req, res) => {
-      if(req.files[0] != undefined){
-			image = req.files[0].filename
-		} else {
-			image = 'default-image.png'
-		}
+      
 		let newProduct = {
 			id: products[products.length - 1].id + 1,
 			...req.body,
-			image: image
+			image: "sample_image.jpg"
 		};
       products.push(newProduct)
       fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))

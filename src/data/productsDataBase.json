@@ -88,6 +88,32 @@
     "category": "Accesorios",
     "color": "Mauv",
     "price": 36
+  },
+  {
+    "id": 11,
+    "name": "BONA",
+    "description": "lkdlkdlkdlkdkd",
+    "colors": "in-sale",
+    "price": "2400",
+    "category": "Escritorio",
+    "image": "default-image.png"
+  },
+  {
+    "id": 12,
+    "name": "BONA",
+    "description": "lkdlkdlkdlkdkd",
+    "colors": "in-sale",
+    "price": "2400",
+    "category": "Escritorio",
+    "image": "sample_image.jpg"
+  },
+  {
+    "id": 13,
+    "name": "BONA",
+    "description": "lkdlkdlkdlkdkd",
+    "colors": "in-sale",
+    "price": "2400",
+    "category": "Escritorio",
+    "image": "sample_image.jpg"
   }
-
 ]
