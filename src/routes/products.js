@@ -15,8 +15,6 @@ const storage = multer.diskStorage({
 const upload = multer({storage: storage})
 // 
 
-
-
 router.get('/', productController.index);
 
 router.get('/create', productController.create);
@@ -27,13 +25,10 @@ router.get('/:id', productController.detail)    ;
 router.get('/:id/edit', productController.edit);
 router.patch('/:id/edit', upload.any(), productController.update);
 
-router.delete('/products/:id', productController.delete);
+router.delete('/products/:id', productController.delete)
 
 // RUTAS DE TESTEO DE VISTAS - BORRAR DESPUES
-router.get('/productCart', productController.productCart);
-router.get('/productDetail', productController.productDetail);
-router.get('/creacionProductos', productController.creacionProductos);
-router.get('/detalle/:id', productController.detalle);
+
 
 
 module.exports = router;
