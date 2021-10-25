@@ -1,21 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
-
     <%-include("../partials/head")%>
-
-=======
-    <%-include("../partials/head")%>
->>>>>>> dfe1f98a4de695aacbc95f731e5c3684e91ab863
     <link rel="stylesheet" href="/css/productDetail.css">
     <title>WS ProductDetail</title>
-
 </head>
 <body>
-
     <%-include('../partials/header')%>
-    
 <main>
     <div class="img-producto">
         <img class="img" src="/images/<%= product.image %>" alt="banner">
@@ -27,7 +18,7 @@
         <h4 class="precio">$ <%= product.price %></h4>
     </div>
     <div class="cont-boton">
-    <button class="boton" type="añadirCarrito" value="añadirCarrito"><a class="botonComprar" href="../product-cart">Comprar</a>
+    <button class="boton" type="añadirCarrito" value="añadirCarrito"><a class="botonComprar" href="./productCart">Comprar</a>
         </button>            
     </div>
     <div class="detalle">
