@@ -11,6 +11,9 @@ const controller = {
    register: function (req, res){
       return res.render('users/register');
    },
+   cart: function (req, res){
+      return res.render('products/product-cart');
+   },
 }
 
 module.exports = controller

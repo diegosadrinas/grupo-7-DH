@@ -17,11 +17,17 @@ const controller = {
    },
 
    store: (req, res) => {
-      
+		let image
+		console.log(req.files);
+		if(req.files[0] != undefined){
+			image = req.files[0].filename
+		} else {
+			image = 'stands-img.webp'
+		}		
 		let newProduct = {
 			id: products[products.length - 1].id + 1,
 			...req.body,
-			image: "sample_image.jpg"
+			image: image
 		};
       products.push(newProduct)
       fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
@@ -43,7 +49,7 @@ const controller = {
    update: (req, res) => {
       let id = req.params.id;
 		let productToEdit = products.find(product => product.id == id)
-		let image = "sample_image_from_put.jpg"
+		let image = "desktop-img.webp"
 
 		productToEdit = {
 			id: productToEdit.id,

@@ -91,29 +91,29 @@
   },
   {
     "id": 11,
-    "name": "BONA",
-    "description": "lkdlkdlkdlkdkd",
+    "name": "ZOZO ZIZI",
+    "description": "zizizizizizi",
     "colors": "in-sale",
-    "price": "2400",
-    "category": "Escritorio",
-    "image": "default-image.png"
+    "price": "250000",
+    "category": "Accesorios",
+    "image": "stands-img.webp"
   },
   {
     "id": 12,
-    "name": "BONA",
-    "description": "lkdlkdlkdlkdkd",
+    "name": "Sintetizador Beringher Poly D",
+    "description": "sinte sinte sinte sinte sinte sinte sinte sinte sinte sinte sinte sinte sinte sinte sinte sinte ",
     "colors": "in-sale",
-    "price": "2400",
-    "category": "Escritorio",
-    "image": "sample_image.jpg"
+    "price": "1500000",
+    "category": "",
+    "image": "image-1635279345976.webp"
   },
   {
     "id": 13,
-    "name": "BONA",
-    "description": "lkdlkdlkdlkdkd",
+    "name": "Sintetizador Beringher Poly D",
+    "description": "asdasd",
     "colors": "in-sale",
-    "price": "2400",
+    "price": "654321",
     "category": "Escritorio",
-    "image": "sample_image.jpg"
+    "image": "image-1635279446543.webp"
   }
 ]
