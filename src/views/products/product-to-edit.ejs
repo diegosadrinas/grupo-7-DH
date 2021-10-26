@@ -16,15 +16,17 @@
         <div class="prodCreate">
             <div>
                 <div>
-                    <h2>Formulario de creación de productos</h2>
+                    <h2>Estás editando * <%= product.name %> *</h2>
                 </div>
             </div>
                 <!-- BORRAR DESPUES DE ARMAR LA VISTA DINAMICA -->
-                <div>TESTEO DE RECEPCION DE PRODUCTO A EDITAR
+                <div>
                     <p>
                         <p> <%= product.name %></p>
-                        <p> <%= product.description %></p>
-                        <p> <%= product.image %></p>
+                        <p> <%= product.description %></p><br>
+                        <p> * * * * * </p>
+                        <img class="img" src="/images/products/<%= product.image %>" alt="banner">
+                        <p> * * * * * </p>                        
                         <p> <%= product.category %></p>
                         <p> <%= product.color %></p>
                         <p>$ <%= product.price %></p>
