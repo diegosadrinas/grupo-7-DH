@@ -113,7 +113,16 @@
   "description": "asdasd",
   "colors": "in-sale",
   "price": "654321",
-  "category": "Escritorio",
-  "image": "image-1635279446543.webp"
+  "category": "",
+  "image": "desktop-img.webp"
+ },
+ {
+  "id": 14,
+  "name": "TUTUTUTUUT",
+  "description": "tutututu",
+  "colors": "in-sale",
+  "price": "5694509864056",
+  "category": "",
+  "image": "desktop-img.webp"
  }
 ]
