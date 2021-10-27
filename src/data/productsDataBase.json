@@ -88,5 +88,14 @@
   "price": "36",
   "category": "",
   "image": "escritorio2.webp"
+ },
+ {
+  "id": 11,
+  "name": "Sintetizador Beringher Poly D",
+  "description": "El coso del cosito.",
+  "colors": "in-sale",
+  "price": "12345678",
+  "category": "",
+  "image": "desktop-img.webp"
  }
 ]
