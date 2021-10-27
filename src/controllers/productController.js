@@ -69,12 +69,13 @@ const controller = {
 	},
 
 
-   delete: (req, res) => {
-      let id = req.params.id;
+	// Delete - Delete one product from DB
+	delete : (req, res) => {
+		let id = req.params.id;
 		let finalProducts = products.filter(product => product.id != id);
 		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
 		res.redirect('/');
-   },
+	}
 }
 
 module.exports = controller

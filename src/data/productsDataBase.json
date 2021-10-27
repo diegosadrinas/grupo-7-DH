@@ -84,45 +84,9 @@
   "id": 10,
   "name": "Steak",
   "description": "rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa id lobortis convallis tortor risus",
-  "image": "escritorio2.webp",
-  "category": "Accesorios",
-  "color": "Mauv",
-  "price": 36
- },
- {
-  "id": 11,
-  "name": "ZOZO ZIZI",
-  "description": "zizizizizizi",
   "colors": "in-sale",
-  "price": "250000",
-  "category": "Accesorios",
-  "image": "stands-img.webp"
- },
- {
-  "id": 12,
-  "name": "Sintetizador Beringher Poly D",
-  "description": "sinte sinte sinte sinte sinte sinte sinte sinte sinte sinte sinte sinte sinte sinte sinte sinte ",
-  "colors": "in-sale",
-  "price": "1500000",
+  "price": "36",
   "category": "",
-  "image": "desktop-img.webp"
- },
- {
-  "id": 13,
-  "name": "Sintetizador Beringher Poly D",
-  "description": "asdasd",
-  "colors": "in-sale",
-  "price": "654321",
-  "category": "",
-  "image": "desktop-img.webp"
- },
- {
-  "id": 14,
-  "name": "TUTUTUTUUT",
-  "description": "tutututu",
-  "colors": "in-sale",
-  "price": "5694509864056",
-  "category": "",
-  "image": "desktop-img.webp"
+  "image": "escritorio2.webp"
  }
 ]

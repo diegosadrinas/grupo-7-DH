@@ -26,7 +26,7 @@ router.get('/:id', productController.detail);
 router.get('/:id/edit', productController.edit);
 router.patch('/:id/edit', upload.any(), productController.update);
 
-router.delete('/products/:id', productController.delete)
+router.delete('/delete/:id', productController.delete)
 
 // RUTAS DE TESTEO DE VISTAS - BORRAR DESPUES
 
