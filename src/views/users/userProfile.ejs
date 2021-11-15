@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include("../partials/head")%>
+    <link rel="stylesheet" href="/css/productDetail.css">
+    <title>WS Perfil Usuario</title>
+</head>
+<body>
+    <%-include('../partials/header')%>
+<main>
+    <div class="img-producto">
+        <img class="img" src="/images/products/<%= product.image %>" alt="banner">
+    </div>
+
+    <div class="descripcion-producto">
+        <h2><%= user.first_name %></h2>
+        <h2><%= user.last_name %></h2>
+        <h4><%= user.email %></h4>
+    </div>
+    <!-- <div class="cont-boton">
+    <button class="boton" type="añadirCarrito" value="añadirCarrito"><a class="botonComprar" href="./userCart">Comprar</a>
+        </button>            
+    </div> -->
+    <div class="detalle">
+        <h2>Diferencie su espacio de trabajo</h2>
+        <p><%= user.description %></p>
+</main>
+
+<%-include('../partials/footer')%>
+
+</body>
+</html>

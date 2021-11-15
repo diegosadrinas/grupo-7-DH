@@ -11,23 +11,98 @@
 
     <div class="first-banner"></div>
         <div class="tarjeta">
+          <!-- <% if (locals.errors) { %>
+            <% for ( let oneError in errors ) { %>
+              <p><%= errors[oneError].msg %> </p>
+            <% } %>
+          <% } %> -->
             <h1>Registrarse</h1>
-            <form method="post">
+            <!-- VER SI ESTA BIEN LA RITA DE ACTION !!!!!
+            !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+            AGREGAR EL CAMPO DE IMAGEN DE USUARIO TABIEN !-->
+            <form method="post" action="/user/register" enctype="multipart/form-data">
               <div class="campo">
-                <input type="text" required>
+								<input 
+									type="text" 
+									name="first_name" 
+									class="form-control <%= locals.errors && errors.first_name ? 'is-invalid' : null %>"
+									value="<%= locals.oldData ? oldData.first_name : null %>"
+								>
+								<% if (locals.errors && errors.first_name) { %>
+									<div class="text-danger">
+										<%= errors.first_name.msg %> 
+									</div>
+								<% } %>
                 <span></span>
-                <label>Usuario</label>
+                <label>Email</label>
               </div>
               <div class="campo">
-                <input type="password" required>
+								<input 
+									type="text" 
+									name="first_name" 
+									class="form-control <%= locals.errors && errors.first_name ? 'is-invalid' : null %>"
+									value="<%= locals.oldData ? oldData.first_name : null %>"
+								>
+								<% if (locals.errors && errors.first_name) { %>
+									<div class="text-danger">
+										<%= errors.first_name.msg %> 
+									</div>
+								<% } %>
+                <span></span>
+                <label>Nombre</label>
+              </div>
+
+              <div class="campo">
+								<input 
+									type="text" 
+									name="last_name" 
+									class="form-control <%= locals.errors && errors.last_name ? 'is-invalid' : null %>"
+									value="<%= locals.oldData ? oldData.last_name : null %>"
+								>
+								<% if (locals.errors && errors.last_name) { %>
+									<div class="text-danger">
+										<%= errors.last_name.msg %> 
+									</div>
+								<% } %>
+                <span></span>
+                <label>Apellido</label>
+              </div>
+
+              <div class="campo">
+								<input 
+									type="text" 
+									name="password" 
+									class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+									value="<%= locals.oldData ? oldData.password : null %>"
+								>
+								<% if (locals.errors && errors.password) { %>
+									<div class="text-danger">
+										<%= errors.password.msg %> 
+									</div>
+								<% } %>
                 <span></span>
                 <label>Contraseña</label>
               </div>
-              <div class="campo">
+
+              <!-- YA ESTA EL MIDDLEWARE PARA CARGAR FOTO PERFIL USUARIO  -->
+
+              <!-- <div class="campo">
+                <input type="file" name="avatar" required>
+                <span></span>
+                <label>Imagen de Perfil</label>
+              </div>
+              <% if (locals.errors && errors.avatar) { %>
+                <%= errors.avatar.msg %>
+                <% } %> -->
+
+
+              <!-- ESTO QUIZA ESTA DE MAS  -->
+
+              <!-- <div class="campo">
                 <input type="password" required>
                 <span></span>
                 <label>Repetir Contraseña</label>
-              </div>
+              </div> -->
               
               <input type="submit" value="Registrarse">
               

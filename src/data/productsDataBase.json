@@ -97,5 +97,14 @@
   "price": "12345678",
   "category": "",
   "image": "desktop-img.webp"
+ },
+ {
+  "id": 12,
+  "name": "DINO",
+  "description": "Dino es un dino muy dino",
+  "colors": "Negro",
+  "price": "23456",
+  "category": "",
+  "image": "image-1635369909765.jpeg"
  }
 ]
