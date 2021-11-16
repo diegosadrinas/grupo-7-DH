@@ -47,7 +47,10 @@ const validations = [
 router.get('/', mainController.index);
 router.get('/login', mainController.login);
 router.get('/register', mainController.register);
-router.post('/register', uploadFile.single('avatar') ,validations, mainController.processRegister)
+router.post('/register', 
+// uploadFile.single('avatar') ,validations, 
+// esto serian las validaciones pero no se porque chota no funcionan
+mainController.processRegister)
 router.get('/product-cart', mainController.cart);
 
 // PERFIL DE UN USUARIO - CREAR VISTA - COPIAR DETALLE PRODUCTO Y MODIFICAR
