@@ -21,11 +21,11 @@ const uploadFile = multer({ storage });
 const mainController = require('../controllers/mainController');
 
 const validations = [
-	body('first_name').notEmpty().withMessage('Tienes que escribir un nombre'),
-	body('last_name').notEmpty().withMessage('Tienes que escribir un apellido'),
 	body('email')
 		.notEmpty().withMessage('Tienes que escribir un correo electrónico').bail()
 		.isEmail().withMessage('Debes escribir un formato de correo válido'),
+	body('first_name').notEmpty().withMessage('Tienes que escribir un nombre'),
+	body('last_name').notEmpty().withMessage('Tienes que escribir un apellido'),
 	body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),
 	// body('avatar').custom((value, { req }) => {
 	// 	let file = req.file;

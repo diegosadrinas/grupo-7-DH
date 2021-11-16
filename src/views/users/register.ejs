@@ -25,13 +25,13 @@
               <div class="campo">
 								<input 
 									type="text" 
-									name="first_name" 
-									class="form-control <%= locals.errors && errors.first_name ? 'is-invalid' : null %>"
-									value="<%= locals.oldData ? oldData.first_name : null %>"
+									name="email" 
+									class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+									value="<%= locals.oldData ? oldData.email : null %>"
 								>
-								<% if (locals.errors && errors.first_name) { %>
+								<% if (locals.errors && errors.email) { %>
 									<div class="text-danger">
-										<%= errors.first_name.msg %> 
+										<%= errors.email.msg %> 
 									</div>
 								<% } %>
                 <span></span>
