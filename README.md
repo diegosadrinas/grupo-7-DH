@@ -1,6 +1,7 @@
 # Grupo 7 "Woodstack"
 
 link: https://g7-woodstack.herokuapp.com/
+Trello: https://trello.com/b/Gz6X0CXl/woodstack
 
 ### Consignas:
 
