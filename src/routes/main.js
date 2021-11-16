@@ -26,28 +26,28 @@ const validations = [
 	body('email')
 		.notEmpty().withMessage('Tienes que escribir un correo electrónico').bail()
 		.isEmail().withMessage('Debes escribir un formato de correo válido'),
-	body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),,
-	body('avatar').custom((value, { req }) => {
-		let file = req.file;
-		let acceptedExtensions = ['.jpg', '.png', '.gif'];
+	body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),
+	// body('avatar').custom((value, { req }) => {
+	// 	let file = req.file;
+	// 	let acceptedExtensions = ['.jpg', '.png', '.gif'];
 		
-		if (!file) {
-			throw new Error('Tienes que subir una imagen');
-		} else {
-			let fileExtension = path.extname(file.originalname);
-			if (!acceptedExtensions.includes(fileExtension)) {
-				throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
-			}
-		}
+	// 	if (!file) {
+	// 		throw new Error('Tienes que subir una imagen');
+	// 	} else {
+	// 		let fileExtension = path.extname(file.originalname);
+	// 		if (!acceptedExtensions.includes(fileExtension)) {
+	// 			throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
+	// 		}
+	// 	}
 
-		return true;
-	})
+	// 	return true;
+	// })
 ];
 
 router.get('/', mainController.index);
 router.get('/login', mainController.login);
 router.get('/register', mainController.register);
-router.post('/register', 
+router.post('/register', validations,
 // uploadFile.single('avatar') ,validations, 
 // esto serian las validaciones pero no se porque chota no funcionan
 mainController.processRegister)
