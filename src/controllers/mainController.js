@@ -26,7 +26,7 @@ const controller = {
 			});
 		}
 
-		return res.send('Ok, las validaciones se pasaron y no tienes errores');
+		return res.render('users/usuarioExito');
 	},
 
    profile: function (req, res){
