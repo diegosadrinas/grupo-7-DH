@@ -1,12 +1,7 @@
-// Clave hacer un module.exports de todo esto para despues usarlo
-//  en el primer objeto en username, pass y database iria la info de nuestra base de datos a linkear ..
-// Toda esta info la recibe el archibo index.js dentro de la carpeta database/models
-
-
-{
+module.exports = {
   "development": {
     "username": "root",
-    "password": null,
+    "password": "root",
     "database": "database_development",
     "host": "127.0.0.1",
     "dialect": "mysql"
