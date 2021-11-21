@@ -17,11 +17,10 @@
             <% } %>
           <% } %> -->
             <h1>Registrarse</h1>
-            <!-- VER SI ESTA BIEN LA RITA DE ACTION !!!!!
-            !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+            <!--  
             AGREGAR EL CAMPO DE IMAGEN DE USUARIO TABIEN !-->
             <form method="post" action="/register">
-            <!-- enctype="multipart/form-data" -->
+        
               <div class="campo">
 								<input 
 									type="text" 
@@ -86,14 +85,16 @@
 
               <!-- YA ESTA EL MIDDLEWARE PARA CARGAR FOTO PERFIL USUARIO  -->
 
-              <!-- <div class="campo">
-                <input type="file" name="avatar" required>
+              <div class="campo">
+                <input type="file" id="avatar" name="avatar">
                 <span></span>
                 <label>Imagen de Perfil</label>
               </div>
               <% if (locals.errors && errors.avatar) { %>
+                <div class="text-danger">
                 <%= errors.avatar.msg %>
-                <% } %> -->
+              </div>
+                <% } %>
 
 
               <!-- ESTO QUIZA ESTA DE MAS  -->

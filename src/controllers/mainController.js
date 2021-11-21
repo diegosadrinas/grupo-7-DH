@@ -20,13 +20,24 @@ const controller = {
       return res.render('users/register');
    },
 
+
 	processRegister: (req, res) => {
 		const resultValidation = validationResult(req);
+
+      let avatar
+		if(req.body.avatar != undefined){
+			avatar = req.body.avatar
+		} else {
+			avatar = 'stands-img.webp'
+		}
       let newUser = {
 			id: users[users.length - 1].id + 1,
-			...req.body
+			...req.body,
+         avatar: avatar
 		};
-
+      // console.log(avatar)
+      // console.log(resultValidation.errors);
+      // console.log(req.body);
 		if (resultValidation.errors.length > 0) {
 			return res.render('users/register', {
 				errors: resultValidation.mapped(),

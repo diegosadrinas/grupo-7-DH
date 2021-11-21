@@ -180,5 +180,148 @@
     "first_name": "Jorge",
     "last_name": "Pinkerello",
     "password": "54545454"
+  },
+  {
+    "id": 24,
+    "email": "hola@hola.com",
+    "first_name": "qrw",
+    "last_name": "qw",
+    "password": "qrere"
+  },
+  {
+    "id": 25,
+    "email": "matod87@hotmail.com",
+    "first_name": "qwe",
+    "last_name": "qwe",
+    "password": "ewq"
+  },
+  {
+    "id": 26,
+    "email": "tryning@hotmail.com",
+    "first_name": "rewrew",
+    "last_name": "rewrew",
+    "password": "werwer"
+  },
+  {
+    "id": 27,
+    "email": "kakaka@kka.com",
+    "first_name": "kakak",
+    "last_name": "kakak",
+    "password": "kkqkekqwe12312ed"
+  },
+  {
+    "id": 28,
+    "email": "kakaka@kka.com",
+    "first_name": "kakak",
+    "last_name": "kakak",
+    "password": "kkqkekqwe12312ed"
+  },
+  {
+    "id": 29,
+    "email": "matod87@hotmail.com",
+    "first_name": "asd",
+    "last_name": "asd",
+    "password": "asd"
+  },
+  {
+    "id": 30,
+    "email": "asd@asd.com",
+    "first_name": "Matias",
+    "last_name": "dpmasd",
+    "password": "23123"
+  },
+  {
+    "id": 31,
+    "email": "matod87@hotmail.com",
+    "first_name": "QWR",
+    "last_name": "QWEWE",
+    "password": "QWEQWEQWE",
+    "avatar": "avatar-1637192023300.jpg"
+  },
+  {
+    "id": 32,
+    "email": "tryning@hotmail.com",
+    "first_name": "Matias",
+    "last_name": "dsadsa",
+    "password": "123123123",
+    "avatar": "avatar-1637192040529.jpg"
+  },
+  {
+    "id": 33,
+    "email": "matod87@hotmail.com",
+    "first_name": "Matias",
+    "last_name": "dsadsa",
+    "password": "qweqweqwe",
+    "avatar": "avatar-1637192206732.jpg"
+  },
+  {
+    "id": 34,
+    "email": "matod87@hotmail.com",
+    "first_name": "qweqwe",
+    "last_name": "qwewe",
+    "password": "qweqwe",
+    "avatar": "stands-img.webp"
+  },
+  {
+    "id": 35,
+    "email": "matod87@hotmail.com",
+    "first_name": "qwe",
+    "last_name": "QWEWE",
+    "password": "qweqwe",
+    "avatar": "avatar-1637193674739.jpg"
+  },
+  {
+    "id": 36,
+    "email": "",
+    "first_name": "",
+    "last_name": "",
+    "password": "",
+    "avatar": "stands-img.webp"
+  },
+  {
+    "id": 37,
+    "email": "tryning@hotmail.com",
+    "first_name": "HOL",
+    "last_name": "HOLA",
+    "password": "1234567",
+    "avatar": "minion.jpg"
+  },
+  {
+    "id": 38,
+    "email": "asdasd@fdfs.com",
+    "first_name": "JOJOJO",
+    "last_name": "JOJOJOJO",
+    "password": "2jekjgfdnjkgdfnjkdgf"
+  },
+  {
+    "id": 39,
+    "email": "hola@chau.com",
+    "first_name": "PEPE",
+    "last_name": "BONONO",
+    "password": "12312452"
+  },
+  {
+    "id": 40,
+    "email": "matod87@hotmail.com",
+    "first_name": "asdasd",
+    "last_name": "asdasd",
+    "password": "asdasd",
+    "avatar": "minion.jpg"
+  },
+  {
+    "id": 41,
+    "email": "matod87@hotmail.com",
+    "first_name": "asdasd",
+    "last_name": "asdas",
+    "password": "123123123",
+    "avatar": "minion.jpg"
+  },
+  {
+    "id": 42,
+    "email": "matod87@hotmail.com",
+    "first_name": "qweqwe",
+    "last_name": "qwe",
+    "password": "eeee",
+    "avatar": "minion.jpg"
   }
 ]

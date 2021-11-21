@@ -6,7 +6,6 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
 
-
 const controller = {
    index: (req, res) => {
       res.render('products/all-products', {products})
