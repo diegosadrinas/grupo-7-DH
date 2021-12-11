@@ -1,7 +1,7 @@
 // si el modelo se llama Producto.js esto entiende por si solo que la tabla se llama prodcutos o Productos (nose si reconoce la Mayusucula)
 
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Productos';
+    const alias = 'Productos';
     let cols = {
 
     }
