@@ -35,9 +35,7 @@ const controller = {
 			...req.body,
          avatar: avatar
 		};
-      // console.log(avatar)
-      // console.log(resultValidation.errors);
-      // console.log(req.body);
+
 		if (resultValidation.errors.length > 0) {
 			return res.render('users/register', {
 				errors: resultValidation.mapped(),
