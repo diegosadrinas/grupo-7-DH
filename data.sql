@@ -31,15 +31,12 @@ insert into products (product_id, name, description, img_url, category_id, color
 insert into products (product_id, name, description, img_url, category_id, color_id, price) values (9, 'morbi non quam', 'Fusce consequat. Nulla nisl. Nunc nisl.', 'http://dummyimage.com/120x100.png/ff4444/ffffff', 4, 3, 887);
 insert into products (product_id, name, description, img_url, category_id, color_id, price) values (10, 'lacus at turpis', 'Nam dui.', 'http://dummyimage.com/157x100.png/dddddd/000000', 2, 4, 46);
 
-insert into shopping_cart (shopping_cart_id, user_id) values (1, 1);
-insert into shopping_cart (shopping_cart_id, user_id) values (2, 3);
-insert into shopping_cart (shopping_cart_id, user_id) values (3, 5);
-insert into shopping_cart (shopping_cart_id, user_id) values (4, 7);
-insert into shopping_cart (shopping_cart_id, user_id) values (5, 9);
 
-insert into product_cart (product_cart_id, shopping_cart_id, product_id) values (1, 4, 5);
-insert into product_cart (product_cart_id, shopping_cart_id, product_id) values (2, 1, 5);
-insert into product_cart (product_cart_id, shopping_cart_id, product_id) values (3, 5, 10);
-insert into product_cart (product_cart_id, shopping_cart_id, product_id) values (4, 4, 3);
-insert into product_cart (product_cart_id, shopping_cart_id, product_id) values (5, 3, 10);
+insert into product_cart (product_cart_id, user_id, product_id) values (1, 4, 5);
+insert into product_cart (product_cart_id, user_id, product_id) values (2, 1, 5);
+insert into product_cart (product_cart_id, user_id, product_id) values (3, 5, 10);
+insert into product_cart (product_cart_id, user_id, product_id) values (4, 4, 3);
+insert into product_cart (product_cart_id, user_id, product_id) values (5, 3, 10);
+insert into product_cart (product_cart_id, user_id, product_id) values (6, 2, 9);
+insert into product_cart (product_cart_id, user_id, product_id) values (7, 2, 8);
 

@@ -1,6 +1,6 @@
--- MySQL dump 10.13  Distrib 8.0.27, for macos11 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.27, for Win64 (x86_64)
 --
--- Host: localhost    Database: woodstack_db
+-- Host: localhost    Database: users_db
 -- ------------------------------------------------------
 -- Server version	8.0.27
 
@@ -48,12 +48,12 @@ DROP TABLE IF EXISTS `product_cart`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_cart` (
   `product_cart_id` int NOT NULL,
-  `shopping_cart_id` int NOT NULL,
+  `user_id` int NOT NULL,
   `product_id` int NOT NULL,
-  PRIMARY KEY (`product_cart_id`),
   KEY `product_id_idx` (`product_id`),
+  KEY `users_id_idx` (`user_id`),
   CONSTRAINT `product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`),
-  CONSTRAINT `shopping_cart_id` FOREIGN KEY (`product_cart_id`) REFERENCES `shopping_cart` (`shopping_cart_id`)
+  CONSTRAINT `users_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -63,7 +63,7 @@ CREATE TABLE `product_cart` (
 
 LOCK TABLES `product_cart` WRITE;
 /*!40000 ALTER TABLE `product_cart` DISABLE KEYS */;
-INSERT INTO `product_cart` VALUES (1,4,5),(2,1,5),(3,5,10),(4,4,3),(5,3,10);
+INSERT INTO `product_cart` VALUES (1,4,5),(2,1,5),(3,5,10),(4,4,3),(5,3,10),(1,4,5),(2,1,5),(3,5,10),(4,4,3),(5,3,10),(6,2,9),(7,2,8);
 /*!40000 ALTER TABLE `product_cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -187,4 +187,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-12 15:15:16
+-- Dump completed on 2021-12-17 16:33:01
