@@ -15,7 +15,7 @@ module.exports = (sequelize, dataTypes) => {
         timetamps: false
     }
 
-    const Categoria = sequelize.define(alias, colm, config);
+    const Categoria = sequelize.define(alias, cols, config);
 
-    return Usuario;
+    return Categoria;
 }

@@ -21,7 +21,7 @@ module.exports = (sequelize, dataTypes) => {
         timetamps: false
     }
 
-    const Carrito = sequelize.define(alias, colm, config);
+    const Carrito = sequelize.define(alias, cols, config);
 
-    return Producto;
+    return Carrito;
 }
