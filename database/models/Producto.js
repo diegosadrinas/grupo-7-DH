@@ -1,7 +1,7 @@
 // si el modelo se llama Producto.js esto entiende por si solo que la tabla se llama prodcutos o Productos (nose si reconoce la Mayusucula)
 
 module.exports = (sequelize, dataTypes) => {
-    const alias = 'Productos';
+    const alias = 'Producto';
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -36,7 +36,7 @@ module.exports = (sequelize, dataTypes) => {
     const Producto = sequelize.define(alias, cols, config);
 
     Producto.associate = function (models){
-        Producto.belongsToMany(models.Usuarios, {
+        Producto.belongsToMany(models.Usuario, {
             as: "usuarios",
             through: "product_cart",
             foreignKey: "product_id",
