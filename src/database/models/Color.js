@@ -18,4 +18,4 @@ module.exports = (sequelize, dataTypes) => {
     const Color = sequelize.define(alias, cols, config);
 
     return Color;
-}
+} 

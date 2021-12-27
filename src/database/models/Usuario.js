@@ -37,6 +37,7 @@ module.exports = (sequelize, dataTypes) => {
             otherKey: "product_id",
             timetamps: false
         })
+    }
 
     return Usuario;
-}}
+}

@@ -10,7 +10,7 @@ const db = require('../database/models');
 
 const controller = {
    index: function (req, res){
-      db.Usuarios.findAll({
+      db.Usuario.findAll({
          include:[{association: "productos"}]
       })
          .then( (productos) => {

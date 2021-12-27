@@ -58,7 +58,7 @@ mainController.login);
 router.get('/register', mainController.register);
 router.post('/register', validations,
 uploadFile.any(),
-// esto serian las validaciones pero no se porque chota no funcionan
+
 mainController.processRegister)
 router.get('/product-cart', mainController.cart);
 

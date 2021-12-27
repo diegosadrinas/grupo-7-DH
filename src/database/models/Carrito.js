@@ -1,4 +1,3 @@
-
 module.exports = (sequelize, dataTypes) => {
     const alias = 'Carrito';
     let cols = {
@@ -23,4 +22,4 @@ module.exports = (sequelize, dataTypes) => {
     const Carrito = sequelize.define(alias, cols, config);
 
     return Carrito;
-}
+} 
