@@ -323,5 +323,13 @@
     "last_name": "qwe",
     "password": "eeee",
     "avatar": "minion.jpg"
+  },
+  {
+    "id": 43,
+    "email": "matod87@hotmail.com",
+    "first_name": "Matias",
+    "last_name": "Donati",
+    "password": "1234",
+    "avatar": "minion.jpg"
   }
 ]

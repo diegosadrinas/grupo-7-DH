@@ -12,16 +12,16 @@
       <div class="first-banner"></div>
       <div class="tarjeta">
         <h1>Iniciar Sesion</h1>
-        <form method="post">
+        <form method="POST" action="/login">
           <div class="campo">
-            <input type="text" required>
+            <input type="email" name="email" required>
             <span></span>
-            <label>Usuario</label>
+            <label>Email</label>
           </div>
           <div class="campo">
-            <input type="password" required>
+            <input type="password" name="password" required>
             <span></span>
-            <label>Contraseña</label>
+            <label>Password</label>
           </div>
           <div class="pass">Olvidó su contraseña?</div>
           <input type="submit" value="Iniciar Sesion">
