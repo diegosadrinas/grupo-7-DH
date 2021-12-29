@@ -55,6 +55,23 @@ router.get('/', mainController.index);
 router.get('/login',
 // validationLogin, 
 mainController.login);
+
+// Login - guardar usuario Loguead
+
+router.post('/login',[
+	body('email').isEmail().withMessage('Email Invalido'),
+	body('password').isLength({min: 8}).withMessage('El pass debe tener como minimo 8 caracteres')
+],mainController.processLogin);
+
+router.get('/check', function(req, res){
+	if(req.session.usuarioLogueado == undefined){
+		res.send('No esas Logueado');
+	}else{
+		res.send('El usuario Logueado es ' + req.session.usuarioLogueado.email)
+	}
+})
+
+
 router.get('/register', mainController.register);
 router.post('/register', validations,
 uploadFile.any(),
@@ -74,6 +91,8 @@ router.get('/contador', function(req, res){
 
 	res.send('El contador esta en el número: ' + req.session.numeroVisitas);
 });
+
+
 
 
 module.exports = router;
