@@ -65,5 +65,15 @@ router.get('/product-cart', mainController.cart);
 // PERFIL DE UN USUARIO - CREAR VISTA - COPIAR DETALLE PRODUCTO Y MODIFICAR
 router.get('/profile/:userId', mainController.profile);
 
+// Prueba Session - Contador Visita
+router.get('/contador', function(req, res){
+	if(req.session.numeroVisitas == undefined){
+		req.session.numeroVisitas = 0;
+	}
+		req.session.numeroVisitas++;
+
+	res.send('El contador esta en el número: ' + req.session.numeroVisitas);
+});
+
 
 module.exports = router;
