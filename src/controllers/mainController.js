@@ -21,7 +21,7 @@ const controller = {
 
 
    },
-   login: function (req, res){
+   login: async function (req, res){
       return res.render('users/login');
    },
    processLogin: function(req, res){
