@@ -6,7 +6,8 @@ const productsRouter = require('./routes/products');
 const methodOverride = require('method-override');
 const session = require('express-session');
 // BCRYP COMO SE USABA ? asi ?? en mainController.js dentro de processLogin dice que no esta definido bcrypt.
-
+// instale los npm i bcrypt y bcryptjs pero con eso solo no basta ! 
+// const bcrypt = require('bcryptjs')
 
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));

@@ -43,7 +43,6 @@ const controller = {
                }
             }
          }
-
          if(usuarioALoguearse == undefined){
             return res.render('users/login', {errors: [
                {msg: 'Credenciales invalidas'}
