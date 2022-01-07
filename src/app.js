@@ -13,7 +13,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
-app.use(session({ secret: 'Secreto' }));
+app.use(session({ secret: 'Secreto', resave: false, saveUninitialized: false }));
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views')); 

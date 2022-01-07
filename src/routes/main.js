@@ -24,8 +24,10 @@ const validations = [
 	body('email')
 		.notEmpty().withMessage('Tienes que escribir un correo electrónico').bail()
 		.isEmail().withMessage('Debes escribir un formato de correo válido'),
-	body('first_name').notEmpty().withMessage('Tienes que escribir un nombre'),
-	body('last_name').notEmpty().withMessage('Tienes que escribir un apellido'),
+	body('first_name').notEmpty().withMessage('Tienes que escribir un nombre').bail()
+		.isLength({min:2}).withMessage('Debe tener minimo 2 caracteres'),
+	body('last_name').notEmpty().withMessage('Tienes que escribir un apellido').bail()
+	.isLength({min:2}).withMessage('Debe tener minimo 2 caracteres'),
 	body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),
 	body('avatar').custom((value, { req }) => {
 		let file = req.body.avatar;
@@ -39,7 +41,6 @@ const validations = [
 				throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
 			}
 		}
-
 		return true;
 	})
 ];
