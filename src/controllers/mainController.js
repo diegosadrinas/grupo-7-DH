@@ -21,6 +21,8 @@ const controller = {
 
 
    },
+
+   // Validacion y login de session
    login: async function (req, res){
       return res.render('users/login');
    },
@@ -54,6 +56,7 @@ const controller = {
          return res.render('users/login', {errors: errors.errors});
       }
    },
+
    register: function (req, res){
       return res.render('users/register');
    },
@@ -78,8 +81,11 @@ const controller = {
 				oldData: req.body
 			});
 		}
+
+      // Aca hay que modificar que se grabe en la DB en vez del JSON
       users.push(newUser)
-      fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2))
+
+      fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2)) 
 		res.render('users/usuarioExito');
 	},
 
