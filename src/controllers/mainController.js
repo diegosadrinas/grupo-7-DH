@@ -1,12 +1,8 @@
 const path = require('path');
 const fs = require('fs');
-
-
-const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
 const { validationResult, body } = require('express-validator');
 const db = require('../database/models');
+const bcrypt = require('bcrypt')
 
 
 const controller = {
@@ -26,33 +22,32 @@ const controller = {
    },
    processLogin: function(req, res){
       let errors = validationResult(req);
+      let usuarioALoguearse;
 
       if(errors.isEmpty()){
-         let usersJSON = fs.readFileSync(usersFilePath, {encoding:'utf8'})
-         let users;
-         if(usersJSON == "") {
-            users = [];
-         } else {
-            users = JSON.parse(usersJSON);
-         }
-         for (let i = 0; i < users.length; i++){
-            if(users[i].email == req.body.email){
-               if(bcrypt.compareSync(req.body.password, users[i].password)){
-                  let usuarioALoguearse = users[i];
-                  break;
+         db.Usuario.findAll()
+            .then(function(users) {
+               for (let i = 0; i < users.length; i++){
+               if(users[i].email == req.body.email){
+                  console.log("hay coincidencia")
+                  if(bcrypt.compareSync(req.body.password, users[i].password)){
+                     usuarioALoguearse = users[i];
+            
+                     req.session.usuarioLogueado = usuarioALoguearse;
+                     return res.render('Success!')
+                  
                }
             }
-         }
+         }})
+
          if(usuarioALoguearse == undefined){
             return res.render('users/login', {errors: [
                {msg: 'Credenciales invalidas'}
             ]});
          }
-         req.session.usuarioLogueado = usuarioALoguearse;
-         res.render('Success!')
-      }else{   
+         
+      }   
          return res.render('users/login', {errors: errors.errors});
-      }
    },
 
    register: function (req, res){
@@ -61,7 +56,8 @@ const controller = {
 	processRegister: (req, res) => {
 		const resultValidation = validationResult(req);
       if (resultValidation.errors.length > 0) {
-			return res.render('users/register', {
+			
+         return res.render('users/register', {
 				errors: resultValidation.mapped(),
 				oldData: req.body
 			})
@@ -74,7 +70,7 @@ const controller = {
       password: req.body.password,
       is_admin: false
       });
-		  
+		
       return res.render('users/usuarioExito');
 	},
 

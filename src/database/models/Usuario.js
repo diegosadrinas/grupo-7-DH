@@ -35,7 +35,7 @@ module.exports = (sequelize, dataTypes) => {
             through: "shopping_cart",
             foreignKey: "user_id",
             otherKey: "product_id",
-            timetamps: false
+            timestamps: false
         })
     }
 

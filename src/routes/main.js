@@ -28,21 +28,7 @@ const validations = [
 		.isLength({min:2}).withMessage('Debe tener minimo 2 caracteres'),
 	body('last_name').notEmpty().withMessage('Tienes que escribir un apellido').bail()
 	.isLength({min:2}).withMessage('Debe tener minimo 2 caracteres'),
-	body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),
-	body('avatar').custom((value, { req }) => {
-		let file = req.body.avatar;
-		let acceptedExtensions = ['.jpg', '.png', '.gif'];
-		
-		if (!file) {
-			throw new Error('Tienes que subir una imagen');
-		} else {
-			let fileExtension = path.extname(file);
-			if (!acceptedExtensions.includes(fileExtension)) {
-				throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
-			}
-		}
-		return true;
-	})
+	body('password').notEmpty().withMessage('Tienes que escribir una contraseña')
 ];
 
 // VALIDACION PARA EL LOGIN ! FALTA CODEAR LA VISTA ! 
@@ -62,7 +48,7 @@ mainController.login);
 router.post('/login',[
 	body('email').isEmail().withMessage('Email Invalido'),
 	body('password').isLength({min: 8}).withMessage('El pass debe tener como minimo 8 caracteres')
-],mainController.processLogin);
+], mainController.processLogin);
 
 router.get('/check', function(req, res){
 	if(req.session.usuarioLogueado == undefined){
@@ -74,10 +60,10 @@ router.get('/check', function(req, res){
 
 
 router.get('/register', mainController.register);
-router.post('/register', validations,
-uploadFile.any(),
+router.post('/register', 
+			validations,
+			uploadFile.any(), mainController.processRegister)
 
-mainController.processRegister)
 router.get('/product-cart', mainController.cart);
 
 // PERFIL DE UN USUARIO - CREAR VISTA - COPIAR DETALLE PRODUCTO Y MODIFICAR
