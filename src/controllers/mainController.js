@@ -1,8 +1,12 @@
 const path = require('path');
 const fs = require('fs');
+
+
+const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
+const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+
 const { validationResult, body } = require('express-validator');
 const db = require('../database/models');
-const bcrypt = require('bcrypt')
 
 
 const controller = {
@@ -23,36 +27,32 @@ const controller = {
    processLogin: function(req, res){
       let errors = validationResult(req);
       let usuarioALoguearse;
-
       if(errors.isEmpty()){
          db.Usuario.findAll()
             .then(function(users) {
                for (let i = 0; i < users.length; i++){
                if(users[i].email == req.body.email){
-                  console.log("hay coincidencia")
                   if(bcrypt.compareSync(req.body.password, users[i].password)){
                      usuarioALoguearse = users[i];
-            
                      req.session.usuarioLogueado = usuarioALoguearse;
                      return res.render('Success!')
-                  
+                  break;
                }
             }
          }})
-
          if(usuarioALoguearse == undefined){
             return res.render('users/login', {errors: [
                {msg: 'Credenciales invalidas'}
             ]});
          }
-         
-      }   
+      }  
          return res.render('users/login', {errors: errors.errors});
    },
 
    register: function (req, res){
       return res.render('users/register');
    },
+
 	processRegister: (req, res) => {
 		const resultValidation = validationResult(req);
       if (resultValidation.errors.length > 0) {
