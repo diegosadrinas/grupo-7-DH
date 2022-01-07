@@ -28,6 +28,8 @@ const controller = {
 			...req.body,
 			image: image
 		};
+
+		// Acá entra la logica de Sequelize y se borra JSON
       products.push(newProduct)
       fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
 		res.redirect('/products');
@@ -63,12 +65,15 @@ const controller = {
 			return product;
 		})
 
+		// Acá se modifica para insertar el sequelize
 		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
 		res.redirect('/');
 	},
 
 
 	// Delete - Delete one product from DB
+
+	// Acá se inserta el sequelize
 	delete : (req, res) => {
 		let id = req.params.id;
 		let finalProducts = products.filter(product => product.id != id);
