@@ -49,12 +49,19 @@
                 <a href="#">
                     <figure>
                         <img>Acá van las imágenes en carrousel
+
                     </figure>
                 </a>
             </section>
 
         </div>
 
+    </div>
+    <div>
+        <% for (let i=0; i < productos.length; i++) { %>
+            <%= productos[i].name %>
+        <% } %>
+    
     </div>
 </main>
 

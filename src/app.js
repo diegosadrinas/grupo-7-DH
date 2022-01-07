@@ -22,6 +22,7 @@ app.use('/', mainRouter);
 app.use('/products', productsRouter);
 
 
+
 app.listen(process.env.PORT || 3001, function(){
     console.log('Servidor funcionando en el 3001');
 });

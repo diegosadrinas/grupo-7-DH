@@ -15,6 +15,18 @@ if (config.use_env_variable) {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
+const connect = async () => {
+  try {
+    await sequelize.authenticate();
+    await sequelize.sync();
+
+    console.log('Connection to the database has been established successfully.');
+  }
+  catch (error) {
+    console.error(error.message);
+  }
+};
+
 fs
   .readdirSync(__dirname)
   .filter(file => {
@@ -30,6 +42,8 @@ Object.keys(db).forEach(modelName => {
     db[modelName].associate(db);
   }
 });
+
+
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

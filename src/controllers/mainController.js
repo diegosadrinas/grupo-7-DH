@@ -15,11 +15,9 @@ const controller = {
          include:[{association: "productos"}]
       })
          .then( (productos) => {
-            res.send(productos)
+            console.log(productos)
+            return res.render('products/index', {productos: productos});
          })
-      return res.render('products/index');
-
-
    },
 
    // Validacion y login de session
@@ -51,7 +49,7 @@ const controller = {
             ]});
          }
          req.session.usuarioLogueado = usuarioALoguearse;
-         res.render('Succes!')
+         res.render('Success!')
       }else{   
          return res.render('users/login', {errors: errors.errors});
       }
@@ -62,31 +60,22 @@ const controller = {
    },
 	processRegister: (req, res) => {
 		const resultValidation = validationResult(req);
-
-      let avatar
-		if(req.body.avatar != undefined){
-			avatar = req.body.avatar
-		} else {
-			avatar = 'stands-img.webp'
-		}
-      let newUser = {
-			id: users[users.length - 1].id + 1,
-			...req.body,
-         avatar: avatar
-		};
-
-		if (resultValidation.errors.length > 0) {
+      if (resultValidation.errors.length > 0) {
 			return res.render('users/register', {
 				errors: resultValidation.mapped(),
 				oldData: req.body
-			});
-		}
+			})
+      };
 
-      // Aca hay que modificar que se grabe en la DB en vez del JSON
-      users.push(newUser)
-
-      fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2)) 
-		res.render('users/usuarioExito');
+      db.Usuario.create({
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      email: req.body.email,
+      password: req.body.password,
+      is_admin: false
+      });
+		  
+      return res.render('users/usuarioExito');
 	},
 
    profile: function (req, res){
