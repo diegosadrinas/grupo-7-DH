@@ -68,11 +68,9 @@ const controller = {
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       email: req.body.email,
-      // password: req.body.password,
       password: bcryptjs.hashSync(req.body.password, 10),
       is_admin: false
       });
-		
 
       return res.render('users/usuarioExito');
 	},
