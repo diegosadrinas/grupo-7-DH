@@ -1,12 +1,13 @@
 const path = require('path');
 const fs = require('fs');
 
-
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const { validationResult, body } = require('express-validator');
 const db = require('../database/models');
+const bcryptjs = require ('bcryptjs');
+
 
 
 const controller = {
@@ -67,12 +68,15 @@ const controller = {
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       email: req.body.email,
-      password: req.body.password,
+      // password: req.body.password,
+      password: bcryptjs.hashSync(req.body.password, 10),
       is_admin: false
       });
 		
+
       return res.render('users/usuarioExito');
 	},
+
 
    profile: function (req, res){
       return res.render('users/userProfile')
@@ -82,5 +86,8 @@ const controller = {
       return res.render('products/product-cart');
    },
 }
+
+console.log(bcryptjs.hashSync('123', 10));
+
 
 module.exports = controller
