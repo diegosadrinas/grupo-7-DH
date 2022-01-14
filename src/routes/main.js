@@ -16,7 +16,11 @@ const storage = multer.diskStorage({
     }
 })
 const uploadFile = multer({storage: storage})
-// 
+
+// MiddleWares
+
+const guestMiddleware = require('../../middlewares/guestMiddleware')
+const authMiddleware = require('../../middlewares/authMiddleware')
 
 const mainController = require('../controllers/mainController');
 
@@ -30,7 +34,6 @@ const validations = [
 	.isLength({min:2}).withMessage('Debe tener minimo 2 caracteres'),
 	body('password').notEmpty().withMessage('Tienes que escribir una contraseña')
 ];
-
 // VALIDACION PARA EL LOGIN ! FALTA CODEAR LA VISTA ! 
 
 const validationLogin = [
@@ -39,17 +42,8 @@ const validationLogin = [
 ]
 
 router.get('/', mainController.index);
-router.get('/login',validationLogin, mainController.login);
 
-// Login - guardar usuario Loguead
-
-// router.post('/login',[
-// 	body('email').isEmail().withMessage('Email Invalido'),
-// 	body('password').isLength({min: 8}).withMessage('El pass debe tener como minimo 8 caracteres')
-// ], mainController.processLogin);
-
-// Loguin !
-
+router.get('/login',validationLogin, guestMiddleware, mainController.login);
 router.post('/login', mainController.loginProcess)
 
 router.get('/check', function(req, res){
@@ -61,15 +55,17 @@ router.get('/check', function(req, res){
 })
 
 
-router.get('/register', mainController.register);
+router.get('/register', guestMiddleware, mainController.register);
 router.post('/register', 
 			validations,
 			uploadFile.any(), mainController.processRegister)
 
 router.get('/product-cart', mainController.cart);
 
-// PERFIL DE UN USUARIO - CREAR VISTA - COPIAR DETALLE PRODUCTO Y MODIFICAR
-router.get('/profile/:userId', mainController.profile);
+
+router.get('/profile', authMiddleware, mainController.profile);
+
+router.get('/logout', mainController.logout);
 
 // Prueba Session - Contador Visita
 router.get('/contador', function(req, res){

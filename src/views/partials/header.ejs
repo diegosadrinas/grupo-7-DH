@@ -21,8 +21,14 @@
             <i class="fas fa-shopping-cart"></i>
         </a>
         <ul>
+            <% if (locals.isLogged) { %>
+            <li>Hola <%= locals.userLogged.first_name %></li>
+            <li><a href="/profile">PROFILE</a> </li>
+            <li><a href="/logout">LOGOUT</a> </li>
+            <% } else { %>
             <li><a href="/register">REGISTRARSE</a> </li>
             <li><a href="/login">INGRESAR</a> </li>
+            <% } %>
             <li><a href="/product-cart">MI CARRITO</a></li>
         </ul>
     </div>

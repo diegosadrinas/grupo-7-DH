@@ -38,18 +38,21 @@ const controller = {
                 errors: error.mapped(),
             })
         }
-
+      
       let userToLogin = db.Usuario.findOne({ where: { email: req.body.email }}).then((userToLogin)=>{
 
-// despues del null de la linea 45 para chekear pass (no anda) : && bcrypt.compareSync(req.body.password, userToLogin.password)
-         if(userToLogin != null){
-            req.session.loggedUser = userToLogin;
-            console.log("este es el req.session: " + req.session.loggedUser)
+         // COMO DIVIDIR PARA TIRAR ERROR DE MAIL POR UN LADO Y PASS POR OTRO ?? NO ME SALE
+
+         if(userToLogin != null && bcrypt.compareSync(req.body.password, userToLogin.password)){
+            req.session.userLogged = userToLogin;
+            delete userToLogin.password;
+            console.log("este es el req.session: " + req.session.userLogged)
             if (req.body.remember_user){
                 res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60) * 2})
             }
-            res.redirect("/")
-        }else res.render('users/login', {
+            res.redirect("/profile")
+
+        } else res.render('users/login', {
            errors: {
               email:{
                  msg: 'No se encuentra en la Base de Datos'
@@ -57,7 +60,7 @@ const controller = {
            }
         })
             console.log("llegó hasta el else")
-            
+
         })
    },
 
@@ -123,11 +126,21 @@ const controller = {
 
 
    profile: function (req, res){
-      return res.render('users/userProfile')
+      
+      return res.render('users/userProfile', {
+         user: req.session.userLogged
+      })
+   },
+
+// HACER UN ICONO CON PROFILE Y LOGOUT COMO EN EL VIDEO CLASE 26 (PROCESO LOGIN COMPLETO) MIN 1.21 Ó HACER UN BOTON DE LOGOUT EN ALGUNA PARTE !
+
+   logout: function (req, res){
+      req.session.destroy();
+      return res.redirect('/');
    },
 
    cart: function (req, res){
-      return res.render('products/product-cart');
+      return res.send('products/product-cart');
    },
 }
 
