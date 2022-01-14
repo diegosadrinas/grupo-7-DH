@@ -41,8 +41,8 @@ const controller = {
 
       let userToLogin = db.Usuario.findOne({ where: { email: req.body.email }}).then((userToLogin)=>{
 
-
-         if(userToLogin != null ){
+// despues del null de la linea 45 para chekear pass (no anda) : && bcrypt.compareSync(req.body.password, userToLogin.password)
+         if(userToLogin != null){
             req.session.loggedUser = userToLogin;
             console.log("este es el req.session: " + req.session.loggedUser)
             if (req.body.remember_user){
