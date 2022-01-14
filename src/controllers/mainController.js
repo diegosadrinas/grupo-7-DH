@@ -24,14 +24,10 @@ const controller = {
 
    // Validacion y login de session
    login: async function (req, res){
-      // console.log(req.session)
       return res.render('users/login');
    },
 
-   // PRUEBA LOGIN 2
-
    loginProcess: (req, res) => {
-
       let error = validationResult(req);
         if (error.errors.length > 0){
             return res.render ('users/login', {
@@ -42,7 +38,6 @@ const controller = {
       let userToLogin = db.Usuario.findOne({ where: { email: req.body.email }}).then((userToLogin)=>{
 
          // COMO DIVIDIR PARA TIRAR ERROR DE MAIL POR UN LADO Y PASS POR OTRO ?? NO ME SALE
-
          if(userToLogin != null && bcrypt.compareSync(req.body.password, userToLogin.password)){
             req.session.userLogged = userToLogin;
             delete userToLogin.password;
@@ -55,12 +50,10 @@ const controller = {
         } else res.render('users/login', {
            errors: {
               email:{
-                 msg: 'No se encuentra en la Base de Datos'
+                 msg: 'Usuario y/o contraseña incorrecto'
               }
            }
         })
-            console.log("llegó hasta el else")
-
         })
    },
 
@@ -68,17 +61,8 @@ const controller = {
       return res.render('users/register');
    },
 
-   findByField:(field, text) => {
-      let allUsers = this.findAll();
-      let userFound = allUsers.find(oneUser => oneUser[field] === text)
-      return userFound;
-   },
-
 	processRegister: (req, res) => {
-
-
 		const resultValidation = validationResult(req);
-
       if (resultValidation.errors.length > 0) {
 			
          return res.render('users/register', {
@@ -87,16 +71,14 @@ const controller = {
 			})
       };
 
-      // !!!!!!!!! Querer registrar un mail Ya Registardo prueba 1
-
+      // Falta validar el intento de registrarse con un correo ya guardado.
+      // Prueba 1
       // let userInDB = db.Usuario.findByField ('email', req.body.email);
-      
       // if (userInDB) {
       //    return res.send('El mail ya esta registrado')
       // }
 
-      // !!!!!!!!! Querer registrar un mail Ya Registardo prueba 2
-
+      // Prueba 2
       // let userToLog = db.Usuario.findOne({ where: { email: req.body.email } 
       // }) .then((userToLog)=> {
       //     if(userToLog !== null && bcryptjs.compareSync(req.body.password, userToLog.dataValues.pass )){
@@ -131,8 +113,6 @@ const controller = {
          user: req.session.userLogged
       })
    },
-
-// HACER UN ICONO CON PROFILE Y LOGOUT COMO EN EL VIDEO CLASE 26 (PROCESO LOGIN COMPLETO) MIN 1.21 Ó HACER UN BOTON DE LOGOUT EN ALGUNA PARTE !
 
    logout: function (req, res){
       req.session.destroy();

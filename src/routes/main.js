@@ -1,12 +1,10 @@
 const express = require('express');
 const router = express.Router();
-
 const path = require('path')
 const multer = require('multer');
-
 const { body } = require('express-validator');
 
-// MULTER
+// Multer
 const storage = multer.diskStorage({
     destination:function(req,file,cb){
         cb(null, 'public/images/avatars')
@@ -17,13 +15,11 @@ const storage = multer.diskStorage({
 })
 const uploadFile = multer({storage: storage})
 
-// MiddleWares
 
+// MiddleWares
 const guestMiddleware = require('../../middlewares/guestMiddleware')
 const authMiddleware = require('../../middlewares/authMiddleware')
-
 const mainController = require('../controllers/mainController');
-
 const validations = [
 	body('email')
 		.notEmpty().withMessage('Tienes que escribir un correo electrónico').bail()
@@ -34,37 +30,18 @@ const validations = [
 	.isLength({min:2}).withMessage('Debe tener minimo 2 caracteres'),
 	body('password').notEmpty().withMessage('Tienes que escribir una contraseña')
 ];
-// VALIDACION PARA EL LOGIN ! FALTA CODEAR LA VISTA ! 
-
 const validationLogin = [
 	body("email").isEmail().withMessage("Email incorrecto"),
     body("password").isLength({min:8}).withMessage("Contraseña demasiado corta")
 ]
 
 router.get('/', mainController.index);
-
 router.get('/login',validationLogin, guestMiddleware, mainController.login);
 router.post('/login', mainController.loginProcess)
-
-router.get('/check', function(req, res){
-	if(req.session.usuarioLogueado == undefined){
-		res.send('No esas Logueado');
-	}else{
-		res.send('El usuario Logueado es ' + req.session.usuarioLogueado.email)
-	}
-})
-
-
 router.get('/register', guestMiddleware, mainController.register);
-router.post('/register', 
-			validations,
-			uploadFile.any(), mainController.processRegister)
-
+router.post('/register', validations, uploadFile.any(), mainController.processRegister)
 router.get('/product-cart', mainController.cart);
-
-
 router.get('/profile', authMiddleware, mainController.profile);
-
 router.get('/logout', mainController.logout);
 
 // Prueba Session - Contador Visita
@@ -76,8 +53,6 @@ router.get('/contador', function(req, res){
 
 	res.send('El contador esta en el número: ' + req.session.numeroVisitas);
 });
-
-
 
 
 module.exports = router;
