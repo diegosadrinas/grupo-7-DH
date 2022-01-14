@@ -8,18 +8,6 @@
 <body>
   <%-include('../partials/header')%>
     <main>
-<!-- ERRORES LOGIN -->
-      <% if (typeof errors != 'undefined') { %>
-        <p style="color: red">ERROR</p>
-        <ul>
-          <% for (let i = 0; i < errors.length; i++) { %>
-            <li>
-              <%=errors[i].msg%>
-            </li>
-            <% } %>
-        </ul>
-      <% } %>
-<!-- FIN ERRORES LOGIN -->
       <div class="first-banner"></div>
       <div class="tarjeta">
         <h1>Iniciar Sesion</h1>
@@ -27,7 +15,15 @@
           <div class="campo">
             <!-- puedo cambiar el type a text para q no valide desde el Form -->
             <input type="email" name="email" required>
-            <span></span>
+            <% if (locals.errors && errors.email) { %>
+              <div class="text-danger"> 
+              <%= errors.email.msg %>
+            </div>
+            <% } %>
+            
+            <!-- mostrar errores del front en Span -->
+
+            <span class="spanEmailLogin"></span>
             <label>Email</label>
           </div>
           <div class="campo">
@@ -40,6 +36,7 @@
           <div class="registrarse">
             No es miembro?<a href="#">Registrarse</a>
           </div>
+        x|
         </form>
       </div>
     </main>

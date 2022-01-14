@@ -33,15 +33,13 @@ const validations = [
 
 // VALIDACION PARA EL LOGIN ! FALTA CODEAR LA VISTA ! 
 
-// const validationLogin = [
-// 	body("email").isEmail().withMessage("Email incorrecto"),
-//     body("password").isLength({min:8}).withMessage("Contraseña demasiado corta")
-// ]
+const validationLogin = [
+	body("email").isEmail().withMessage("Email incorrecto"),
+    body("password").isLength({min:8}).withMessage("Contraseña demasiado corta")
+]
 
 router.get('/', mainController.index);
-router.get('/login',
-// validationLogin, 
-mainController.login);
+router.get('/login',validationLogin, mainController.login);
 
 // Login - guardar usuario Loguead
 

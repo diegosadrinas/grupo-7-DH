@@ -6,7 +6,7 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const { validationResult, body } = require('express-validator');
 const db = require('../database/models');
-const bcryptjs = require ('bcryptjs');
+const bcrypt = require ('bcrypt');
 const { text } = require('express');
 
 
@@ -24,6 +24,7 @@ const controller = {
 
    // Validacion y login de session
    login: async function (req, res){
+      // console.log(req.session)
       return res.render('users/login');
    },
 
@@ -39,44 +40,26 @@ const controller = {
         }
 
       let userToLogin = db.Usuario.findOne({ where: { email: req.body.email }}).then((userToLogin)=>{
-         if(userToLogin !== null && bcryptjs.compareSync(req.body.password, userToLogin.dataValues.pass )){
+
+
+         if(userToLogin != null ){
             req.session.loggedUser = userToLogin;
+            console.log("este es el req.session: " + req.session.loggedUser)
             if (req.body.remember_user){
                 res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60) * 2})
             }
             res.redirect("/")
-        }else res.render("users/login",{ errors :
-            [{msg: "No exites como usuario"}]})
-
+        }else res.render('users/login', {
+           errors: {
+              email:{
+                 msg: 'No se encuentra en la Base de Datos'
+              }
+           }
+        })
+            console.log("llegó hasta el else")
+            
         })
    },
-
-   // 
-
-   // processLogin: function(req, res){
-   //    let errors = validationResult(req);
-   //    let usuarioALoguearse;
-   //    if(errors.isEmpty()){
-   //       db.Usuario.findAll()
-   //          .then(function(users) {
-   //             for (let i = 0; i < users.length; i++){
-   //             if(users[i].email == req.body.email){
-   //                if(bcrypt.compareSync(req.body.password, users[i].password)){
-   //                   usuarioALoguearse = users[i];
-   //                   req.session.usuarioLogueado = usuarioALoguearse;
-   //                   return res.render('Success!')
-   //                break;
-   //             }
-   //          }
-   //       }})
-   //       if(usuarioALoguearse == undefined){
-   //          return res.render('users/login', {errors: [
-   //             {msg: 'Credenciales invalidas'}
-   //          ]});
-   //       }
-   //    }  
-   //       return res.render('users/login', {errors: errors.errors});
-   // },
 
    register: function (req, res){
       return res.render('users/register');
@@ -129,7 +112,7 @@ const controller = {
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       email: req.body.email,
-      password: bcryptjs.hashSync(req.body.password, 10),
+      password: bcrypt.hashSync(req.body.password, 10),
       is_admin: false
       });
 
@@ -147,8 +130,6 @@ const controller = {
       return res.render('products/product-cart');
    },
 }
-
-console.log(bcryptjs.hashSync('123', 10));
 
 
 module.exports = controller
