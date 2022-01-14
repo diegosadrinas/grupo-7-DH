@@ -45,10 +45,14 @@ mainController.login);
 
 // Login - guardar usuario Loguead
 
-router.post('/login',[
-	body('email').isEmail().withMessage('Email Invalido'),
-	body('password').isLength({min: 8}).withMessage('El pass debe tener como minimo 8 caracteres')
-], mainController.processLogin);
+// router.post('/login',[
+// 	body('email').isEmail().withMessage('Email Invalido'),
+// 	body('password').isLength({min: 8}).withMessage('El pass debe tener como minimo 8 caracteres')
+// ], mainController.processLogin);
+
+// Loguin !
+
+router.post('/login', mainController.loginProcess)
 
 router.get('/check', function(req, res){
 	if(req.session.usuarioLogueado == undefined){

@@ -26,30 +26,57 @@ const controller = {
    login: async function (req, res){
       return res.render('users/login');
    },
-   processLogin: function(req, res){
-      let errors = validationResult(req);
-      let usuarioALoguearse;
-      if(errors.isEmpty()){
-         db.Usuario.findAll()
-            .then(function(users) {
-               for (let i = 0; i < users.length; i++){
-               if(users[i].email == req.body.email){
-                  if(bcrypt.compareSync(req.body.password, users[i].password)){
-                     usuarioALoguearse = users[i];
-                     req.session.usuarioLogueado = usuarioALoguearse;
-                     return res.render('Success!')
-                  break;
-               }
+
+   // PRUEBA LOGIN 2
+
+   loginProcess: (req, res) => {
+
+      let error = validationResult(req);
+        if (error.errors.length > 0){
+            return res.render ('users/login', {
+                errors: error.mapped(),
+            })
+        }
+
+      let userToLogin = db.Usuario.findOne({ where: { email: req.body.email }}).then((userToLogin)=>{
+         if(userToLogin !== null && bcryptjs.compareSync(req.body.password, userToLogin.dataValues.pass )){
+            req.session.loggedUser = userToLogin;
+            if (req.body.remember_user){
+                res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60) * 2})
             }
-         }})
-         if(usuarioALoguearse == undefined){
-            return res.render('users/login', {errors: [
-               {msg: 'Credenciales invalidas'}
-            ]});
-         }
-      }  
-         return res.render('users/login', {errors: errors.errors});
+            res.redirect("/")
+        }else res.render("users/login",{ errors :
+            [{msg: "No exites como usuario"}]})
+
+        })
    },
+
+   // 
+
+   // processLogin: function(req, res){
+   //    let errors = validationResult(req);
+   //    let usuarioALoguearse;
+   //    if(errors.isEmpty()){
+   //       db.Usuario.findAll()
+   //          .then(function(users) {
+   //             for (let i = 0; i < users.length; i++){
+   //             if(users[i].email == req.body.email){
+   //                if(bcrypt.compareSync(req.body.password, users[i].password)){
+   //                   usuarioALoguearse = users[i];
+   //                   req.session.usuarioLogueado = usuarioALoguearse;
+   //                   return res.render('Success!')
+   //                break;
+   //             }
+   //          }
+   //       }})
+   //       if(usuarioALoguearse == undefined){
+   //          return res.render('users/login', {errors: [
+   //             {msg: 'Credenciales invalidas'}
+   //          ]});
+   //       }
+   //    }  
+   //       return res.render('users/login', {errors: errors.errors});
+   // },
 
    register: function (req, res){
       return res.render('users/register');
