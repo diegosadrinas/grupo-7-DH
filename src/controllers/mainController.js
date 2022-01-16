@@ -126,7 +126,7 @@ const controller = {
 
 
    profile: function (req, res){
-      
+      console.log(req.cookies.userEmail);
       return res.render('users/userProfile', {
          user: req.session.userLogged
       })
@@ -135,6 +135,7 @@ const controller = {
 // HACER UN ICONO CON PROFILE Y LOGOUT COMO EN EL VIDEO CLASE 26 (PROCESO LOGIN COMPLETO) MIN 1.21 Ó HACER UN BOTON DE LOGOUT EN ALGUNA PARTE !
 
    logout: function (req, res){
+      res.clearCookie('userEmail');
       req.session.destroy();
       return res.redirect('/');
    },
