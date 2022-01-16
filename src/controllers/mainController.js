@@ -1,15 +1,9 @@
 const path = require('path');
 const fs = require('fs');
-
-const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
 const { validationResult, body } = require('express-validator');
 const db = require('../database/models');
 const bcrypt = require ('bcrypt');
 const { text } = require('express');
-
-
 
 const controller = {
    index: function (req, res){
