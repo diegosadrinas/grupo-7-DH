@@ -36,7 +36,7 @@ module.exports = (sequelize, dataTypes) => {
     Producto.associate = function (models){
         Producto.belongsToMany(models.Usuario, {
             as: "usuarios",
-            through: "shopping_cart",
+            through: "product_cart",
             foreignKey: "product_id",
             otherKey: "user_id",
             timestamps: false

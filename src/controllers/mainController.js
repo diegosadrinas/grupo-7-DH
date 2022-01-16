@@ -14,6 +14,11 @@ const controller = {
             console.log(productos)
             return res.render('products/index', {productos: productos});
          })
+         .catch(function(err){
+
+            console.log("Error:" + String(err));
+        
+        });
    },
 
    // Validacion y login de session
