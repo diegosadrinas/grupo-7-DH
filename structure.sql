@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 8.0.27, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.27, for macos11 (x86_64)
 --
 -- Host: localhost    Database: sprint_db
 -- ------------------------------------------------------
@@ -37,6 +37,34 @@ LOCK TABLES `colors` WRITE;
 /*!40000 ALTER TABLE `colors` DISABLE KEYS */;
 INSERT INTO `colors` VALUES (1,'negro'),(2,'blanco'),(3,'marrón'),(4,'gris oscuro'),(5,'azul marino');
 /*!40000 ALTER TABLE `colors` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `product_cart`
+--
+
+DROP TABLE IF EXISTS `product_cart`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `product_cart` (
+  `product_cart_id` int NOT NULL,
+  `user_id` int NOT NULL,
+  `product_id` int NOT NULL,
+  KEY `product_id_idx` (`product_id`),
+  KEY `users_id_idx` (`user_id`),
+  CONSTRAINT `product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`),
+  CONSTRAINT `users_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `product_cart`
+--
+
+LOCK TABLES `product_cart` WRITE;
+/*!40000 ALTER TABLE `product_cart` DISABLE KEYS */;
+INSERT INTO `product_cart` VALUES (1,4,5),(2,1,5),(3,5,10),(4,4,3),(5,3,10),(1,4,5),(2,1,5),(3,5,10),(4,4,3),(5,3,10),(6,2,9),(7,2,8);
+/*!40000 ALTER TABLE `product_cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -97,35 +125,6 @@ INSERT INTO `products` VALUES (1,'vulputate luctus cum','Donec vitae nisi. Nam u
 UNLOCK TABLES;
 
 --
--- Table structure for table `shopping_cart`
---
-
-DROP TABLE IF EXISTS `shopping_cart`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `shopping_cart` (
-  `shopping_cart_id` int NOT NULL,
-  `user_id` int NOT NULL,
-  `product_id` int DEFAULT NULL,
-  PRIMARY KEY (`shopping_cart_id`),
-  KEY `user_id_idx` (`user_id`),
-  KEY `product_id_idx` (`product_id`),
-  CONSTRAINT `product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`),
-  CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `shopping_cart`
---
-
-LOCK TABLES `shopping_cart` WRITE;
-/*!40000 ALTER TABLE `shopping_cart` DISABLE KEYS */;
-INSERT INTO `shopping_cart` VALUES (1,1,NULL),(2,3,NULL),(3,5,NULL),(4,7,NULL),(5,9,NULL);
-/*!40000 ALTER TABLE `shopping_cart` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `users`
 --
 
@@ -162,4 +161,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-07 11:15:34
+-- Dump completed on 2022-01-16 12:46:22
