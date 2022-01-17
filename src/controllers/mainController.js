@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const { validationResult, body } = require('express-validator');
 const db = require('../database/models');
+const { Usuario } = db
 const bcrypt = require ('bcrypt');
 const { text } = require('express');
 
@@ -11,7 +12,6 @@ const controller = {
          include:[{association: "productos"}]
       })
          .then( (productos) => {
-            console.log(productos)
             return res.render('products/index', {productos: productos});
          })
          .catch(function(err){
@@ -70,6 +70,23 @@ const controller = {
 			})
       };
 
+      db.Usuario.create({
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      email: req.body.email,
+      password: bcrypt.hashSync(req.body.password, 10),
+      is_admin: false
+      })
+         .then( () => {
+            res.render('users/usuarioExito')
+          })
+         .catch(function(err){
+
+            console.log("Error:" + String(err));
+        
+        })
+
+
       // Falta validar el intento de registrarse con un correo ya guardado.
       // Prueba 1
       // let userInDB = db.Usuario.findByField ('email', req.body.email);
@@ -90,17 +107,6 @@ const controller = {
       //     [{msg: "No exites como usuario"}]})
 
       // })
-
-
-      db.Usuario.create({
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
-      email: req.body.email,
-      password: bcrypt.hashSync(req.body.password, 10),
-      is_admin: false
-      });
-
-      return res.render('users/usuarioExito');
       
 	},
 

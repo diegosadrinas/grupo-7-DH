@@ -39,7 +39,7 @@ router.get('/', mainController.index);
 router.get('/login',validationLogin, guestMiddleware, mainController.login);
 router.post('/login', mainController.loginProcess)
 router.get('/register', guestMiddleware, mainController.register);
-router.post('/register', validations, uploadFile.any(), mainController.processRegister)
+router.post('/register', validations, mainController.processRegister)
 router.get('/product-cart', mainController.cart);
 router.get('/profile', authMiddleware, mainController.profile);
 router.get('/logout', mainController.logout);
