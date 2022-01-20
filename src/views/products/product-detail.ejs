@@ -24,7 +24,7 @@
     <button class="boton" type="añadirCarrito" value="añadirCarrito"><a class="botonComprar" href="../product-cart">Comprar</a>
         </button>
         <p> * * * * * </p>
-    <button class="boton" type="añadirCarrito" value="añadirCarrito"><a class="botonComprar" href="../products/<%= product.id %>/edit">Editar</a>
+    <button class="boton" type="añadirCarrito" value="añadirCarrito"><a class="botonComprar" href="../products/edit/<%= product.id %>">Editar</a>
         </button>            
         <p> * * * * * </p>
     <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">

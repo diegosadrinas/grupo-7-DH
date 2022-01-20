@@ -14,22 +14,20 @@ const storage = multer.diskStorage({
     }
 })
 const upload = multer({storage: storage})
-// 
 
+// FUNCIONAN
 router.get('/', productController.index);
-
-router.get('/create', productController.create);
-router.post('/', upload.any(),  productController.store);
-
 router.get('/:id', productController.detail);
+router.get('/edit/:id', productController.edit);
+router.patch('/edit/:id', upload.any(), productController.update);
 
-router.get('/:id/edit', productController.edit);
-router.patch('/:id/edit', upload.any(), productController.update);
+
+// DEJATON DE FUNCIONAR
+router.get('/create', productController.create);
+router.post('/create', upload.any(),  productController.store);
+
+router.get('/product-cart', productController.cart);
 
 router.delete('/delete/:id', productController.delete)
-
-// RUTAS DE TESTEO DE VISTAS - BORRAR DESPUES
-
-
 
 module.exports = router;

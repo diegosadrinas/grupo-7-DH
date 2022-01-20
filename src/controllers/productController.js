@@ -10,9 +10,13 @@ const controller = {
    index: (req, res) => {
       res.render('products/all-products', {products})
    },
-
+   
    create: (req, res) => {
-      res.render('products/product-create-form')
+      res.render('products/product-create-form', {products})
+   },
+
+   cart: (req, res) => {
+      res.send("asdasdasd")
    },
 
    store: (req, res) => {

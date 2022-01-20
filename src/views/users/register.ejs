@@ -4,6 +4,7 @@
     <%-include('../partials/head')%>
     <link rel="stylesheet" href="css/login.css">
     <title>Woodstack | Registrarse</title>
+    <script src="/js/registerValidationFront.js"></script>
 </head>
 <body>
   <%-include('../partials/header')%>
@@ -19,13 +20,13 @@
             <h1>Registrarse</h1>
             <!--  
             AGREGAR EL CAMPO DE IMAGEN DE USUARIO TABIEN !-->
-            <form method="post" action="/register">
+            <form method="post" action="/register" class="formRegister">
         
               <div class="campo">
 								<input 
 									type="text" 
 									name="email" 
-									class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+									class="form-control email-input <%= locals.errors && errors.email ? 'is-invalid' : null %>"
 									value="<%= locals.oldData ? oldData.email : null %>"
 								>
 								<% if (locals.errors && errors.email) { %>
@@ -33,14 +34,14 @@
 										<%= errors.email.msg %> 
 									</div>
 								<% } %>
-                <span></span>
+                <span class="span-email"></span>
                 <label>Email</label>
               </div>
               <div class="campo">
 								<input 
 									type="text" 
 									name="first_name" 
-									class="form-control <%= locals.errors && errors.first_name ? 'is-invalid' : null %>"
+									class="form-control nombre-input <%= locals.errors && errors.first_name ? 'is-invalid' : null %>"
 									value="<%= locals.oldData ? oldData.first_name : null %>"
 								>
 								<% if (locals.errors && errors.first_name) { %>
@@ -56,7 +57,7 @@
 								<input 
 									type="text" 
 									name="last_name" 
-									class="form-control <%= locals.errors && errors.last_name ? 'is-invalid' : null %>"
+									class="form-control apellido-input <%= locals.errors && errors.last_name ? 'is-invalid' : null %>"
 									value="<%= locals.oldData ? oldData.last_name : null %>"
 								>
 								<% if (locals.errors && errors.last_name) { %>
@@ -72,14 +73,14 @@
 								<input 
 									type="password" 
 									name="password" 
-									class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+									class="form-control apellido-input <%= locals.errors && errors.password ? 'is-invalid' : null %>"
 									value="<%= locals.oldData ? oldData.password : null %>">
 								<% if (locals.errors && errors.password) { %>
 									<div class="text-danger">
 										<%= errors.password.msg %> 
 									</div>
 								<% } %>
-                <span></span>
+                <span class="span-email" ></span>
                 <label>Contraseña</label>
               </div>
 
