@@ -11,24 +11,28 @@
       <div class="first-banner"></div>
       <div class="tarjeta">
         <h1>Iniciar Sesion</h1>
-        <form method="POST" action="/login">
+
+        <form method="POST" action="/login" class="loginForm">
+         
+          <div class="errores">
+            <ul></ul>
+          </div>
+
           <div class="campo">
             <!-- puedo cambiar el type a text para q no valide desde el Form -->
-            <input type="email" name="email" required>
+            <input type="email" name="email" class="email-input">
             <% if (locals.errors && errors.email) { %>
               <div class="text-danger"> 
               <%= errors.email.msg %>
             </div>
             <% } %>
-
-            <!-- mostrar errores del front en Span -->
-
-            <span class="spanEmailLogin"></span>
+            <span class="span-email text-danger"></span>
             <label>Email</label>
           </div>
+
           <div class="campo">
-            <input type="password" name="password" required>
-            <span></span>
+            <input type="password" name="password">
+            <span class="span-password text-danger" ></span>
             <label>Password</label>
           </div>
           <div class="pass">Olvidó su contraseña?</div>
@@ -37,10 +41,12 @@
           <div class="registrarse">
             No es miembro?<a href="/register">Registrarse</a>
           </div>
-        x|
         </form>
       </div>
     </main>
     <%-include('../partials/footer')%>
+
+    <script src="/js/loginValidationFront.js"></script>
+
 </body>
 </html>
