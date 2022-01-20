@@ -91,6 +91,9 @@
     font-size: 15px;
   }
 
+  div.errores {
+    color: red;
+  }
 
 
 @media (min-width: 768px) {

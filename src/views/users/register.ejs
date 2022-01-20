@@ -20,7 +20,12 @@
             <!--  
             AGREGAR EL CAMPO DE IMAGEN DE USUARIO TABIEN !-->
             <form method="post" action="/register" class="form-register">
-        
+             
+              <!-- DIV PARA ERRORES DEL FRONT -->
+              <div class="errores">
+                <ul></ul>
+              </div>
+
               <div class="campo">
 								<input 
 									type="text" 
@@ -103,7 +108,8 @@
           </div>
     </main>
     <%-include('../partials/footer')%>
-    <script src="/js/registerValidationFront.js"></script>
+    <!-- <script src="/js/registerValidationFront.js"></script> -->
+    <script src="/js/registerValidationFrontTest.js"></script>
     
 </body>
 </html>
