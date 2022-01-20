@@ -4,7 +4,6 @@
     <%-include('../partials/head')%>
     <link rel="stylesheet" href="css/login.css">
     <title>Woodstack | Registrarse</title>
-    <script src="/js/registerValidationFront.js"></script>
 </head>
 <body>
   <%-include('../partials/header')%>
@@ -20,7 +19,7 @@
             <h1>Registrarse</h1>
             <!--  
             AGREGAR EL CAMPO DE IMAGEN DE USUARIO TABIEN !-->
-            <form method="post" action="/register" class="formRegister">
+            <form method="post" action="/register" class="form-register">
         
               <div class="campo">
 								<input 
@@ -34,7 +33,7 @@
 										<%= errors.email.msg %> 
 									</div>
 								<% } %>
-                <span class="span-email"></span>
+                <span class="span-email text-danger"></span>
                 <label>Email</label>
               </div>
               <div class="campo">
@@ -49,7 +48,7 @@
 										<%= errors.first_name.msg %> 
 									</div>
 								<% } %>
-                <span></span>
+                <span class="span-nombre text-danger"></span>
                 <label>Nombre</label>
               </div>
 
@@ -65,7 +64,7 @@
 										<%= errors.last_name.msg %> 
 									</div>
 								<% } %>
-                <span></span>
+                <span class="span-apellido text-danger"></span>
                 <label>Apellido</label>
               </div>
 
@@ -80,7 +79,7 @@
 										<%= errors.password.msg %> 
 									</div>
 								<% } %>
-                <span class="span-email" ></span>
+                <span class="span-password text-danger" ></span>
                 <label>Contraseña</label>
               </div>
 
@@ -104,6 +103,7 @@
           </div>
     </main>
     <%-include('../partials/footer')%>
-    <!-- <script src="/js/registerValidationFront.js"></script> -->
+    <script src="/js/registerValidationFront.js"></script>
+    
 </body>
 </html>
