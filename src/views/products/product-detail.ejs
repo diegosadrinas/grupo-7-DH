@@ -24,12 +24,19 @@
     <button class="boton" type="añadirCarrito" value="añadirCarrito"><a class="botonComprar" href="../product-cart">Comprar</a>
         </button>
         <p> * * * * * </p>
+
+        <!-- SI ESTAS LOGUADO CON EL ADMIN VES ESTO SI NO, NO  -->
+
+        <% if (locals.isLogged && locals.userLogged.is_admin === true) { %>   
+            <p>PODES EDITAR <%= locals.userLogged.is_admin %> </p> 
+            <p> * * * * * </p>
     <button class="boton" type="añadirCarrito" value="añadirCarrito"><a class="botonComprar" href="../products/edit/<%= product.id %>">Editar</a>
         </button>            
         <p> * * * * * </p>
     <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
     <button class="boton" type="añadirCarrito" value="añadirCarrito"><a class="botonComprar" href="../product-to-edit">Eliminar</a>
         </button>        
+        <% } %>
     </form>    
     </div>
     <div class="detalle">
