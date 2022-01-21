@@ -15,10 +15,16 @@ const storage = multer.diskStorage({
 })
 const upload = multer({storage: storage})
 
+//MIDDLEWARES
+
+// adminMiddel: si no estas logueado cono Admin no podes ir ir a la ruta edir por ej.. no me funca
+const adminMiddle = require('../../middlewares/adminMiddle')
+const adminMiddle2 = require('../../middlewares/adminMiddle2')
+
 // FUNCIONAN
 router.get('/', productController.index);
 router.get('/:id', productController.detail);
-router.get('/edit/:id', productController.edit);
+router.get('/edit/:id', adminMiddle, adminMiddle2, productController.edit);
 router.patch('/edit/:id', upload.any(), productController.update);
 
 

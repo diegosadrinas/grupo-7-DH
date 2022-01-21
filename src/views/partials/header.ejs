@@ -22,6 +22,8 @@
         </a>
         <ul>
             <% if (locals.isLogged) { %>
+            <li>(Avatar)</li>
+            <!-- <img src="/images/avatars/avatarDefault.jpeg" alt="" class="avatarHeader"> -->
             <li>Hola <%= locals.userLogged.first_name %></li>
             <li><a href="/profile">PROFILE</a> </li>
             <li><a href="/logout">LOGOUT</a> </li>

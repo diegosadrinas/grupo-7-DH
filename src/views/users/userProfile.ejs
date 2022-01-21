@@ -13,6 +13,11 @@
     <div class="first-banner">
         <article class="banner-text">
             <h1 class="banner-title">Hola <%= user.first_name %></h1>
+            <% if (user.avatar) { %>
+            <img src="/images/avatars/<%= user.avatar %>" alt="">
+            <% } else { %>
+            <img src="/images/avatars/avatarDefault.jpeg" class="avatar" alt=""> 
+            <% } %>
             <p class="banner-subtitle"><%= user.email %></p>
             <p class="banner-subtitle"></p>
             <p class="banner-subtitle"></p>
