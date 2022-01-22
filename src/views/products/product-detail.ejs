@@ -23,11 +23,11 @@
     <div class="cont-boton">
     <button class="boton" type="añadirCarrito" value="añadirCarrito"><a class="botonComprar" href="../product-cart">Comprar</a>
         </button>
-        <p> * * * * * </p>
 
         <!-- SI ESTAS LOGUADO CON EL ADMIN VES ESTO SI NO, NO  -->
 
         <% if (locals.isLogged && locals.userLogged.is_admin === true) { %>   
+            <p> * * * * * </p>
             <p>PERMISOS DE ADMINISTRADOR CONCEDIDOS</p> 
             <p> * * * * * </p>
     <button class="boton" type="añadirCarrito" value="añadirCarrito"><a class="botonComprar" href="../products/edit/<%= product.id %>">Editar</a>

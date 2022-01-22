@@ -28,11 +28,14 @@ router.get('/edit/:id', adminMiddle, adminMiddle2, productController.edit);
 router.patch('/edit/:id', upload.any(), productController.update);
 
 
+
 // DEJATON DE FUNCIONAR
 router.get('/create', productController.create);
-router.post('/create', upload.any(),  productController.store);
+router.post('/create', upload.any(), productController.store);
 
 router.get('/product-cart', productController.cart);
+
+
 
 router.delete('/delete/:id', productController.delete)
 

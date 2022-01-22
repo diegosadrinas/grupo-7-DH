@@ -12,11 +12,11 @@ const controller = {
    },
    
    create: (req, res) => {
-      res.render('products/product-create-form', {products})
+      res.render('products/product-create-form')
    },
 
    cart: (req, res) => {
-      res.send("asdasdasd")
+      res.render('products/product-cart')
    },
 
    store: (req, res) => {
