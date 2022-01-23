@@ -81,6 +81,15 @@
     margin-right: auto;
 }
 
+.avatarHeader{
+    max-width: 10%;
+    max-height: 10%;
+    border-radius: 100%;
+    position: relative;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
 @media (min-width: 768px) {
 
     .product-container {
