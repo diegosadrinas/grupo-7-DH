@@ -122,11 +122,7 @@ const controller = {
       res.clearCookie('userEmail');
       req.session.destroy();
       return res.redirect('/');
-   },
-
-   cart: function (req, res){
-      return res.send('products/product-cart');
-   },
+   }
 }
 
 

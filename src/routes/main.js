@@ -19,8 +19,11 @@ const uploadFile = multer({storage: storage})
 // MiddleWares
 const guestMiddleware = require('../../middlewares/guestMiddleware')
 const authMiddleware = require('../../middlewares/authMiddleware')
+
 const mainController = require('../controllers/mainController');
-const validations = [
+
+// Validaciomes
+const validationsRegister = [
 	body('email')
 		.notEmpty().withMessage('Tienes que escribir un correo electrónico').bail()
 		.isEmail().withMessage('Debes escribir un formato de correo válido'),
@@ -35,12 +38,12 @@ const validationLogin = [
     body("password").isLength({min:8}).withMessage("Contraseña demasiado corta")
 ]
 
+// Rutas
 router.get('/', mainController.index);
 router.get('/login',validationLogin, guestMiddleware, mainController.login);
 router.post('/login', mainController.loginProcess)
 router.get('/register', guestMiddleware, mainController.register);
-router.post('/register', validations, mainController.processRegister)
-router.get('/product-cart', mainController.cart);
+router.post('/register', validationsRegister, mainController.processRegister)
 router.get('/profile', authMiddleware, mainController.profile);
 router.get('/logout', mainController.logout);
 
