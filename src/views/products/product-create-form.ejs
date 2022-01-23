@@ -17,15 +17,22 @@
                 </div>
             </div>
             <div>
+                <div class="errores">
+                    <ul>
+
+                    </ul>
+                </div>
                 <form action="/products" method="POST" enctype="multipart/form-data" class="formulario">
                     <section class="izquierda">
                     <div class="line">
-                        <label for="name" class="form-label">Nombre del producto:</label>
+                        <label for="name" class="form-label name">Nombre del producto:</label>
                         <input type="text" id="name" name="name" placeholder="Ej: Mouse Pad" class="form-input">
+                        <span class="span-name"></span>
                     </div>
                     <div class="line">
-                        <label for="description" class="form-label">Descipción:</label>
+                        <label for="description" class="form-label description">Descipción:</label>
                         <textarea name="description" id="description" placeholder="Ej: Escritorio de caoba negro" class="form-input"></textarea>
+                        <span class="description"></span>
                     </div>
                     <div class="line">
                         <label for="colors" class="form-label">Colores:</label>
@@ -63,5 +70,6 @@
 <footer>
     <%-include('../partials/footer')%>
 </footer>
+<script src="/js/createValidationFront.js"></script>
 </body>
 </html>

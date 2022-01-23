@@ -85,6 +85,7 @@ const controller = {
         
         })
 
+      // ESTO ES OPCIONAL !!
 
       // Falta validar el intento de registrarse con un correo ya guardado.
       // Prueba 1
