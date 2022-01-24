@@ -75,34 +75,39 @@ const controller = {
    },
 
 	edit: (req, res) => {
-		let id = req.params.id
-		let productToEdit = products.find(product => product.id == id)
-		res.render('products/product-to-edit', { product: productToEdit })
+		let product_id = req.params.id
+		db.Producto.findByPk(product_id)
+			.then((product => {
+				res.render('products/product-to-edit', { product })
+			}))
+			.catch((err) => {
+				console.log("Error en detail:" + String(err));	
+			})
+		
    },
 
    update: (req, res) => {
-		let id = req.params.id;
-		let productToEdit = products.find(product => product.id == id)
-		let image = "desktop-img.webp"
+	let product_id = req.params.id
+	db.Producto.findByPk(product_id)
+		.then((product => {
+			product.update({
+				name: req.body.name,
+				description: req.body.description,
+				img_url: image,
+				color: req.body.color,
+				price: req.body.price,
+				category: req.body.category
+			})
+				.then((product) => {
+					res.render('products/product-to-edit', { product })
+				})
 
-		productToEdit = {
-			id: productToEdit.id,
-			...req.body,
-			image: image,
-		};
-		
-		let newProducts = products.map(product => {
-			if (product.id == productToEdit.id) {
-				return product = {...productToEdit};
-			}
-			return product;
+		}))
+		.catch((err) => {
+			console.log("Error en detail:" + String(err));	
 		})
-
-		// Acá se modifica para insertar el sequelize
-		
-		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
-		res.redirect('/');
-	},
+	
+},
 
 
 	// Delete - Delete one product from DB
