@@ -19,28 +19,37 @@ const uploadFile = multer({storage: storage})
 // MiddleWares
 const guestMiddleware = require('../../middlewares/guestMiddleware')
 const authMiddleware = require('../../middlewares/authMiddleware')
+
 const mainController = require('../controllers/mainController');
-const validations = [
+
+// Validaciomes
+const validationsRegister = [
 	body('email')
 		.notEmpty().withMessage('Tienes que escribir un correo electrónico').bail()
 		.isEmail().withMessage('Debes escribir un formato de correo válido'),
+		// NO PUEDE REPETIRSE CON OTRO EMAIL ! EN CONTROLADOR HAY ALGO DE ESO!
 	body('first_name').notEmpty().withMessage('Tienes que escribir un nombre').bail()
 		.isLength({min:2}).withMessage('Debe tener minimo 2 caracteres'),
 	body('last_name').notEmpty().withMessage('Tienes que escribir un apellido').bail()
 	.isLength({min:2}).withMessage('Debe tener minimo 2 caracteres'),
-	body('password').notEmpty().withMessage('Tienes que escribir una contraseña')
+    body("password").notEmpty().withMessage('Tienes que escribir una contraseña').isLength({min:8}).withMessage("Debe terner minimo 8 caracteres")
+	// VALIDAR IMAGEN! (JPG, JPEG, PNG, GIF)
+
 ];
+
 const validationLogin = [
 	body("email").isEmail().withMessage("Email incorrecto"),
-    body("password").isLength({min:8}).withMessage("Contraseña demasiado corta")
+	//DEBERA EXISITER EN LA BASE !
+    body("password").notEmpty().withMessage('Tienes que escribir una contraseña').isLength({min:8}).withMessage("Debe terner minimo 8 caracteres")
+	// DEBERA COINCIDIR CON LA BASE ! 
 ]
 
+// Rutas
 router.get('/', mainController.index);
 router.get('/login',validationLogin, guestMiddleware, mainController.login);
 router.post('/login', mainController.loginProcess)
 router.get('/register', guestMiddleware, mainController.register);
-router.post('/register', validations, mainController.processRegister)
-router.get('/product-cart', mainController.cart);
+router.post('/register', validationsRegister, mainController.processRegister)
 router.get('/profile', authMiddleware, mainController.profile);
 router.get('/logout', mainController.logout);
 
