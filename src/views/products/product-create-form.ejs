@@ -22,7 +22,7 @@
 
                     </ul>
                 </div>
-                <form action="/products" method="POST" enctype="multipart/form-data" class="formulario">
+                <form action="/products/create" method="POST" enctype="multipart/form-data" class="formulario">
                     <section class="izquierda">
                     <div class="line">
                         <label for="name" class="form-label name">Nombre del producto:</label>
@@ -59,17 +59,24 @@
                 <section class="derecha">
                     <label for="image" class="form-label btn">Upload Image</label>
                     <input type="file" name="image" id="image" class="btn">
+                    <div class="visorArchivo">
+                    </div>
                 </section>
                 <div>
                     <button type="submit" class="btn">Guardar producto</button>
                 </div>
             </form>
         </div>
+
     </main>
 
 <footer>
     <%-include('../partials/footer')%>
 </footer>
 <script src="/js/createValidationFront.js"></script>
+
+<!-- Validacion y Preview de Img - No funciona -->
+<!-- <script src="/js/imgValitationAndPrev.js"></script> -->
+
 </body>
 </html>

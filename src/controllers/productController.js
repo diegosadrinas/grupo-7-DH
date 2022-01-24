@@ -10,7 +10,21 @@ const controller = {
    index: (req, res) => {
       res.render('products/all-products', {products})
    },
-   
+
+
+	//    TESTINGS !
+
+   test: (req, res)=>{
+	  res.render('products/testForm')
+   },
+   testPost: (req, res) => {
+	   let data = req.body
+	   console.log(data);
+	   res.send(data)
+   },
+	// FIN
+
+
    create: (req, res) => {
       res.render('products/product-create-form')
    },
@@ -70,6 +84,7 @@ const controller = {
 		})
 
 		// Acá se modifica para insertar el sequelize
+		
 		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
 		res.redirect('/');
 	},

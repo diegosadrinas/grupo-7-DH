@@ -106,5 +106,23 @@
   "price": "23456",
   "category": "",
   "image": "image-1635369909765.jpeg"
+ },
+ {
+  "id": 13,
+  "name": "Encendedorasdaasdasd",
+  "description": "Prende joya",
+  "colors": "Negro",
+  "price": "12345",
+  "category": "",
+  "image": "desktop-img.webp"
+ },
+ {
+  "id": 14,
+  "name": "SOREToon",
+  "description": "Soretin",
+  "colors": "Negro",
+  "price": "1234567",
+  "category": "",
+  "image": "desktop-img.webp"
  }
 ]
