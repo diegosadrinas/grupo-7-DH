@@ -36,12 +36,6 @@ const validationsEdit = [
 
 // Rutas
 router.get('/', productController.index);
-
-// Test Form Post
-router.get('/test-form', productController.test)
-router.post('/test-form', productController.testPost)
-// FIN
-
 router.get('/create', 
 adminMiddle, adminMiddle2, 
 validactionsCreate, productController.create);
