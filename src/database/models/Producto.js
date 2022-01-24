@@ -15,11 +15,11 @@ module.exports = (sequelize, dataTypes) => {
         img_url: {
             type: dataTypes.CHAR,
         },
-        category_id: {
-            type: dataTypes.INTEGER,
+        category: {
+            type: dataTypes.CHAR,
         },
-        color_id: {
-            type: dataTypes.INTEGER
+        color: {
+            type: dataTypes.CHAR
         },
         price: {
             type: dataTypes.INTEGER

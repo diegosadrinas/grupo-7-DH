@@ -1,7 +1,7 @@
 module.exports = (sequelize, dataTypes) => {
     const alias = 'Carrito';
     let cols = {
-        shopping_cart_id:{
+        product_cart_id:{
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
@@ -15,7 +15,7 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     let config = {
-        tableName: 'carrito',  
+        tableName: 'product_cart',  
         timetamps: false
     }
 

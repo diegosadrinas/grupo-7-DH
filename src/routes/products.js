@@ -23,7 +23,6 @@ const adminMiddle2 = require('../../middlewares/adminMiddle2')
 
 // FUNCIONAN
 router.get('/', productController.index);
-router.get('/test', productController.test);
 router.get('/create', productController.create);
 router.post('/create', upload.any(), productController.store);
 router.get('/product-cart', productController.cart);

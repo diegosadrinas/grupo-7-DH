@@ -13,9 +13,9 @@
 <main>
     <div class="first-section">
         <% products.forEach(product => { %>
-           <a href="/products/<%= product.id %>">
+           <a href="/products/<%= product.product_id %>">
             <div class="img-producto">
-                <img class="img" src="/images/products/<%= product.image %>" alt="banner">
+                <img class="img" src="<%= product.img_url %>" alt="banner">
             </div>
         </a>
             <!-- <p> <%= product.id %> </p> -->
@@ -23,7 +23,7 @@
            <p> * * * * * </p>
            <p> <%= product.description %></p>
            <!-- <p> <%= product.category %></p> -->
-           <p> <%= product.color %></p>
+           <p> <%= product.color_id %></p>
            <p> $ <%= product.price %></p>
            <p> * * * * * </p>
 
