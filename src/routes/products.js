@@ -36,11 +36,21 @@ const validationsEdit = [
 
 // Rutas
 router.get('/', productController.index);
-router.get('/create', adminMiddle, adminMiddle2, validactionsCreate, productController.create);
+
+// Test Form Post
+router.get('/test-form', productController.test)
+router.post('/test-form', productController.testPost)
+// FIN
+
+router.get('/create', 
+adminMiddle, adminMiddle2, 
+validactionsCreate, productController.create);
 router.post('/create', upload.any(), productController.store);
 router.get('/product-cart', productController.cart);
 router.get('/:id', productController.detail);
-router.get('/edit/:id', adminMiddle, adminMiddle2, validationsEdit, productController.edit);
+router.get('/edit/:id',
+ adminMiddle, adminMiddle2, 
+ validationsEdit, productController.edit);
 router.patch('/edit/:id', upload.any(), productController.update);
 router.delete('/delete/:id', productController.delete)
 

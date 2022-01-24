@@ -4,6 +4,28 @@ const db = require('../database/models');
 const products = []
 
 const controller = {
+<<<<<<< HEAD
+   index: (req, res) => {
+      res.render('products/all-products', {products})
+   },
+
+
+	//    TESTINGS !
+
+   test: (req, res)=>{
+	  res.render('products/testForm')
+   },
+   testPost: (req, res) => {
+	   let data = req.body
+	   console.log(data);
+	   res.send(data)
+   },
+	// FIN
+
+
+   create: (req, res) => {
+      res.render('products/product-create-form')
+=======
 	index: function (req, res){
 
 		db.Producto.findAll({
@@ -20,6 +42,7 @@ const controller = {
    
 	create: (req, res) => {
 		res.render('products/product-create-form')
+>>>>>>> 776078f8ea55a432eab24da884ebb9ac581c58aa
    },
 
 	cart: (req, res) => {
@@ -88,6 +111,7 @@ const controller = {
 		})
 
 		// Acá se modifica para insertar el sequelize
+		
 		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
 		res.redirect('/');
 	},
