@@ -13,7 +13,7 @@ const controller = {
 		   })
 		   .catch(function(err){
   
-			  console.log("Error:" + String(err));
+			  console.log("Error en index:" + String(err));
 		  
 		  });
 	 },
@@ -27,16 +27,12 @@ const controller = {
    },
 
 	store: (req, res) => {
-	   console.log("entré a store")
 		let image
-		console.log(req.files);
 		if(req.files[0] != undefined){
 			image = req.files[0].filename
 		} else {
 			image = 'stands-img.webp'
 		}
-
-		console.log(image, category, colors)
 		
 		db.Producto.create({
 			name: req.body.name,
@@ -48,19 +44,34 @@ const controller = {
 		})
 			.then(() =>
 				{
-					res.render('/products')
+					db.Producto.findAll({
+					})
+					   .then( (products) => {
+						  return res.render('products/all-products', {products});
+					   })
+					   .catch(function(err){
+			  
+						  console.log("Error en index:" + String(err));
+					  
+					  });
 			})
 
 			.catch(function(err){
 
-				console.log("Error:" + String(err));		
+				console.log("Error en Store:" + String(err));		
 			})	
    },
 
 	detail: (req, res) => {
 		let product_id = req.params.id
-		let product = products.find(product => product.id == product_id)
-		res.render('products/product-detail', {product});
+		db.Producto.findByPk(product_id)
+			.then((product => {
+				res.render('products/product-detail', {product});
+			}))
+			.catch((err) => {
+				console.log("Error en detail:" + String(err));	
+			})
+		
    },
 
 	edit: (req, res) => {

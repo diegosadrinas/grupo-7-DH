@@ -16,30 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `colors`
---
-
-DROP TABLE IF EXISTS `colors`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `colors` (
-  `color_id` int NOT NULL,
-  `color` varchar(15) NOT NULL,
-  PRIMARY KEY (`color_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `colors`
---
-
-LOCK TABLES `colors` WRITE;
-/*!40000 ALTER TABLE `colors` DISABLE KEYS */;
-INSERT INTO `colors` VALUES (1,'negro'),(2,'blanco'),(3,'marrón'),(4,'gris oscuro'),(5,'azul marino');
-/*!40000 ALTER TABLE `colors` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `product_cart`
 --
 
@@ -68,30 +44,6 @@ INSERT INTO `product_cart` VALUES (1,4,5),(2,1,5),(3,5,10),(4,4,3),(5,3,10),(1,4
 UNLOCK TABLES;
 
 --
--- Table structure for table `product_category`
---
-
-DROP TABLE IF EXISTS `product_category`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `product_category` (
-  `category_id` int NOT NULL,
-  `category` varchar(45) NOT NULL,
-  PRIMARY KEY (`category_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `product_category`
---
-
-LOCK TABLES `product_category` WRITE;
-/*!40000 ALTER TABLE `product_category` DISABLE KEYS */;
-INSERT INTO `product_category` VALUES (1,'escritorios'),(2,'accesorios'),(3,'mousepads'),(4,'desktop pads');
-/*!40000 ALTER TABLE `product_category` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `products`
 --
 
@@ -103,14 +55,10 @@ CREATE TABLE `products` (
   `name` varchar(30) DEFAULT NULL,
   `description` char(250) NOT NULL,
   `img_url` varchar(100) NOT NULL,
-  `category_id` int NOT NULL,
-  `color_id` int NOT NULL,
+  `category` varchar(30) NOT NULL,
+  `color` varchar(30) NOT NULL,
   `price` int NOT NULL,
-  PRIMARY KEY (`product_id`),
-  KEY `category_id_idx` (`category_id`),
-  KEY `color_id_idx` (`color_id`),
-  CONSTRAINT `category_id` FOREIGN KEY (`category_id`) REFERENCES `product_category` (`category_id`),
-  CONSTRAINT `color_id` FOREIGN KEY (`color_id`) REFERENCES `colors` (`color_id`)
+  PRIMARY KEY (`product_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -120,7 +68,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'vulputate luctus cum','Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus.','http://dummyimage.com/225x100.png/ff4444/ffffff',2,1,701),(2,'aenean auctor gravida','Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.','http://dummyimage.com/230x100.png/dddddd/000000',2,3,910),(3,'amet lobortis sapien','Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum.','http://dummyimage.com/167x100.png/cc0000/ffffff',1,1,586),(4,'nulla elit','Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.','http://dummyimage.com/158x100.png/cc0000/ffffff',4,2,785),(5,'vel nulla','Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat.','http://dummyimage.com/143x100.png/5fa2dd/ffffff',4,1,448),(6,'aenean fermentum donec','Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem.','http://dummyimage.com/217x100.png/5fa2dd/ffffff',4,3,771),(7,'amet cursus id','Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.','http://dummyimage.com/247x100.png/cc0000/ffffff',4,3,836),(8,'dui luctus','Duis aliquam convallis nunc.','http://dummyimage.com/155x100.png/cc0000/ffffff',3,3,986),(9,'morbi non quam','Fusce consequat. Nulla nisl. Nunc nisl.','http://dummyimage.com/120x100.png/ff4444/ffffff',4,3,887),(10,'lacus at turpis','Nam dui.','http://dummyimage.com/157x100.png/dddddd/000000',2,4,46);
+INSERT INTO `products` VALUES (1,'vulputate luctus cum','Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus.','http://dummyimage.com/225x100.png/ff4444/ffffff','2','1',701),(2,'aenean auctor gravida','Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.','http://dummyimage.com/230x100.png/dddddd/000000','2','3',910),(3,'amet lobortis sapien','Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum.','http://dummyimage.com/167x100.png/cc0000/ffffff','1','1',586),(4,'nulla elit','Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.','http://dummyimage.com/158x100.png/cc0000/ffffff','4','2',785),(5,'vel nulla','Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat.','http://dummyimage.com/143x100.png/5fa2dd/ffffff','4','1',448),(6,'aenean fermentum donec','Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem.','http://dummyimage.com/217x100.png/5fa2dd/ffffff','4','3',771),(7,'amet cursus id','Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.','http://dummyimage.com/247x100.png/cc0000/ffffff','4','3',836),(8,'dui luctus','Duis aliquam convallis nunc.','http://dummyimage.com/155x100.png/cc0000/ffffff','3','3',986),(9,'morbi non quam','Fusce consequat. Nulla nisl. Nunc nisl.','http://dummyimage.com/120x100.png/ff4444/ffffff','4','3',887),(10,'lacus at turpis','Nam dui.','http://dummyimage.com/157x100.png/dddddd/000000','2','4',46);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -161,4 +109,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-19 19:53:00
+-- Dump completed on 2022-01-24  0:10:11
