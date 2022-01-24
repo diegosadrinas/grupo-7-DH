@@ -37,7 +37,7 @@ const validationsEdit = [
 // Rutas
 router.get('/', productController.index);
 router.get('/create', adminMiddle, adminMiddle2, validactionsCreate, productController.create);
-girouter.post('/create', upload.any(), productController.store);
+router.post('/create', upload.any(), productController.store);
 router.get('/product-cart', productController.cart);
 router.get('/:id', productController.detail);
 router.get('/edit/:id', adminMiddle, adminMiddle2, validationsEdit, productController.edit);
