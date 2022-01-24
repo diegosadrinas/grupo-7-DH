@@ -1,6 +1,6 @@
 /* Empieza Banner */
 .first-banner {
-    background-image: url(/images/index/first-section-img2.jpg);
+    background-image: url(/images/index/desktop-img.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     padding-top: 20%;
@@ -13,16 +13,19 @@
     z-index: 10;
     color: #ffffff;
     gap: 10px;
-    padding-top: 60px;
+    padding-top: 130px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 500;
+    font-size: 3rem;
 }
 
 .banner-title {
     font-size: 3rem;
-    font-weight: 300;
+    font-weight: 500;
 }
 
 .banner-subtitle {
-    font-size: 1rem;    
+    font-size: 1.5rem;    
 }
 
 .banner-link {

@@ -11,7 +11,7 @@
 body{
     background: #ffffff;
     color: #0d0d0d;
-    font-family: 'Koh Santepheap';
+    font-family: 'Rajdhani', sans-serif;
     min-width: 360px;
 
 }
@@ -19,4 +19,5 @@ body{
 main{
     text-align: center;
     font-family: "Inria Serif";
+    font-weight: 700;
 }

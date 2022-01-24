@@ -1,12 +1,10 @@
 const path = require('path');
 const fs = require('fs');
-
-const productsFilePath= path.join(__dirname, '../data/productsDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-
+const db = require('../database/models');
+const products = []
 
 const controller = {
+<<<<<<< HEAD
    index: (req, res) => {
       res.render('products/all-products', {products})
    },
@@ -27,46 +25,75 @@ const controller = {
 
    create: (req, res) => {
       res.render('products/product-create-form')
+=======
+	index: function (req, res){
+
+		db.Producto.findAll({
+		})
+		   .then( (products) => {
+			  return res.render('products/all-products', {products});
+		   })
+		   .catch(function(err){
+  
+			  console.log("Error:" + String(err));
+		  
+		  });
+	 },
+   
+	create: (req, res) => {
+		res.render('products/product-create-form')
+>>>>>>> 776078f8ea55a432eab24da884ebb9ac581c58aa
    },
 
-   cart: (req, res) => {
-      res.render('products/product-cart')
+	cart: (req, res) => {
+	   res.render('products/product-cart')
    },
 
-   store: (req, res) => {
+	store: (req, res) => {
+	   console.log("entré a store")
 		let image
 		console.log(req.files);
 		if(req.files[0] != undefined){
 			image = req.files[0].filename
 		} else {
 			image = 'stands-img.webp'
-		}		
-		let newProduct = {
-			id: products[products.length - 1].id + 1,
-			...req.body,
-			image: image
-		};
+		}
 
-		// Acá entra la logica de Sequelize y se borra JSON
-      products.push(newProduct)
-      fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
-		res.redirect('/products');
+		console.log(image, category, colors)
+		
+		db.Producto.create({
+			name: req.body.name,
+			description: req.body.description,
+			img_url: image,
+			color: req.body.color,
+			price: req.body.price,
+			category: req.body.category
+		})
+			.then(() =>
+				{
+					res.render('/products')
+			})
+
+			.catch(function(err){
+
+				console.log("Error:" + String(err));		
+			})	
    },
 
-   detail: (req, res) => {
-      let product_id = req.params.id
-      let product = products.find(product => product.id == product_id)
-      res.render('products/product-detail', {product});
+	detail: (req, res) => {
+		let product_id = req.params.id
+		let product = products.find(product => product.id == product_id)
+		res.render('products/product-detail', {product});
    },
 
-   edit: (req, res) => {
-      let id = req.params.id
+	edit: (req, res) => {
+		let id = req.params.id
 		let productToEdit = products.find(product => product.id == id)
 		res.render('products/product-to-edit', { product: productToEdit })
    },
 
    update: (req, res) => {
-      let id = req.params.id;
+		let id = req.params.id;
 		let productToEdit = products.find(product => product.id == id)
 		let image = "desktop-img.webp"
 

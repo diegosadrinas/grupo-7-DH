@@ -3,15 +3,13 @@ const fs = require('fs');
 const { validationResult, body } = require('express-validator');
 const db = require('../database/models');
 const bcrypt = require ('bcrypt');
-const { text } = require('express');
 
 const controller = {
    index: function (req, res){
       db.Usuario.findAll({
-         include:[{association: "productos"}]
       })
-         .then( (productos) => {
-            return res.render('products/index', {productos: productos});
+         .then( (usuarios) => {
+            return res.render('products/index', {usuarios: usuarios});
          })
          .catch(function(err){
 
