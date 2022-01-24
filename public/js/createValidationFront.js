@@ -9,12 +9,12 @@ window.addEventListener("load", function(){
 
         if (campoName.value == ""){
             errores.push('FALTA NOMBRE')
-            let errorNombre = 'INGRESA NOMBRE'
-            document.querySelector('.span-name').innerHTML = errorNombre
+            let errorName = 'INGRESA NOMBRE'
+            document.querySelector('.span-name').innerHTML = errorName
         } else if (campoName.length < 5){
             errores.push('Debe tener min 5 caracteres')
-            let errorNombre = 'Debe tener min 5 caracteres'
-            document.querySelector('.span-name').innerHTML = errorNombre
+            let errorName = 'Debe tener min 5 caracteres'
+            document.querySelector('.span-name').innerHTML = errorName
         }
         
         let campoDescription = document.querySelector(".description")
@@ -23,6 +23,14 @@ window.addEventListener("load", function(){
             errores.push('FALTA DESCRIPCION')
             let errorDescription = 'INGRESA DESCRIPCION'
             document.querySelector('.span-description').innerHTML = errorDescription
+        }
+
+        let campoPrice = document.querySelector(".pricce");
+
+        if (campoPrice.value == ""){
+            errores.push('Fata Precio')
+            let errorPrice = "Ingresa Precio"
+            document.querySelector('.span-price').innerHTML = errorPrice
         }
 
         // VALIDAR IMAGEN (JPG, JPEG, PNG, GIF)

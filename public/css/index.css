@@ -85,8 +85,8 @@
 }
 
 .avatarHeader{
-    max-width: 10%;
-    max-height: 10%;
+    max-width: 2em;
+    max-height: 2em;
     border-radius: 100%;
     position: relative;
     margin-left: auto; 
