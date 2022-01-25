@@ -18,7 +18,7 @@ window.addEventListener("load", function(){
             document.querySelector(".span-email").innerHTML = errorMail;
         }
 
-        let campoPassword = document.querySelector(".email-input")
+        let campoPassword = document.querySelector(".password")
 
         if (campoPassword.value == ""){
             errores.push('Ingresa Pass')
