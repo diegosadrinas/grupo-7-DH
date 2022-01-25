@@ -19,7 +19,7 @@
                     <section class="izquierda">
 
                         <div class="errores">
-                            <ul></ul>
+                            <ul id="erroresArray"></ul>
                         </div>
                         
                     <div class="campo">
@@ -36,7 +36,7 @@
                                 <%= errors.name.msg %> 
                             </div>
                         <% } %>
-                        <span class="span-name"></span>
+                        <span class="span-name text-danger"></span>
                     </div>
                     <div class="campo">
                         <label for="description" class="form-label description">Descipción:</label>
@@ -46,7 +46,7 @@
                                 <%= errors.description.msg %> 
                             </div>
                         <% } %>
-                        <span class="span-description"></span>
+                        <span class="span-description text-danger"></span>
                     </div>
                     <div class="campo">
                         <label for="color" class="form-label">Colores:</label>
@@ -60,7 +60,7 @@
                                 <%= errors.color.msg %> 
                             </div>
                         <% } %>
-                        <span class="span-price"></span>
+                        <span class="span-color text-danger"></span>
                     </div>
                     <div class="campo">
                         <label for="price" class="form-label">Precio del producto:</label>
@@ -70,7 +70,7 @@
                                 <%= errors.price.msg %> 
                             </div>
                         <% } %>
-                        <span class="span-price"></span>
+                        <span class="span-price text-danger"></span>
                     </div>
                     <div class="campo">
                         <label for="category" class="form-label">Categoría:</label>
@@ -84,7 +84,7 @@
                                 <%= errors.category.msg %> 
                             </div>
                         <% } %>
-                        <span class="span-category"></span>
+                        <span class="span-category text-danger"></span>
                     </div>
                 
             </div>
@@ -97,7 +97,7 @@
                             <%= errors.image.msg %> 
                         </div>
                     <% } %>
-                    <span class="span-image"></span>
+                    <span class="span-image text-danger"></span>
                 </section>
 
                     <input type="submit" class="btn">
