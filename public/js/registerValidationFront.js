@@ -1,65 +1,56 @@
 const regExEmail = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/
-const regExPassword = /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/
 
-
-// !!!!! Acomodar todas las Class al Formulario !!!!!! 
 
 window.addEventListener("load", function(){
     let formulario = document.querySelector(".form-register")
 
     formulario.addEventListener("submit", function(e){
-        e.preventDefault()
+        console.log("HOLA HOLA")
+        let errores = [];
 
-        let errores = {}
-        
-        // Email
+        console.log(errores);
+
         let campoEmail = document.querySelector(".email-input")
-        if (campoEmail.value == ""){
-            errores.email = "Debes ingresar un Email"
-            document.querySelector(".span-email").innerHTML = errores.email;
-        }else if (regExEmail.test(campoEmail.value)){
-            errores.email = "Debe ser un email valido"
-            document.querySelector(".span-email").innerHTML = errores.email;
-        } 
 
-        // Nombre Formulario
+        if (campoEmail.value == "" ){
+            errores.push('Ingresa Mail')
+            let errorMail = 'Ingresa un Email'
+            document.querySelector('.span-email').innerHTML = errorMail
+        } else if (!regExEmail.test(campoEmail.value)){
+            errores.push("Debe ser un email valido")
+            document.querySelector(".span-email").innerHTML = errorMail;
+        } 
+        
         let campoNombre = document.querySelector(".nombre-input")
-        if (campoNombre.value == ""){
-            errores.nombre = "Debes ingresar un nombre"
-            document.querySelector(".span-nombre").innerHTML = errores.nombre;
-        }else if (campoNombre.value.length < 3){
-            errores.nombre = "El nombre debe tener por lo menos dos caracteres"
-            document.querySelector(".span-nombre").innerHTML = errores.nombre;
-        } 
 
-        // Apellido
-        let campoApellido = document.querySelector(".apellido-input")
-        if (campoApellido.value == ""){
-            errores.apellido = "Debes ingresar un apellido"
-            document.querySelector(".span-apellido").innerHTML = errores.apellido;
-
-        }else if (campoApellido.value.length < 3){
-            errores.apellido = "El apellido debe tener por lo menos tres caracteres"
-            document.querySelector(".span-apellido").innerHTML = errores.apellido
-        } 
-
-        // Password
-
-        let campoPassword = document.querySelector(".apellido-input")
-        if (campoPassword.value == ""){
-            errores.password = "Debes ingresar una contraseña"
-            document.querySelector(".span-password").innerHTML = errores.password;
-
-        }else if (regExPassword.test(campoPassword)){
-            errores.password = "Tu contraseña debe contener al menos 8 caracteres"
-            document.querySelector(".span-password").innerHTML = errores.password;
-        } 
-
-        if (Object.keys(errores).length > 0) {
-            e.preventDefault()
+        if (campoNombre.value == "" || campoNombre.length < 2){
+            errores.push('Ingresa Nombre de al menos 2 caracteres')
+            let errorNombre = 'Ingresa un Nombre de al menos 2 caracteres'
+            document.querySelector('.span-nombre').innerHTML = errorNombre
         }
-      
-        console.log(errores)
 
+        let campoApellido = document.querySelector(".apellido-input")
+
+        if (campoApellido.value == "" || campoApellido.length < 2){
+            errores.push('Ingresa un Apeliido de al menos 2 caracteres')
+            let errorApellido = 'Ingresa Apellidode al menos 2 caracteres'
+            document.querySelector('.span-apellido').innerHTML = errorApellido
+        }
+        
+        let campoPassword = document.querySelector(".password-input")
+
+        if (campoPassword.value == "" || campoPassword < 8){
+            errores.push('Ingresa un Pass de al menos 8 Caracteres')
+            let errorPassword = 'Ingresa Pass de al menos 8 Caracteres'
+            document.querySelector('.span-password').innerHTML = errorPassword
+        }
+
+        if (errores.length > 0 ) {
+            e.preventDefault()
+
+            let ulErrores = document.querySelector('div.errores ul');
+            ulErrores.innerHTML += "<li>" + errores + "</li>"                
+            
+        }
     })
 })

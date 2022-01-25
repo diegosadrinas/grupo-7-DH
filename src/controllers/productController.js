@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const { validationResult } = require('express-validator');
 const db = require('../database/models');
 const products = []
 
@@ -19,7 +20,7 @@ const controller = {
 	 },
    
 	create: (req, res) => {
-		res.render('products/product-create-form')
+		res.render('products/product-create-formTest')
    },
 
 	cart: (req, res) => {
@@ -27,13 +28,25 @@ const controller = {
    },
 
 	store: (req, res) => {
+		
+		const resultValidation = validationResult(req);
+		console.log('REQ!', req.errors);
+		console.log('REQ!', req.body);
+		if (resultValidation.errors.length > 0) {
+				
+			return res.render('products/product-create-formTest', {
+					errors: resultValidation.mapped(),
+					oldData: req.body
+				})
+		};
+
 		let image
 		if(req.files[0] != undefined){
 			image = req.files[0].filename
 		} else {
 			image = 'stands-img.webp'
 		}
-		
+	
 		db.Producto.create({
 			name: req.body.name,
 			description: req.body.description,

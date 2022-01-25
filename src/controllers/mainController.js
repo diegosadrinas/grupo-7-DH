@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-const { validationResult, body } = require('express-validator');
+const { validationResult } = require('express-validator');
 const db = require('../database/models');
 const bcrypt = require ('bcrypt');
 
@@ -82,30 +82,6 @@ const controller = {
             console.log("Error:" + String(err));
         
         })
-
-      // ESTO ES OPCIONAL !!
-
-      // Falta validar el intento de registrarse con un correo ya guardado.
-      // Prueba 1
-      // let userInDB = db.Usuario.findByField ('email', req.body.email);
-      // if (userInDB) {
-      //    return res.send('El mail ya esta registrado')
-      // }
-
-      // Prueba 2
-      // let userToLog = db.Usuario.findOne({ where: { email: req.body.email } 
-      // }) .then((userToLog)=> {
-      //     if(userToLog !== null && bcryptjs.compareSync(req.body.password, userToLog.dataValues.pass )){
-      //     req.session.loggedUser = userToLog;
-      //     if (req.body.remember_user){
-      //         res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60) * 2})
-      //     }
-      //     res.redirect("/")
-      // }else res.render("login",{ errors :
-      //     [{msg: "No exites como usuario"}]})
-
-      // })
-      
 	},
 
 

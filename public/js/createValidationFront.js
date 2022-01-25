@@ -1,7 +1,11 @@
 window.addEventListener("load", function(){
-    let formulario = document.querySelector(".formulario")
+    let formulario = document.querySelector(".form-create")
+
 
     formulario.addEventListener("submit", function(e){
+
+        console.log('ASDASDASDASDASDA');
+
 
         let errores = [];
 
@@ -33,17 +37,29 @@ window.addEventListener("load", function(){
             document.querySelector('.span-price').innerHTML = errorPrice
         }
 
-        // VALIDAR IMAGEN (JPG, JPEG, PNG, GIF)
+        let campoImg = document.querySelector(".image")
 
+        if (campoImg.value == ""){
+            errores.push = "Debes subir una imagen"
+            document.querySelector(".span-image").innerHTML = errores.artistimg;
+
+        }else if (campoImg.value.split(".").pop()){
+            let extensiones = ["png", "jpg", "gif", "tiff"]                
+                if (!extensiones.includes(campoImg.value.split(".").pop())) {
+                    errores.push = "El archivo debe ser: png, jpg, gif, tiff!"
+                    document.querySelector(".span-image").innerHTML = errores.artistimg;
+                  }
+            
+        }
 
         if (errores.length > 0 ) {
+            
             e.preventDefault()
 
             let ulErrores = document.querySelector('div.errores ul');
-            for (let i = 0; i < errores.length; i++) {
 
-                ulErrores.innerHTML += "<li>" + errores[i] + "</li>"                
-            }
+            ulErrores.innerHTML += "<li>" + errores[i] + "</li>"                
+            
         }
     })
 })

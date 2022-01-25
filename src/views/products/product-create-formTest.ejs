@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('../partials/head')%>
+    <link rel="stylesheet" href="/css/creacionProductosTest.css">
+    <title>Creacion Productos</title>
+</head>
+<body>
+<header>
+    <%-include('../partials/header')%>
+</header>
+<main>
+        <div class="tarjeta">
+        
+                    <h1>Creación de productos</h1>
+
+            <div>
+                <form action="/products/create" method="POST" enctype="multipart/form-data" class="formulario form-create">
+                    <section class="izquierda">
+
+                        <div class="errores">
+                            <ul></ul>
+                        </div>
+                        
+                    <div class="campo">
+                        <label for="name" class="form-label name">Nombre del producto:</label>
+                        <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        placeholder="Ej: Mouse Pad" 
+                        class="form-input <%= locals.errors && errors.name ? 'is-invalid' : null %>"
+                        value="<%= locals.oldData ? oldData.name : null %>">
+                        <% if (locals.errors && errors.name) { %>
+                            <div class="text-danger">
+                                <%= errors.name.msg %> 
+                            </div>
+                        <% } %>
+                        <span class="span-name"></span>
+                    </div>
+                    <div class="campo">
+                        <label for="description" class="form-label description">Descipción:</label>
+                        <textarea name="description" id="description" placeholder="Ej: Escritorio de caoba negro" class="form-input"></textarea>
+                        <% if (locals.errors && errors.description) { %>
+                            <div class="text-danger">
+                                <%= errors.description.msg %> 
+                            </div>
+                        <% } %>
+                        <span class="span-description"></span>
+                    </div>
+                    <div class="campo">
+                        <label for="color" class="form-label">Colores:</label>
+                        <select name="color" id="color" class="form-input">
+                            <option value="">Elegi</option>
+                            <option value="Negro">Negro</option>
+                            <option value="Blanco">Blanco</option>
+                        </select>
+                        <% if (locals.errors && errors.color) { %>
+                            <div class="text-danger">
+                                <%= errors.color.msg %> 
+                            </div>
+                        <% } %>
+                        <span class="span-price"></span>
+                    </div>
+                    <div class="campo">
+                        <label for="price" class="form-label">Precio del producto:</label>
+                        <input type="number" id="price" name="price" placeholder="$ 2,500.00" class="form-input">
+                        <% if (locals.errors && errors.price) { %>
+                            <div class="text-danger">
+                                <%= errors.price.msg %> 
+                            </div>
+                        <% } %>
+                        <span class="span-price"></span>
+                    </div>
+                    <div class="campo">
+                        <label for="category" class="form-label">Categoría:</label>
+                        <select name="category" id="category" class="form-input">
+                            <option value="">Elegi</option>
+                            <option value="Escritorio">Escritorio</option>
+                            <option  value="Accesorios">Accesorios</option>
+                        </select>
+                        <% if (locals.errors && errors.category) { %>
+                            <div class="text-danger">
+                                <%= errors.category.msg %> 
+                            </div>
+                        <% } %>
+                        <span class="span-category"></span>
+                    </div>
+                
+            </div>
+                </section>
+                <section class="derecha">
+                    <label for="image" class="form-label btn">Upload Image</label>
+                    <input type="file" name="image" id="image" class="btn">
+                    <% if (locals.errors && errors.image) { %>
+                        <div class="text-danger">
+                            <%= errors.image.msg %> 
+                        </div>
+                    <% } %>
+                    <span class="span-image"></span>
+                </section>
+
+                    <input type="submit" class="btn">
+            </form>
+        </div>
+    </main>
+    <%-include('../partials/footer')%>
+    <script src="/js/createValidationFront.js"></script>
+
+</body>
+</html>

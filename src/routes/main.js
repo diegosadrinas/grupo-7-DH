@@ -35,7 +35,7 @@ const validationsRegister = [
     body("password").notEmpty().withMessage('Tienes que escribir una contraseña').isLength({min:8}).withMessage("Debe terner minimo 8 caracteres")
 	// VALIDAR IMAGEN! (JPG, JPEG, PNG, GIF)
 
-];
+]
 
 const validationLogin = [
 	body("email").isEmail().withMessage("Email incorrecto"),
@@ -46,8 +46,8 @@ const validationLogin = [
 
 // Rutas
 router.get('/', mainController.index);
-router.get('/login',validationLogin, guestMiddleware, mainController.login);
-router.post('/login', mainController.loginProcess)
+router.get('/login', guestMiddleware, mainController.login);
+router.post('/login', validationLogin, mainController.loginProcess)
 router.get('/register', guestMiddleware, mainController.register);
 router.post('/register', validationsRegister, mainController.processRegister)
 router.get('/profile', authMiddleware, mainController.profile);

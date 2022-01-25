@@ -13,7 +13,7 @@ window.addEventListener("load", function(){
             errores.push('Ingresa Mail')
             let errorMail = 'Ingresa Mail'
             document.querySelector('.span-email').innerHTML = errorMail
-        }  else if (regExEmail.test(campoEmail.value)){
+        }  else if (!regExEmail.test(campoEmail.value)){
             errores.push("Debe ser un email valido")
             document.querySelector(".span-email").innerHTML = errorMail;
         }
@@ -30,10 +30,8 @@ window.addEventListener("load", function(){
             e.preventDefault()
 
             let ulErrores = document.querySelector('div.errores ul');
-            for (let i = 0; i < errores.length; i++) {
-
-                ulErrores.innerHTML += "<li>" + errores[i] + "</li>"                
-            }
+            ulErrores.innerHTML += "<li>" + errores[i] + "</li>"                
+            
         }
     })
 })
