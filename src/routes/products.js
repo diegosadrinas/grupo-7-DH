@@ -3,7 +3,6 @@ const router = express.Router();
 const productController = require('../controllers/productController');
 const multer = require('multer')
 const path = require('path')
-const { body } = require('express-validator');
 
 
 // Multer
@@ -22,37 +21,8 @@ const adminMiddle = require('../../middlewares/adminMiddle')
 const adminMiddle2 = require('../../middlewares/adminMiddle2');
 
 // Validaciones
-const validationsCreate = [
-    body('name')
-    .notEmpty().withMessage('Tienes que escribir un nombre').bail()
-    .isLength({min:5}).withMessage('Debe terner al menos 5 caracteres'),
-    body('description')
-    .notEmpty().withMessage('Debes ingresar una descripción').bail()
-    .isLength({min:20}).withMessage('Debe terner al menos 5 caracteres'),
-    body('price')
-    .notEmpty().withMessage('Debes ingresar un valor'),
-    body('image').custom((value, { req }) => {
-        let file = req.file;
-        let acceptedExtensions = ['.jpg', '.png', '.jpeg', '.gif'];
-        if (!file) {
-            throw new Error ('Debes subir una imagen');
-        } else {
-            let fileExtension = path.extname(file.originalname);
-            if (!acceptedExtensions.includes(fileExtension)){
-                throw new Error ('El arhivo debe ser JPG, JPEG, PNG o GIF')
-            }
-        }
-        return true;
-    }),
-    body('category').notEmpty().withMessage('Elegi una opcion'),
-    body('color').notEmpty().withMessage('Elegi un color')
-]
-
-const validationsEdit = [
-    body('name').notEmpty().withMessage('Tienes que escribir un nombre').bail().isLength({ min:5 }).withMessage('Debe terner al menos 5 caracteres'),
-    body('description').notEmpty().withMessage('Debes ingresar una descripción').bail().isLength({ min:20 }).withMessage('Debe terner al menos 5 caracteres')
-    // VALIDAR IMAGEN! (JPG, JPEG, PNG, GIF)
-];
+const validationsCreate = require('../../public/js/validationsCreate')
+const validationsEdit = require('../../public/js/validationsEdit')
 
 // Rutas
 router.get('/', productController.index);
