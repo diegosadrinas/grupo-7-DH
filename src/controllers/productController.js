@@ -5,7 +5,6 @@ const products = []
 
 const controller = {
 	index: function (req, res){
-
 		db.Producto.findAll({
 		})
 		   .then( (products) => {

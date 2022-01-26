@@ -11,13 +11,17 @@
 body{
     background: #ffffff;
     color: #0d0d0d;
-    font-family: 'Rajdhani', sans-serif;
     min-width: 360px;
 
 }
 
 main{
     text-align: center;
-    font-family: "Inria Serif";
-    font-weight: 700;
+    font-family: 'Prata', serif;
+    
+}
+
+a:hover {
+    text-decoration: none;
+    color: inherit;
 }

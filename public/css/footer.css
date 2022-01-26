@@ -3,6 +3,7 @@ footer {
     background: #CCD3D8;
     margin-top: 22px;
     padding: 2em 0;
+    font-family: 'Prata', serif;
 }
 footer .container {
     align-items: flex-start;

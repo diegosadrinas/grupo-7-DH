@@ -6,10 +6,10 @@ const bcrypt = require ('bcrypt');
 
 const controller = {
    index: function (req, res){
-      db.Usuario.findAll({
+      db.Producto.findAll({
       })
-         .then( (usuarios) => {
-            return res.render('products/index', {usuarios: usuarios});
+         .then( (product) => {
+            return res.render('products/index', {product: product});
          })
          .catch(function(err){
 

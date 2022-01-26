@@ -20,7 +20,7 @@
     <div class="section-two">
         <article>
             <p class="index-title">Estilo que inspira</p>
-            <p class="index-subtitle">Armá tu ambiente de trabajo de ensueños y desarrollá tu potencial</p>
+            <p class="index-subtitle">Armá tu ambiente de trabajo soñado y desarrollá tu potencial</p>
             <a href="#" class="banner-link">EMPEZÁ</a>
         </article>
         <div class="product-container">
@@ -43,18 +43,35 @@
         </div>
     </div>
     <div>
-        <div>
             <!-- Acá van las imágenes en carrousel -->
-            <section>
+            <!-- <section>
                 <a href="/products">
                     <figure>
+                        <% product.forEach(product => { %>
+                        <p><%= product.name %></p>
+                        <% }) %>
                         <img>Acá van las imágenes en carrousel
 
                     </figure>
                 </a>
-            </section>
-
+            </section> -->
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-4 mb-4 text-center card-container">
+            <% product.forEach(product => { %>
+                <div class="card product-card">
+                    <img src="/images/products/<%= product.img_url %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title"><%= product.name %></h5>
+                    <p class="card-text">$<%= product.price %></p>
+                    <a href="#" class="btn btn-outline-secondary">Comprar</a>
+                    </div>
+                </div>
+                <% }) %>
         </div>
+    </div>        
+
+
+        
 
     </div>
     <div>
