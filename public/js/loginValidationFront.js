@@ -5,35 +5,30 @@ window.addEventListener("load", function(){
 
     formulario.addEventListener("submit", function(e){
 
-        let errores = [];
+        let errores = false
 
         let campoEmail = document.querySelector(".email-input")
 
         if (campoEmail.value == ""){
-            errores.push('Ingresa Mail')
+            errores = true
             let errorMail = 'Ingresa Mail'
             document.querySelector('.span-email').innerHTML = errorMail
-        }  else if (regExEmail.test(campoEmail.value)){
-            errores.push("Debe ser un email valido")
+        }  else if (!regExEmail.test(campoEmail.value)){
+            errores = true
             document.querySelector(".span-email").innerHTML = errorMail;
         }
 
         let campoPassword = document.querySelector(".password")
 
         if (campoPassword.value == ""){
-            errores.push('Ingresa Pass')
+            errores = true
             let errorPassword = 'Ingresa Pass'
             document.querySelector('.span-password').innerHTML = errorPassword
         }
 
-        if (errores.length > 0 ) {
-            e.preventDefault()
-
-            let ulErrores = document.querySelector('div.errores ul');
-            for (let i = 0; i < errores.length; i++) {
-
-                ulErrores.innerHTML += "<li>" + errores[i] + "</li>"                
-            }
+        if (errores) {
+            e.preventDefault()           
+            
         }
     })
 })

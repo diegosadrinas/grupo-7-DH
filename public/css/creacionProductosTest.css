@@ -1,6 +1,38 @@
 /* * {
     font-family: sans-serif;
 } */
+.tarjeta{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #f5f5f5;
+    border-radius: 10px;
+  }
+  .tarjeta h1{
+    text-align: center;
+    padding: 20px 0px 0px 0px
+  }
+  .tarjeta form{
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+  .tarjeta form .campo{
+    position: relative;
+    border-bottom: 2px solid #000000;
+    margin: 30px 0;
+  }
+
+  .tarjeta .campo input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 12px;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  
 .prodCreate{
     font-family: sans-serif;
     display: flex;
@@ -9,9 +41,6 @@
     box-sizing: border-box;
     padding-top: 10%;
     background-color: rgb(195, 196, 197);
-}
-.pageTitle {
-    margin-top: 3em;
 }
 
 .izquierda{
@@ -75,3 +104,8 @@ textarea {
 input[type="file"]{
     display: none;
 }
+
+.text-danger{
+    color: red;
+    font-size: 15px;
+  }

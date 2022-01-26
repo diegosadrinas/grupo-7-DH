@@ -14,9 +14,9 @@
 
         <form method="POST" action="/login" class="loginForm">
          
-          <div class="errores">
+          <!-- <div class="errores">
             <ul></ul>
-          </div>
+          </div> -->
 
           <div class="campo">
             <!-- puedo cambiar el type a text para q no valide desde el Form -->
@@ -32,6 +32,11 @@
 
           <div class="campo">
             <input type="password" name="password" class="password">
+            <% if (locals.errors && errors.password) { %>
+              <div class="text-danger">
+                <%= errors.password.msg %> 
+              </div>
+            <% } %>
             <span class="span-password text-danger" ></span>
             <label>Password</label>
           </div>

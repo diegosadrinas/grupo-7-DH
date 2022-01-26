@@ -1,49 +1,63 @@
 window.addEventListener("load", function(){
-    let formulario = document.querySelector(".formulario")
+    let formulario = document.querySelector(".form-create")
+
 
     formulario.addEventListener("submit", function(e){
 
-        let errores = [];
+        // e.preventDefault()
 
-        let campoName = document.querySelector(".name")
+        let errores = false;
+
+        let campoName = document.querySelector("#name")
+
+        console.log(campoName);
 
         if (campoName.value == ""){
-            errores.push('FALTA NOMBRE')
+            errores = true
             let errorName = 'INGRESA NOMBRE'
             document.querySelector('.span-name').innerHTML = errorName
         } else if (campoName.length < 5){
-            errores.push('Debe tener min 5 caracteres')
+            errores = true
             let errorName = 'Debe tener min 5 caracteres'
             document.querySelector('.span-name').innerHTML = errorName
         }
         
-        let campoDescription = document.querySelector(".description")
+        let campoDescription = document.querySelector("#description")
 
         if (campoDescription.value == ""){
-            errores.push('FALTA DESCRIPCION')
+            errores = true
             let errorDescription = 'INGRESA DESCRIPCION'
             document.querySelector('.span-description').innerHTML = errorDescription
         }
 
-        let campoPrice = document.querySelector(".pricce");
+        let campoPrice = document.querySelector("#price");
 
         if (campoPrice.value == ""){
-            errores.push('Fata Precio')
+            errores = true
             let errorPrice = "Ingresa Precio"
             document.querySelector('.span-price').innerHTML = errorPrice
         }
 
-        // VALIDAR IMAGEN (JPG, JPEG, PNG, GIF)
+        let campoImg = document.querySelector("#image")
 
+        if (campoImg.value == ""){
+            let errorDescription = 'Debes subir una imagen'
+            errores = true
+            document.querySelector(".span-image").innerHTML = errorDescription
 
-        if (errores.length > 0 ) {
-            e.preventDefault()
+        }else if (campoImg.value.split(".").pop()){
+            let extensiones = ["png", "jpg", "gif", "tiff"]                
+                if (!extensiones.includes(campoImg.value.split(".").pop())) {
+                    errores = true
+                    document.querySelector(".span-image").innerHTML = errorDescription
+                  }
+            
+        }
 
-            let ulErrores = document.querySelector('div.errores ul');
-            for (let i = 0; i < errores.length; i++) {
-
-                ulErrores.innerHTML += "<li>" + errores[i] + "</li>"                
-            }
+        if (errores) {
+            
+            e.preventDefault()         
+        
         }
     })
 })
