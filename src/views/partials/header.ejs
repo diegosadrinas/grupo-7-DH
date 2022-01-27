@@ -27,8 +27,8 @@
             <% if (locals.isLogged) { %>
             <!-- <li>(Avatar)</li> -->
             <!-- <img src="/images/avatars/avatarDefault.jpeg" alt="" class="avatarHeader"> -->
-            <li> <%= locals.userLogged.first_name %> </li>
-            <li><button type="button" class="btn btn-outline-dark"><a href="/profile">PROFILE</a> </li></button>
+            <!-- <li> <%= locals.userLogged.first_name %> </li> -->
+            <li><button type="button" class="btn btn-outline-dark"><a href="/profile"><%= locals.userLogged.first_name %> - PROFILE </a> </li></button>
             <li><button type="button" class="btn btn-outline-dark"><a href="/logout">LOGOUT</a> </li></button>
             <% } else { %>
             <li><button type="button" class="btn btn-outline-dark"><a href="/register">REGISTRARSE</a></button></li>
