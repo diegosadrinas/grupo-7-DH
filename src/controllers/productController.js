@@ -43,7 +43,7 @@ const controller = {
 		if(req.files[0] != undefined){
 			image = req.files[0].filename
 		} else {
-			image = 'stands-img.webp'
+			image = 'laptop-stand.jpeg'
 		}
 	
 		db.Producto.create({
