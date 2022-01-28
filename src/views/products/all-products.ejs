@@ -11,24 +11,31 @@
     
 </body>
 <main>
-    <div class="first-section">
+    <div class="first-section container-fluid row">
         <% products.forEach(product => { %>
+        <div class="img-producto col col-lg-6">
            <a href="/products/<%= product.product_id %>">
-            <div class="img-producto">
+            
                 <img class="img" src="/images/products/<%= product.img_url %>" alt="banner">
-            </div>
-        </a>
+            
+            </a>
+        </div>
             <!-- <p> <%= product.id %> </p> -->
-           <p> <%= product.name %></p>
-           <p> * * * * * </p>
-           <p> <%= product.description %></p>
-           <!-- <p> <%= product.category %></p> -->
-           <p> <%= product.color_id %></p>
-           <p> $ <%= product.price %></p>
-           <p> * * * * * </p>
-
+            <div class="col col-lg-6">
+                <p class="fs-2"> <%= product.name %></p>
+                <!--<p> * * * * * </p>-->
+                <p class="fs-5"> <%= product.description %></p>
+                <!--<p> <%= product.category %></p> -->
+                <p class="fs-6"> <%= product.color %></p>
+                <p class="fs-5"> $ <%= product.price %></p>
+                <!--<p> * * * * * </p>-->
+                <button class="btn btn-outline-dark position-relative">
+                    <a class="btn-detalle" href="/products/<%= product.product_id %>">Más Detalles</a>
+                </button>
+            </div>
+       
             <% }) %>
-
+        
     </div>
     
 </main>
