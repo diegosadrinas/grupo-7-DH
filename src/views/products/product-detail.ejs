@@ -11,34 +11,42 @@
     <%-include('../partials/header')%>
     
 <main>
-    <div class="img-producto">
-        <img class="img" src="/images/products/<%= product.img_url %>" alt="banner">
-    </div>
-
-    <div class="descripcion-producto">
-        <h2><%= product.name %></h2>
-        <h4><%= product.color %></h4>
-        <h4 class="precio">$ <%= product.price %></h4>
-    </div>
-    <div class="cont-boton">
-    <button class="boton" type="añadirCarrito" value="añadirCarrito"><a class="botonComprar" href="../product-cart">Comprar</a>
-        </button>
-
-        <!-- SI ESTAS LOGUADO CON EL ADMIN VES ESTO SI NO, NO  -->
-
-        <% if (locals.isLogged && locals.userLogged.is_admin === true) { %>   
-            <p> * * * * * </p>
-            <p>PERMISOS DE ADMINISTRADOR CONCEDIDOS</p> 
-            <p> * * * * * </p>
-    <button class="boton" type="añadirCarrito" value="añadirCarrito"><a class="botonComprar" href="../products/edit/<%= product.product_id %>">Editar</a>
-        </button>            
-        <p> * * * * * </p>
-    <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-    <button class="boton" type="añadirCarrito" value="añadirCarrito"><a class="botonComprar" href="../products">Eliminar</a>
-        </button>        
-        <% } %>
+    <div class="row"></div>
+    <div class="prod-container position-relative row">
         
-    </form>    
+        <div class="img-producto container-fluid col">
+            <img class="img" src="/images/products/<%= product.img_url %>" alt="banner">
+        </div>
+
+        <div class="descripcion-producto col col-xl-5">
+            <h2 class="fs-1"><%= product.name %></h2>
+            <h4 class="fs-2"><%= product.color %></h4>
+            <h4 class="precio fs-4">$ <%= product.price %></h4>
+        
+        
+        <div class="cont-boton">
+            <button class="btn btn-outline-dark position-relative" type="añadirCarrito" value="añadirCarrito">
+                <a class="" href="../product-cart">Comprar</a>
+            </button>
+        </div>
+            <!-- SI ESTAS LOGUADO CON EL ADMIN VES ESTO SI NO, NO  -->
+
+            <% if (locals.isLogged && locals.userLogged.is_admin === true) { %>   
+                <p> * * * * * </p>
+                <p>PERMISOS DE ADMINISTRADOR CONCEDIDOS</p> 
+                <p> * * * * * </p>
+            <button class="btn btn-outline-dark position-relative" type="añadirCarrito" value="añadirCarrito">
+                <a class="" href="../products/edit/<%= product.product_id %>">Editar</a>
+            </button>            
+            <p> * * * * * </p>
+            <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+            <button class="btn btn-outline-dark position-relative" type="añadirCarrito" value="añadirCarrito">
+                <a class="" href="../products">Eliminar</a>
+                </button>        
+                <% } %>
+                
+            </form>    
+        </div>
     </div>
     <div class="detalle">
         <h2>Diferencie su espacio de trabajo</h2>

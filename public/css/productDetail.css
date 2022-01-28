@@ -1,3 +1,11 @@
+.prod-container{
+    padding-top: 10%;
+}
+
+.prod-container a{
+    text-decoration: none
+}
+
 .botonComprar {
     color: white;
 }
@@ -16,7 +24,7 @@
     display: block;
     margin: auto;
     width: 55%;
-    padding-top: 15vh;
+    
 }
 .img-producto{
     position: relative;
