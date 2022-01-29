@@ -1,6 +1,23 @@
 /* * {
     font-family: sans-serif;
 } */
+
+
+.Prod-crear{
+    padding-top: 100px;
+}
+
+label{
+    display: block;
+    margin-top: 1em;
+}
+.checks label{
+    margin-top: 0;
+}
+label:first-of-type{
+    margin-top: 0;
+}
+/*
 .tarjeta{
     position: absolute;
     top: 80%;
@@ -109,3 +126,4 @@ input[type="file"]{
     color: red;
     font-size: 15px;
   }
+*/
