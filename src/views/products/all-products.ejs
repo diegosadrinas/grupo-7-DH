@@ -12,22 +12,17 @@
 </body>
 <main>
     <div class="first-section">
-        <% products.forEach(product => { %>
-           <a href="/products/<%= product.product_id %>">
-            <div class="img-producto">
-                <img class="img" src="/images/products/<%= product.img_url %>" alt="banner">
-            </div>
-        </a>
-            <!-- <p> <%= product.id %> </p> -->
-           <p> <%= product.name %></p>
-           <p> * * * * * </p>
-           <p> <%= product.description %></p>
-           <!-- <p> <%= product.category %></p> -->
-           <p> <%= product.color_id %></p>
-           <p> $ <%= product.price %></p>
-           <p> * * * * * </p>
-
-            <% }) %>
+        <div class="row row-cols-1 row-cols-md-5 mb-5 text-center card-container">
+            <% product.forEach(product => { %>
+                <div class="card product-card">
+                    <img src="/images/products/<%= product.img_url %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= product.name %></h5>
+                        <p class="card-text">$<%= product.price %></p>
+                        <a href="#" class="btn btn-outline-secondary">Ver detalle</a>
+                    </div>
+                </div>
+                <% }) %>
 
     </div>
     

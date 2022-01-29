@@ -2,14 +2,13 @@ const path = require('path');
 const fs = require('fs');
 const { validationResult } = require('express-validator');
 const db = require('../database/models');
-const products = []
 
 const controller = {
 	index: function (req, res){
 		db.Producto.findAll({
 		})
-		   .then( (products) => {
-			  return res.render('products/all-products', {products});
+		   .then( (product) => {
+			  return res.render('products/all-products', {product});
 		   })
 		   .catch(function(err){
   
