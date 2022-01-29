@@ -77,6 +77,10 @@
     display: none;
 }
 
+.fa-shopping-cart {
+    font-size: 1rem;
+}
+
 /* -----> NAVBAR */
 /* Termina HEADER */
 @media (min-width: 361px) {

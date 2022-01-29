@@ -19,7 +19,7 @@
                     <div class="card-body">
                         <h5 class="card-title"><%= product.name %></h5>
                         <p class="card-text">$<%= product.price %></p>
-                        <a href="#" class="btn btn-outline-secondary">Ver detalle</a>
+                        <a href="/products/<%= product.product_id %>" class="btn btn-outline-secondary">Ver detalle</a>
                     </div>
                 </div>
                 <% }) %>
