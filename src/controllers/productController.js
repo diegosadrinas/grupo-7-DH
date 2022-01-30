@@ -7,8 +7,8 @@ const controller = {
 	index: function (req, res){
 		db.Producto.findAll({
 		})
-		   .then( (product) => {
-			  return res.render('products/all-products', {product});
+		   .then( (products) => {
+			  return res.render('products/all-products', {products: products});
 		   })
 		   .catch(function(err){
   
@@ -28,8 +28,6 @@ const controller = {
 	store: (req, res) => {
 		
 		const resultValidation = validationResult(req);
-		console.log('REQ!', req.errors);
-		console.log('REQ!', req.body);
 		if (resultValidation.errors.length > 0) {
 				
 			return res.render('products/product-create-formTest', {
@@ -57,8 +55,8 @@ const controller = {
 				{
 					db.Producto.findAll({
 					})
-					   .then( (products) => {
-						  return res.render('products/all-products', {products});
+					   .then( (product) => {
+						  return res.render('products/all-products', {product});
 					   })
 					   .catch(function(err){
 			  
@@ -119,17 +117,30 @@ const controller = {
 		})
 	
 },
-
-
-	// Delete - Delete one product from DB
-
-	// Acá se inserta el sequelize
 	delete : (req, res) => {
-		let id = req.params.id;
-		let finalProducts = products.filter(product => product.id != id);
-		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
-		res.redirect('/');
-	}
+		let product_id = req.params.id
+		db.Producto.findByPk(product_id)
+			.then((product => {
+				product.destroy()
+				res.redirect('/')
+			}))
+			.catch((err) => {
+				console.log("Error en detail:" + String(err));	
+			})		
+   },
+
+   list: function (req, res){
+	db.Producto.findAll({
+	})
+	   .then( (product) => {
+		  return res.json(product);
+	   })
+	   .catch(function(err){
+
+		  console.log("Error en index:" + String(err));
+	  
+	  });
+ },
 }
 
 module.exports = controller

@@ -8,12 +8,12 @@ const controller = {
    index: function (req, res){
       db.Producto.findAll({
       })
-         .then( (product) => {
-            return res.render('products/index', {product: product});
+         .then( (products) => {
+            return res.render('products/index', {products: products});
          })
          .catch(function(err){
 
-            console.log("Error:" + String(err));
+            console.log("Error en productController.index:" + String(err));
         
         });
    },
@@ -79,7 +79,7 @@ const controller = {
           })
          .catch(function(err){
 
-            console.log("Error:" + String(err));
+            console.log("Error en processRegister:" + String(err));
         
         })
 	},
@@ -97,7 +97,20 @@ const controller = {
       res.clearCookie('userEmail');
       req.session.destroy();
       return res.redirect('/');
-   }
+   },
+
+   list: function (req, res){
+      db.Usuario.findAll({
+      })
+         .then( (user) => {
+            return res.json(user);
+         })
+         .catch(function(err){
+
+            console.log("Error en productController.index:" + String(err));
+        
+        });
+   },
 }
 
 
