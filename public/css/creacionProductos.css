@@ -1,6 +1,10 @@
+.prodedit{
+    padding-top: 7.5%;
+}
+
 /* * {
     font-family: sans-serif;
-} */
+} 
 .prodCreate{
     font-family: sans-serif;
     display: flex;
@@ -75,3 +79,4 @@ textarea {
 input[type="file"]{
     display: none;
 }
+*/
