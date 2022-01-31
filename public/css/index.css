@@ -14,7 +14,6 @@
     z-index: 10;
     color: #ffffff;
     padding-top: 130px;
-    font-family: 'Roboto Slab', serif;
     font-weight: 500;
     font-size: 3rem;
 }
@@ -25,7 +24,7 @@
 }
 
 .banner-subtitle {
-    font-size: 1.5rem;    
+    font-size: 1rem;    
 }
 
 .banner-link {
@@ -52,6 +51,8 @@
 
 .index-subtitle {
     font-size: 1rem;
+    color: #a0a0a0;
+
 }
 
 .product-container {
@@ -75,20 +76,48 @@
     max-width: 100%;
 }
 
-.container {
-    
-}
-
 .card-container {
     display: flex;
     justify-content: space-between;
     padding: 5px;
-    
+    padding-right: 5%;
+    padding-left: 5%;  
 }
 
 .product-card {
     margin: 5px;
 }
+
+.second-banner {
+    background-image: url("https://grovemade.imgix.net/https%3A%2F%2Fsiteleaf.grovemade.com%2Fuploads%2FbannerB-desk-collection-A1.jpg?auto=format&ixlib=python-1.1.2&w=1800&s=411dc819826aa4c9e9504d25e0795604"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    font-size: 3rem;
+    margin-bottom: 5%;
+}
+
+.second-banner-text {
+    padding-left: 20%;
+    padding-right: 20%;
+    color: #ffffff
+}
+
+.second-banner-title {
+    font-size: 3rem;
+}
+
+.second-banner-subtitle {
+    font-size: 1.5rem;
+}
+
+
+.banner-subtitle .section-three {
+    font-size: 1rem;
+    text-decoration: none;
+}
+
 
 .avatar{
     max-width: 10%;

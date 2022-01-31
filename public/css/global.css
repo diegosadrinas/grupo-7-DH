@@ -21,6 +21,10 @@ main{
     
 }
 
+a {
+    color: #0d0d0d
+}
+
 a:hover {
     text-decoration: none;
     color: inherit;

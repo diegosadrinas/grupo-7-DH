@@ -1,16 +1,29 @@
 <%-include("../partials/head")%>
-<nav class="nav-bar">
+<nav class="nav-bar mb-0">
     <div class="left-bar">
-        <a href="#" class="hamburger-btn">
-            <i class="fas fa-bars"></i>
-        </a>
+        <div class="toggle-btn">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"> 
+                    <i class="fas fa-bars"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="dropdownMenuButton1">
+                <% if (locals.isLogged && locals.userLogged.is_admin === true) { %>
+                <li><a href="/products">NOSOTROS</a></button></li>  
+                <li><a href="/products">EXPLORAR</a></button></li>
+                <li><a href="/products/create">CREAR</a></button></li>
+                <% } else { %>
+                <li><a href="/products">NOSOTROS</a></button></li>
+                <li><a href="/products">EXPLORAR</a></button></li>
+                <% } %>
+            </ul>
+          </div>
+        
         <ul>
-            <% if (locals.isLogged && locals.userLogged.is_admin === true) { %>   
-            <li><button type="button" class="btn btn-outline-dark"><a href="/products">COMPRAR</a></button></li>
+            <% if (locals.isLogged && locals.userLogged.is_admin === true) { %>
+            <li><button type="button" class="btn btn-outline-dark"><a href="/products">NOSOTROS</a></button></li>  
             <li><button type="button" class="btn btn-outline-dark"><a href="/products">EXPLORAR</a></button></li>
             <li><button type="button" class="btn btn-outline-dark"><a href="/products/create">CREAR</a></button></li>
             <% } else { %>
-            <li><button type="button" class="btn btn-outline-dark"><a href="/products">COMPRAR</a></button></li>
+            <li><button type="button" class="btn btn-outline-dark"><a href="/products">NOSOTROS</a></button></li>
             <li><button type="button" class="btn btn-outline-dark"><a href="/products">EXPLORAR</a></button></li>
             <% } %>
         </ul>
@@ -25,18 +38,16 @@
     <div class="right-bar">
         <ul>
             <% if (locals.isLogged) { %>
-            <!-- <li>(Avatar)</li> -->
-            <!-- <img src="/images/avatars/avatarDefault.jpeg" alt="" class="avatarHeader"> -->
-            <!-- <li> <%= locals.userLogged.first_name %> </li> -->
-            <li><button type="button" class="btn btn-outline-dark"><a href="/profile"><%= locals.userLogged.first_name %> - PROFILE </a> </li></button>
-            <li><button type="button" class="btn btn-outline-dark"><a href="/logout">LOGOUT</a> </li></button>
+            <li><button type="button" class="btn btn-outline-dark"><a href="/profile"><%= locals.userLogged.first_name %></a> </li></button>
+            <li><button type="button" class="btn btn-outline-dark"><a href="/logout">CERRAR SESIÓN</a> </li></button>
             <% } else { %>
             <li><button type="button" class="btn btn-outline-dark"><a href="/register">REGISTRARSE</a></button></li>
             <li><button type="button" class="btn btn-outline-dark"><a href="/login">INGRESAR</a></button></li>
             <% } %>
-            <li><button type="button" class="btn btn-outline-dark"><a href="/products/product-cart" class="carrito">
-                <i class="fas fa-shopping-cart"></i>
-            </a></button></li>
+            
         </ul>
     </div>
+    <li><button type="button" class="btn btn-outline-dark"><a href="/products/product-cart" class="carrito">
+        <i class="fas fa-shopping-cart"></i>
+    </a></button></li>
 </nav>

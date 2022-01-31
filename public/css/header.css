@@ -12,7 +12,7 @@
     position: fixed;
     z-index: 100;
     padding: 0 20px;
-    min-width: 361;
+    min-width: 400;
 }
 
 .nav-bar li {
@@ -77,6 +77,10 @@
     display: none;
 }
 
+.fa-shopping-cart {
+    font-size: 1rem;
+}
+
 /* -----> NAVBAR */
 /* Termina HEADER */
 @media (min-width: 361px) {
@@ -87,8 +91,8 @@
 
 
 
-@media (min-width: 768px) {
-    .hamburger-btn {
+@media (min-width: 1120px) {
+    .toggle-btn {
         display: none;
     }
 

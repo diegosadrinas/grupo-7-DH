@@ -3,9 +3,22 @@
     margin: auto;
 }
 
-.img{
-    max-width: 30em;
-    max-height: 30em;
+
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    padding-right: 5%;
+    padding-left: 5%;  
+}
+
+.product-card {
+    margin: 5px;
+}
+
+.card {
+    margin-bottom: 5%;
 }
 
 
