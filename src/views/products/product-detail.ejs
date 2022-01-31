@@ -35,12 +35,13 @@
 
                 <p>PERMISOS DE ADMINISTRADOR CONCEDIDOS</p> 
 
-            <button class="btn btn-outline-dark position-relative" type="añadirCarrito" value="añadirCarrito">
+            <form action="/products/edit/<%= product.product_id%>" method="POST" style="display: inline-flex">
+            <button class="btn btn-outline-dark position-relative" type="submit">
                 <a class="" href="/products/edit/<%= product.product_id %>">Editar</a>
             </button>            
             <form action="/products/delete/<%= product.product_id%>" method="POST" style="display: inline-flex">
-            <button class="btn btn-outline-dark position-relative" type="añadirCarrito" value="añadirCarrito">
-                <a href="/products/delete/<%= product.product_id %>">Eliminar</a>
+            <button class="btn btn-outline-dark position-relative" type="submit">
+                Eliminar
                 </button>        
                 <% } %>
                 

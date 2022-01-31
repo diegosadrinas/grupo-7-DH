@@ -37,7 +37,6 @@ const controller = {
          if(userToLogin != null && bcrypt.compareSync(req.body.password, userToLogin.password)){
             req.session.userLogged = userToLogin;
             delete userToLogin.password;
-            console.log("este es el req.session: " + req.session.userLogged)
             if (req.body.remember_user){
                 res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60) * 2})
             }
@@ -87,7 +86,7 @@ const controller = {
 
 
    profile: function (req, res){
-      console.log(req.cookies.userEmail);
+      
       return res.render('users/userProfile', {
          user: req.session.userLogged
       })

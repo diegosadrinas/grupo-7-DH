@@ -32,6 +32,6 @@ router.get('/product-cart', productController.cart);
 router.get('/:id', productController.detail);
 router.get('/edit/:id', adminMiddle, adminMiddle2,  productController.edit);
 router.patch('/edit/:id', upload.any(), validationsEdit , productController.update);
-router.delete('/delete/:id', productController.delete)
+router.post('/delete/:id', productController.delete)
 
 module.exports = router;

@@ -97,8 +97,15 @@ const controller = {
 
    update: (req, res) => {
 	let product_id = req.params.id
+
 	db.Producto.findByPk(product_id)
 		.then((product => {
+			let image
+			if(req.files[0] != undefined){
+				image = req.files[0].filename
+			} else {
+				image = product.img_url
+			}
 			product.update({
 				name: req.body.name,
 				description: req.body.description,
@@ -118,14 +125,17 @@ const controller = {
 	
 },
 	delete : (req, res) => {
-		let product_id = req.params.id
-		db.Producto.findByPk(product_id)
-			.then((product => {
-				product.destroy()
+		db.Producto.destroy({
+			where: {
+				product_id: req.params.id
+			}
+		})
+			.then(
 				res.redirect('/')
-			}))
+			)
+			
 			.catch((err) => {
-				console.log("Error en detail:" + String(err));	
+				console.log("Error en delete:" + String(err));	
 			})		
    },
 
