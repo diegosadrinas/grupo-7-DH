@@ -55,8 +55,8 @@ const controller = {
 				{
 					db.Producto.findAll({
 					})
-					   .then( (product) => {
-						  return res.render('products/all-products', {product});
+					   .then( (products) => {
+						  return res.render('products/all-products', {products});
 					   })
 					   .catch(function(err){
 			  
