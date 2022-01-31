@@ -17,7 +17,9 @@ const controller = {
         
         });
    },
-
+   nosotros: function (req, res) {
+      return res.render('users/nosotros');
+   },
    // Validacion y login de session
    login: async function (req, res){
       return res.render('users/login');

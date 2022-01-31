@@ -27,6 +27,7 @@ const validationLogin = require('../../public/js/validationLogin')
 
 // Rutas
 router.get('/', mainController.index);
+router.get('/nosotros', mainController.nosotros);
 router.get('/login', guestMiddleware, mainController.login);
 router.post('/login', validationLogin, mainController.loginProcess)
 router.get('/register', guestMiddleware, mainController.register);

@@ -7,7 +7,7 @@
             </button>
             <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="dropdownMenuButton1">
                 <% if (locals.isLogged && locals.userLogged.is_admin === true) { %>
-                <li><a href="/products">NOSOTROS</a></button></li>  
+                <li><a href="/nosotros">NOSOTROS</a></button></li>  
                 <li><a href="/products">EXPLORAR</a></button></li>
                 <li><a href="/products/create">CREAR</a></button></li>
                 <% } else { %>
@@ -19,11 +19,11 @@
         
         <ul>
             <% if (locals.isLogged && locals.userLogged.is_admin === true) { %>
-            <li><button type="button" class="btn btn-outline-dark"><a href="/products">NOSOTROS</a></button></li>  
+            <li><button type="button" class="btn btn-outline-dark"><a href="/nosotros">NOSOTROS</a></button></li>  
             <li><button type="button" class="btn btn-outline-dark"><a href="/products">EXPLORAR</a></button></li>
             <li><button type="button" class="btn btn-outline-dark"><a href="/products/create">CREAR</a></button></li>
             <% } else { %>
-            <li><button type="button" class="btn btn-outline-dark"><a href="/products">NOSOTROS</a></button></li>
+            <li><button type="button" class="btn btn-outline-dark"><a href="/nosotros">NOSOTROS</a></button></li>
             <li><button type="button" class="btn btn-outline-dark"><a href="/products">EXPLORAR</a></button></li>
             <% } %>
         </ul>
