@@ -14,7 +14,7 @@ window.addEventListener("load", function(){
 
         if (campoName.value == ""){
             errores = true
-            let errorName = 'INGRESA NOMBRE'
+            let errorName = 'Ingresa Nombre'
             document.querySelector('.span-name').innerHTML = errorName
         } else if (campoName.length < 5){
             errores = true
@@ -26,7 +26,7 @@ window.addEventListener("load", function(){
 
         if (campoDescription.value == ""){
             errores = true
-            let errorDescription = 'INGRESA DESCRIPCION'
+            let errorDescription = 'Ingresa Descripcion'
             document.querySelector('.span-description').innerHTML = errorDescription
         }
 
