@@ -131,7 +131,7 @@ const controller = {
 			}
 		})
 			.then(
-				res.redirect('/')
+				res.redirect('/products')
 			)
 			
 			.catch((err) => {
