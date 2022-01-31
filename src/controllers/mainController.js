@@ -8,12 +8,12 @@ const controller = {
    index: function (req, res){
       db.Producto.findAll({
       })
-         .then( (product) => {
-            return res.render('products/index', {product: product});
+         .then( (products) => {
+            return res.render('products/index', {products: products});
          })
          .catch(function(err){
 
-            console.log("Error:" + String(err));
+            console.log("Error en productController.index:" + String(err));
         
         });
    },
@@ -37,7 +37,6 @@ const controller = {
          if(userToLogin != null && bcrypt.compareSync(req.body.password, userToLogin.password)){
             req.session.userLogged = userToLogin;
             delete userToLogin.password;
-            console.log("este es el req.session: " + req.session.userLogged)
             if (req.body.remember_user){
                 res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60) * 2})
             }
@@ -79,7 +78,7 @@ const controller = {
           })
          .catch(function(err){
 
-            console.log("Error:" + String(err));
+            console.log("Error en processRegister:" + String(err));
         
         })
 	},
@@ -87,7 +86,7 @@ const controller = {
 
 
    profile: function (req, res){
-      console.log(req.cookies.userEmail);
+      
       return res.render('users/userProfile', {
          user: req.session.userLogged
       })
@@ -97,7 +96,20 @@ const controller = {
       res.clearCookie('userEmail');
       req.session.destroy();
       return res.redirect('/');
-   }
+   },
+
+   list: function (req, res){
+      db.Usuario.findAll({
+      })
+         .then( (user) => {
+            return res.json(user);
+         })
+         .catch(function(err){
+
+            console.log("Error en productController.index:" + String(err));
+        
+        });
+   },
 }
 
 
