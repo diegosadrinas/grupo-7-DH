@@ -27,11 +27,11 @@ const validationsEdit = require('../../public/js/validationsEdit')
 // Rutas
 router.get('/', productController.index);
 router.get('/create', adminMiddle, adminMiddle2, productController.create);
-router.post('/create', validationsCreate, upload.any(), productController.store);
+router.post('/create', upload.any(), validationsCreate, productController.store);
 router.get('/product-cart', productController.cart);
 router.get('/:id', productController.detail);
 router.get('/edit/:id', adminMiddle, adminMiddle2,  productController.edit);
 router.patch('/edit/:id', upload.any(), validationsEdit , productController.update);
-router.post('/delete/:id', productController.delete)
+router.delete('/delete/:id', productController.delete)
 
 module.exports = router;

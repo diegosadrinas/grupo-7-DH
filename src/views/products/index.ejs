@@ -45,7 +45,6 @@
     <div>
          
         
-        
     <div>
         <div class="row row-cols-1 row-cols-md-5 mb-5 text-center card-container">
             <% products.forEach(product => { %>
@@ -54,7 +53,7 @@
                     <div class="card-body">
                     <h5 class="card-title"><%= product.name %></h5>
                     <p class="card-text">$<%= product.price %></p>
-                    <a href="#" class="btn btn-outline-secondary">Comprar</a>
+                    <a href="/products/product-cart" class="btn btn-outline-secondary">Comprar</a>
                     </div>
                 </div>
                 <% }) %>
