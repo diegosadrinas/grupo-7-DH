@@ -1,5 +1,5 @@
 const { body } = require('express-validator');
-const path = require('path')
+const path = require('path');
 
 const validationsCreate = [
     body("name")
@@ -15,12 +15,11 @@ const validationsCreate = [
         let acceptedExtensions = ['.jpg', '.png', '.jpeg', '.gif'];
         if (!file) {
             throw new Error ('Debes subir una imagen');
-        // } else {
-        //     let fileExtension = path.extname(file.originalname);
-        //     console.log(fileExtension);
-        //     if (!acceptedExtensions.includes(fileExtension)){
-        //         throw new Error ('El arhivo debe ser JPG, JPEG, PNG o GIF')
-        //     }
+        } else {
+            let fileExtension = path.extname(file[0].originalname);
+            if (!acceptedExtensions.includes(fileExtension)){
+                throw new Error ('El arhivo debe ser JPG, JPEG, PNG o GIF')
+            }
         }
         return true;
     }),
