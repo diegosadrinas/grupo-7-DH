@@ -108,10 +108,22 @@ const controller = {
          })
          .catch(function(err){
 
-            console.log("Error en productController.index:" + String(err));
+            console.log("Error en mainController.list:" + String(err));
         
         });
    },
+
+   listById: function (req, res) {
+      let user_id = req.params.id
+      db.Usuario.findByPk(user_id)
+         .then((user) => {
+            return res.json(user)
+         })
+         .catch(function(err){
+
+            console.log("Error en mainController.listById:" + String(err));
+         })
+      }
 }
 
 
