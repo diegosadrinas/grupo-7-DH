@@ -147,10 +147,23 @@ const controller = {
 	   })
 	   .catch(function(err){
 
-		  console.log("Error en index:" + String(err));
+		  console.log("Error en productController.list:" + String(err));
 	  
 	  });
- },
+   },
+
+   listById: function(req, res) {
+	   let product_id = req.params.id
+	   db.Producto.findByPk(product_id)
+	   .then((product) => {
+		   return res.json(product)
+	   })
+	   .catch(function(err){
+
+		console.log("Error en productController.list:" + String(err));
+	
+	});
+   }
 }
 
 module.exports = controller
